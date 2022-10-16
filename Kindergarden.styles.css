@@ -1,0 +1,41 @@
+@import '_content/BergSoft.UI/BergSoft.UI.bundle.scp.css';
+@import '_content/DIPS.Arena.UI/DIPS.Arena.UI.bundle.scp.css';
+
+/* /Components/Avatar.razor.rz.scp.css */
+.Avatar[b-dxwme3vxdq] {
+    background: #ebebeb;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+    .Avatar.compact[b-dxwme3vxdq] {
+        height: 40px;
+        width: 40px;
+    }
+/* /Components/Card.razor.rz.scp.css */
+.Card[b-69fl72qm8l] {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* /Components/CardControl.razor.rz.scp.css */
+.CardControl[b-aogoq5qfhz] {
+    display: flex;
+    justify-content: flex-start;
+}
+/* /Components/PageMenu.razor.rz.scp.css */
+body[b-apo7b19gnz] {
+    .PageMenu {
+        width: 48px;
+    }
+}
+/* /Pages/Status.razor.rz.scp.css */
+.Activity[b-b7b8wiljw8] {
+    background: red;
+}
+/* /Shared/MainLayout.razor.rz.scp.css */
+.layout[b-eqz5kcb9fm] {
+    display: flex;
+}

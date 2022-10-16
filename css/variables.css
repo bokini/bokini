@@ -1,0 +1,49 @@
+﻿:root {
+    /** Blue primary color, checked toggle or button */
+    --themePrimary: #0078d4;
+
+    /** Checked but also hover */
+    --themeDark: #005A9E;
+
+    /** Selected row in grid and lists */
+    --themeLight: #c7e0f4;
+
+    /** Button face hover, row hover etc. */
+    --neutralLight: #edebe9;
+
+    /** Button face active & hover */
+    --neutralQuaternaryAlt: #e1dfdd;
+    --neutralSecondary: #605e5c;
+    --neutralPrimary: #323130;
+    --white: #ffffff;
+    --borderRadiusNone: 0;
+    --borderRadiusSmall: 2px;
+    --borderRadiusMedium: 4px;
+    --borderRadiusLarge: 6px;
+    --borderRadiusXLarge: 8px;
+    --buttonPressedIconColor: #444;
+
+    /** Sizes */
+    --buttonRoundSize: 34px;
+    --hypelinkColor: #0C71A1;
+    --colorNeutralBackground4: #f0f0f0;
+    --colorNeutralBackground4Selected: #ffffff;
+
+    /*#region Toggle */
+
+    --toggleChecked: var(--themePrimary);
+    --toggleCheckedHover: var(--themeDark);
+
+    /*#endregion */
+
+    /*#region TabsControl */
+
+    --tabsControlBackground: var(--colorNeutralBackground4);
+    --tabsControlButtonsSpacing: 6px;
+    --tabsControlButtonBackgroundColor: inherit;
+    --tabsControlPadding: 4px;
+    --tabsControlWidth: 48px;
+    --tabsControlButtonRadius: var(--borderRadiusMedium);
+
+    /*#endregion */
+}

@@ -1,0 +1,182 @@
+/* _content/DIPS.Arena.UI/Button.razor.rz.scp.css */
+.button[b-1a63ijlx3n] {
+    background: #d5d5d5;
+    border: 0;
+    padding: 0.25em 1em;
+    cursor: pointer;
+}
+
+    .button:hover[b-1a63ijlx3n] {
+        background: #1b000000;
+    }
+
+    .button:active[b-1a63ijlx3n] {
+        border: 2px solid #047F89;
+        border-style: outset;
+    }
+/* _content/DIPS.Arena.UI/Components/GeometryButton.razor.rz.scp.css */
+.GeometryButton[b-tc9n35tf45] {
+    background: inherit;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    fill: #444;
+}
+
+    .GeometryButton:active:hover[b-tc9n35tf45] {
+        fill: #fff;
+        background: var(--neutralQuaternaryAlt);
+    }
+
+    .GeometryButton:hover[b-tc9n35tf45] {
+        background: var(--neutralLight);
+    }
+
+    .GeometryButton.checked[b-tc9n35tf45] {
+        background: var(--themePrimary);
+        fill: #fff;
+    }
+
+/* _content/DIPS.Arena.UI/Components/InlineAlert.razor.rz.scp.css */
+.InlineAlert[b-m8nqpd021b] {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    height: 27px;
+    justify-content: center;
+    border-style: solid;
+    border-left-width: 2px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    padding: 0 8px;
+}
+
+    .InlineAlert.warning[b-m8nqpd021b] {
+        background: #fffbf6;
+        border-top-color: #f2dEb0;
+        border-right-color: #f2dEb0;
+        border-bottom-color: #f2dEb0;
+        border-left-color: #D69600;
+    }
+
+    .InlineAlert svg[b-m8nqpd021b] {
+        margin-right: 5px;
+    }
+/* _content/DIPS.Arena.UI/Components/TabControl.razor.rz.scp.css */
+.TabControl .Tabs[b-yklccxzh4l] {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    padding-left: 80px;
+}
+
+    .TabControl .Tabs button[b-yklccxzh4l] {
+        border: 0;
+        background: inherit;
+        padding: 0 10px;
+        font-size: 24px;
+        font-weight: 400;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        padding: 0px 10px;
+        color: #444;
+        user-select: none;
+    }
+
+        .TabControl .Tabs button:hover[b-yklccxzh4l] {
+
+        }
+
+        .TabControl .Tabs button.active[b-yklccxzh4l] {
+            color: #047f89;
+            font-weight: bold;
+        }
+
+        .TabControl .SideContent[b-yklccxzh4l] {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            padding-left: 40px;
+        }
+/* _content/DIPS.Arena.UI/Components/TextBox.razor.rz.scp.css */
+.TextBox[b-duhx2hyasf] {
+    box-shadow: none;
+    margin: 0px;
+    padding: 1px;
+    bottom: 1px solid inherit;
+    border-radius: 1px;
+    cursor: text;
+    height: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+}
+
+    .TextBox:hover[b-duhx2hyasf] {
+        border-color: var(--neutralPrimary);
+    }
+
+    .TextBox input[b-duhx2hyasf] {
+        font-size: 12px;
+        font-weight: 400;
+        box-shadow: none;
+        margin: 0px;
+        padding: 0px 4px;
+        box-sizing: border-box;
+        border-radius: 0px;
+        border: none;
+        background: none transparent;
+        color: var(--neutralPrimary);
+        width: 100%;
+        min-width: 0px;
+        text-overflow: ellipsis;
+        outline: 0px;
+    }
+
+    .TextBox:focus[b-duhx2hyasf],
+    .TextBox:focus-within[b-duhx2hyasf] {
+        background: var(--white);
+        border: 2px solid #34768B;
+        padding: 0;
+    }
+
+    .TextBox:hover[b-duhx2hyasf] {
+        background: white;
+    }
+/* _content/DIPS.Arena.UI/Toggle.razor.rz.scp.css */
+.Toggle[b-zddceo48kc] {
+    background: #d5d5d5;
+    height: 2em;
+    border-radius: 1em;
+    width: 4em;
+    padding: 0.1em;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+}
+
+    .Toggle:active[b-zddceo48kc] {
+        border: 0;
+    }
+
+    .checked[b-zddceo48kc] {
+        background: #047F89;
+        justify-content: flex-end;
+        transition: justify-content 2s;
+    }
+
+    .Toggle div[b-zddceo48kc] {
+        background: white;
+        height: 1.8em;
+        width: 1.8em;
+        border-radius: 0.9em;
+    }

@@ -1,0 +1,350 @@
+/* _content/BergSoft.UI/Components/Button.razor.rz.scp.css */
+.Button[b-wfoll136jg] {
+    align-items: center;
+    background: inherit;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    font: normal 400 14px "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
+    padding: 0 8px;
+    height: var(--buttonRoundSize);
+    stroke: #444;
+    fill: #444;
+}
+
+    .Button:active:hover[b-wfoll136jg] {
+        background: var(--neutralQuaternaryAlt);
+    }
+
+    .Button:hover[b-wfoll136jg] {
+        background: var(--neutralLight);
+    }
+
+    .Button.checked[b-wfoll136jg] {
+        background: var(--themePrimary);
+        fill: #fff;
+        stroke: #fff;
+    }
+
+        .Button.checked:hover[b-wfoll136jg] {
+            background: var(--themeDark);
+        }
+
+
+    .Button.rounded[b-wfoll136jg] {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 50%;
+        width: var(--buttonRoundSize);
+    }
+
+/*    .Button:focus {
+        outline: 1px auto -webkit-focus-ring-color;
+        outline-style: auto;
+    }
+*/
+/* _content/BergSoft.UI/Components/PageControl.razor.rz.scp.css */
+.PageControl .Tabs[b-ww9a7q5von] {
+    display: flex;
+    height: 34px;
+    width: 100%;
+}
+
+    .PageControl .Tabs button[b-ww9a7q5von] {
+        padding: 0 10px;
+        font-size: 14px;
+        font-weight: 400;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+        text-decoration: none;
+        text-align: center;
+        cursor: default;
+        vertical-align: top;
+        padding: 0px 10px;
+        border-radius: 0px;
+        height: 31px;
+        background-color: rgb(243, 242, 241);
+        color: rgb(37, 36, 35);
+        user-select: none;
+    }
+
+        .PageControl .Tabs button:hover[b-ww9a7q5von] {
+            color: rgb(37, 36, 35);
+            outline: transparent dashed 2px;
+            border-color: transparent;
+            font-weight: 600;
+            background-color: rgb(237, 235, 233);
+        }
+
+        .PageControl .SideContent[b-ww9a7q5von] {
+            display: flex;
+            padding-left: 32px;
+        }
+
+        .flex-container[b-ww9a7q5von] {
+            display: flex;
+            height: 100%;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .flex-container:hover[b-ww9a7q5von] {
+                color: rgb(37, 36, 35);
+                outline: transparent dashed 2px;
+                border-color: transparent;
+                font-weight: 600;
+            }
+
+        .text-container[b-ww9a7q5von] {
+            flex-grow: 1;
+        }
+
+            .button-label[b-ww9a7q5von] {
+                margin: 0px 4px;
+                line-height: 100%;
+                display: block;
+            }
+
+                .button-label:hover[b-ww9a7q5von] {
+                    color: rgb(37, 36, 35);
+                    outline: transparent dashed 2px;
+                    border-color: transparent;
+                    font-weight: 600;
+                }
+/* _content/BergSoft.UI/Components/PivotGrid.razor.rz.scp.css */
+.PivotGrid[b-a97mukj4ms] {
+    user-select: none;
+}
+
+.Row[b-a97mukj4ms] {
+    display: flex;
+    flex-direction: row;
+    min-height: 40px;
+    padding: 0 40px;
+}
+/*    .Row:hover {
+        background: var(--neutralLight);
+    }
+*/
+    .Row.Selected[b-a97mukj4ms] {
+        background: var(--themeLight);
+    }
+
+.HeaderCell[b-a97mukj4ms] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 200px;
+    gap: 8px;
+}
+
+.Cell[b-a97mukj4ms] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    padding: 0 4px;
+}
+
+.Cell[b-a97mukj4ms] {
+}
+
+/* _content/BergSoft.UI/Components/RadioButton.razor.rz.scp.css */
+.RadioButton[b-qck8t9g7op] {
+    --themePrimary: #0078d4;
+    --themeDark: #005A9E;
+    --neutralSecondary: #605e5c;
+    --neutralPrimary: black;
+    --white: white;
+
+    cursor: pointer;
+    font: normal 400 14px "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
+    position: relative;
+}
+
+    .RadioButton input[b-qck8t9g7op] {
+        position: absolute;
+        opacity: 0;
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+    }
+
+    .RadioButton label[b-qck8t9g7op]::before {
+        content: "";
+        display: inline-block;
+        background-color: var(--white);
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--neutralPrimary);
+        width: 20px;
+        height: 20px;
+        font-weight: normal;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-sizing: border-box;
+        transition-property: border-color;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+        border-radius: 50%;
+    }
+
+    .RadioButton label:hover[b-qck8t9g7op]::before {
+        border-color: var(--neutralPrimary);
+    }
+
+    .RadioButton label:hover[b-qck8t9g7op]::after {
+        content: "";
+        transition-property: background-color;
+        left: 5px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        background-color: var(--neutralSecondary);
+    }
+
+    .RadioButton.IsChecked label[b-qck8t9g7op]::before {
+        border-color: var(--themePrimary);
+    }
+
+    .RadioButton.IsChecked label[b-qck8t9g7op]::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        left: 5px;
+        right: 0px;
+        transition-property: border-width;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+        box-sizing: border-box;
+        border-width: 5px;
+        border-style: solid;
+        border-color: var(--themePrimary);
+        background: var(--themePrimary);
+        top: 5px;
+    }
+
+.RadioButton span[b-qck8t9g7op] {
+    display: inline-block;
+    padding-left: 26px;
+}
+/* _content/BergSoft.UI/Components/TabsControl.razor.rz.scp.css */
+.TabsControl[b-qzsmdmv7rr] {
+    background: var(--tabsControlBackground);
+    display: flex;
+    flex-direction: column;
+    gap: var(--tabsControlButtonsSpacing);
+    height: 100%;
+    width: var(--tabsControlWidth);
+    padding: var(--tabsControlPadding);
+}
+
+    .TabsControl button[b-qzsmdmv7rr] {
+        background: var(--tabsControlButtonBackgroundColor);
+        border: 0;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        user-select: none;
+    }
+
+    .TabsControl button:hover[b-qzsmdmv7rr],
+    .TabsControl button.selected[b-qzsmdmv7rr] {
+        background: var(--colorNeutralBackground4Selected);
+        border-radius: var(--tabsControlButtonRadius);
+    }
+/* _content/BergSoft.UI/Components/TextBox.razor.rz.scp.css */
+.TextBox[b-qh1h786k8r] {
+    box-shadow: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: 1px solid var(--neutralSecondary);
+    border-radius: 2px;
+    background: var(--white);
+    cursor: text;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+}
+
+    .TextBox:hover[b-qh1h786k8r] {
+        border-color: var(--neutralPrimary);
+    }
+
+    .TextBox input[b-qh1h786k8r] {
+        font-size: 14px;
+        font-weight: 400;
+        box-shadow: none;
+        margin: 0px;
+        padding: 0px 8px;
+        box-sizing: border-box;
+        border-radius: 0px;
+        border: none;
+        background: none transparent;
+        color: var(--neutralPrimary);
+        width: 100%;
+        min-width: 0px;
+        text-overflow: ellipsis;
+        outline: 0px;
+    }
+
+    .TextBox:focus[b-qh1h786k8r],
+    .TextBox:focus-within[b-qh1h786k8r] {
+        border-color: red;
+    }
+
+    .TextBox:hover[b-qh1h786k8r] {
+        background: white;
+    }
+/* _content/BergSoft.UI/Components/Toggle.razor.rz.scp.css */
+.Toggle[b-owx3sckiy6] {
+    align-items: center;
+    background: inherit;
+    border: 1px solid var(--neutralSecondary);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    height: 20px;
+    padding: 3px;
+    width: 40px;
+    transition: all 0.1s ease 0s;
+}
+
+    .Toggle:hover[b-owx3sckiy6] {
+        border-color: var(--neutralPrimary);
+    }
+
+    .Toggle div[b-owx3sckiy6] {
+        background: var(--neutralSecondary);
+        height: 12px;
+        width: 12px;
+        border-radius: 6px;
+    }
+
+    .Toggle:hover div[b-owx3sckiy6] {
+        background: var(--neutralPrimary);
+    }
+
+    .Toggle.IsChecked[b-owx3sckiy6] {
+        background-color: var(--toggleChecked);
+        border: 0;
+        justify-content: flex-end;
+    }
+
+    .Toggle.IsChecked:hover[b-owx3sckiy6] {
+        background-color: var(--toggleCheckedHover);
+    }
+
+    .Toggle.IsChecked div[b-owx3sckiy6] {
+        background: white;
+    }

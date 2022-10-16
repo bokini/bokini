@@ -1,0 +1,58 @@
+﻿@import "variables.css";
+@import "dips_variables.css";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font: normal 400 14px "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
+}
+
+html, body {
+    font: normal 400 14px "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    color: var(--hypelinkColor);
+    font-weight: 600;
+}
+
+#blazor-error-ui {
+    display: none;
+}
+
+.AvatarCell {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 0;
+    width: 128px;
+}
+
+.Activity {
+    display: flex;
+    padding-top: 10px;
+    line-height: 2em;
+    padding-right: 30px;
+    align-items: flex-start !important;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.employees {
+    display: flex;
+    gap: 5px;
+    padding: 0 20px;
+    text-align: right;
+    flex-grow: 1;
+    justify-content: right;
+}

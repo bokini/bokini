@@ -1,0 +1,15 @@
+﻿:root {
+    --themePrimary: #006A9D;
+    --themeDark: #005F8C;
+
+    --neutralLight: #e0e0e0;
+    --neutralQuaternaryAlt: #a1a1a1;
+
+
+    --tabsControlBackground: #18647C;
+    --tabsControlButtonBackgroundColor: #D9E1E9;
+    --tabsControlButtonsSpacing: 0;
+    --tabsControlPadding: 0;
+    --tabsControlWidth: 40px;
+    --tabsControlButtonRadius: 0;
+}
