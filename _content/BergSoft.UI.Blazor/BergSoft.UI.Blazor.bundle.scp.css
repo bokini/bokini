@@ -5,6 +5,7 @@
     border: 1px solid #d1d1d1;
     border-radius: var(--borderRadius, 4px);
     cursor: pointer;
+    color: black;
     display: inline-flex;
     font-weight: 600;
     font-size: var(--buttonFontSize, 14px);
@@ -724,7 +725,7 @@
         margin-right: -6px;
     }
 
-        .GridHeader .Content .HeaderText[b-ps8xvyt3o3] {
+        .GridHeader .HeaderText[b-ps8xvyt3o3] {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -787,6 +788,7 @@
     border-collapse: collapse;
     user-select: none;
     outline: none;
+    -webkit-user-select: none;
 }
 
 .GridHeaders[b-qhew7i48fs] {
@@ -1477,6 +1479,7 @@
     background: inherit;
     border: 0;
     border-radius: var(--borderRadius, 4px);
+    color: black;
     cursor: pointer;
     font: inherit;
     padding: 8px;
