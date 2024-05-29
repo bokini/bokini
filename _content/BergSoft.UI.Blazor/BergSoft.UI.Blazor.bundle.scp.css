@@ -1,0 +1,1807 @@
+/* _content/BergSoft.UI.Blazor/Components/Button.razor.rz.scp.css */
+.Button[b-ce0ui9l70q] {
+    align-items: center;
+    background: inherit;
+    border: 1px solid #d1d1d1;
+    border-radius: var(--borderRadius, 4px);
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 600;
+    font-size: var(--buttonFontSize, 14px);
+    height: 32px;
+    padding: 0 12px;
+}
+
+    .Button:disabled[b-ce0ui9l70q] {
+        background: var(--disabled, #f5f5f5);
+        color: graytext;
+        cursor: default;
+    }
+
+    .Button:hover:not(:disabled)[b-ce0ui9l70q] {
+        background: var(--neutralLight);
+    }
+
+    .Button:active:hover:not(:disabled)[b-ce0ui9l70q] {
+        background: var(--neutralQuaternaryAlt);
+    }
+
+    .Button.IsChecked[b-ce0ui9l70q] {
+        border: 1px solid rgb(97, 97, 97);
+    }
+
+        .Button.checked:hover[b-ce0ui9l70q] {
+        }
+
+    .Button.Rounded[b-ce0ui9l70q] {
+        align-items: center;
+        border: 0;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 50%;
+        height: var(--buttonRoundSize);
+        width: var(--buttonRoundSize);
+    }
+
+    .Button.Primary[b-ce0ui9l70q] {
+        background-color: var(--primaryControl, #1e7aCb);
+        border: 0;
+        color: var(--primaryText, #fff);
+    }
+
+    .Button.Primary:hover[b-ce0ui9l70q] {
+        background-color: var(--primaryHover, #0f548c);
+    }
+
+    .Button.Primary:active:is(:hover)[b-ce0ui9l70q] {
+        background-color: var(--primaryActive, #0c3b5e);
+    }
+/* _content/BergSoft.UI.Blazor/Components/Callout.razor.rz.scp.css */
+.CalloutBase[b-tkbxn2ysad] {
+    --beakSize: 18px;
+    --offsetX: 0;
+    --offsetY: 9px;
+    position: absolute;
+    z-index: 1004;
+}
+
+.CalloutBase.AnchorLocationLeft[b-tkbxn2ysad] {
+    top: -9px;
+    left: 100%;
+}
+
+    .CalloutBase.AnchorLocationTop[b-tkbxn2ysad] {
+        top: 100%;
+        left: 0;
+        transform: translate(0, 9px);
+    }
+
+.Callout[b-tkbxn2ysad] {
+    background: #FFF;
+    border-radius: 2px;
+    min-width: 100px;
+    min-height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+}
+
+.CalloutContent[b-tkbxn2ysad] {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #FFF;
+    padding: 16px
+}
+
+.Beak[b-tkbxn2ysad] {
+    background: #FFF;
+    position: absolute;
+    width: var(--beakSize, 18px);
+    height: var(--beakSize, 18px);
+    box-shadow: inherit;
+    transform: rotate(45deg);
+}
+
+    .Beak.AnchorLocationTop[b-tkbxn2ysad] {
+        left: 20px;
+        top: -9px;
+    }
+
+    .Beak.AnchorLocationLeft[b-tkbxn2ysad] {
+        transform: translateX(-9px) translateY(18px) rotate(45deg);
+    }
+/* _content/BergSoft.UI.Blazor/Components/CheckBox.razor.rz.scp.css */
+.CheckBox[b-4bm9qzg942] {
+    background: yellow;
+}
+
+.CheckBox input[type="checkbox"][b-4bm9qzg942] {
+    display: none;
+}
+
+    /* Style the custom checkbox */
+    .CheckBox .checkmark[b-4bm9qzg942] {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-color: white;
+        border: 1px solid var(--neutralSecondary);
+        border-radius: 2px;
+    }
+
+    .CheckBox:hover .checkmark[b-4bm9qzg942] {
+        border: 1px solid black;
+    }
+
+        .CheckBox:hover .checkmark[b-4bm9qzg942]::after {
+            display: block;
+        }
+
+    .CheckBox:hover input[type="checkbox"]:checked + .checkmark[b-4bm9qzg942] {
+        background: var(--checkboxBackgroundCheckedHover);
+        border-color: var(--checkboxBackgroundCheckedHover);
+    }
+
+    /* Define the checked state */
+    .CheckBox input[type="checkbox"]:checked + .checkmark[b-4bm9qzg942] {
+        background-color: var(--checkboxBackgroundChecked);
+        border: 1px solid var(--neutralDark);
+    }
+
+
+/* Style the checkmark/indicator */
+.CheckBox .checkmark[b-4bm9qzg942]:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+}
+
+/* Show the checkmark when the checkbox is checked */
+.CheckBox input[type="checkbox"]:checked + .checkmark[b-4bm9qzg942]:after {
+    display: block;
+}
+/* _content/BergSoft.UI.Blazor/Components/CollapseButton.razor.rz.scp.css */
+.CollapseButton[b-59g2hsvakx] {
+    align-items: center;
+    background: inherit;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    padding: 0 8px;
+    height: var(--buttonRoundSize);
+}
+
+    .CollapseButton svg[b-59g2hsvakx] {
+        transform: rotate(0deg);
+        transition-duration: 0.2s;
+        transition-property: transform;
+    }
+
+    .CollapseButton.collapsed svg[b-59g2hsvakx] {
+         transform: rotate(180deg);
+    }
+
+    .CollapseButton[aria-expanded="true"] span[b-59g2hsvakx] {
+    }
+
+/*        .CollapseButton[aria-expanded="true"] svg {
+            transform: rotate(180deg);
+        }
+
+    .CollapseButton[aria-expanded="false"] svg {
+        transform: rotate(0deg);
+    }*/
+/* _content/BergSoft.UI.Blazor/Components/DataGrid/DataGrid.razor.rz.scp.css */
+.DataGrid[b-3cvxvooqij] {
+    background: white;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    font-size: var( --control-font-size);
+}
+
+    .DataGrid:focus[b-3cvxvooqij] {
+        outline: none;
+    }
+
+    .DataGrid:not(.HideFocus):focus[b-3cvxvooqij] {
+        outline: 2px solid var(--selection-background-focus);
+    }
+
+    .DataGrid .Headers[b-3cvxvooqij],
+    .DataGrid .Footers[b-3cvxvooqij] {
+        display: flex;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .DataGrid .Footers[b-3cvxvooqij] {
+        border-top: 1px solid var(--neutralTertiaryAlt);
+    }
+
+    .DataGrid .Headers[b-3cvxvooqij] {
+        border-bottom: 1px solid var(--neutralTertiaryAlt);
+    }
+
+    .DataGrid .GridContent[b-3cvxvooqij] {
+        overflow: auto;
+        flex: 1;
+    }
+
+    .GroupHeader[b-3cvxvooqij] {
+        font-size: 12px;
+    }
+
+    .EmptyText[b-3cvxvooqij] {
+        color: gray;
+        text-align: center;       
+        padding: 5px;
+    }
+
+    .StackedLayout[b-3cvxvooqij] {
+        display: flex;
+        height: 128px;
+        flex-direction: row;
+    }
+/* _content/BergSoft.UI.Blazor/Components/Dialog/Dialog.razor.rz.scp.css */
+.DialogBase[b-s0uk22s0hf] {
+
+}
+
+.DialogBase.Compact[b-s0uk22s0hf] {
+    width: 320px;
+    height: 80px;
+}
+
+    .DialogBase.Standard[b-s0uk22s0hf] {
+        width: 480px;
+        height: 320px;
+    }
+
+.Dialog[b-s0uk22s0hf] {
+    background: var(--neutralLighter);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    box-shadow: rgb(0 0 0 / 22%) 0px 25.6px 57.6px 0px, rgb(0 0 0 / 18%) 0px 4.8px 14.4px 0px;
+    max-height: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+}
+
+    .Dialog header[b-s0uk22s0hf] {
+        border-radius: 4px 4px 0 0;
+        color: rgb(60, 60, 60);
+        display: flex;
+        font-size: 16px;
+        font-weight: 600;
+        height: 44px;
+        padding: 0 20px;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+    }
+
+    .Dialog header button[b-s0uk22s0hf] {
+        padding: 8px;
+    }
+
+.DialogTitleBarBase[b-s0uk22s0hf] {
+    flex: 1;
+    height: 100%;
+}
+
+    .DialogTitleBarBase.Moving[b-s0uk22s0hf] {
+        cursor: move;
+    }
+
+.DialogTitleBar[b-s0uk22s0hf] {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .Dialog footer[b-s0uk22s0hf] {
+        display: flex;
+        margin-top: auto;
+        gap: 10px;
+        height: 44px;
+        padding: 0 20px;
+        justify-content: flex-end;
+        user-select: none;
+    }
+
+    .Dialog .content[b-s0uk22s0hf] {
+        padding: 20px;
+    }
+
+    .Dialog .CloseButton[b-s0uk22s0hf] {
+        margin-left: auto;
+        background: inherit;
+        border: 0;
+        outline: none;
+    }
+
+.DialogBehind[b-s0uk22s0hf] {
+    background: var(--blackTranslucent40);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.open[b-s0uk22s0hf] {
+    display: flex;
+}
+
+.closed[b-s0uk22s0hf] {
+    display: none;
+}
+/* _content/BergSoft.UI.Blazor/Components/GridControl/CellsGroup.razor.rz.scp.css */
+:root[b-3chwvg8zdu] {
+    --cellsGroupHeaderFontWeight: normal;
+    --cellsGroupHeaderIndent: 8px;
+}
+
+.CellsGroup header[b-3chwvg8zdu] {
+    align-items: center;
+    background: var(--neutralSecondarySurface);
+    border-bottom: 1px solid var(--neutralTertiaryAlt);
+    display: flex;
+    font-weight: var(--cellsGroupHeaderFontWeight);
+    font-size: 12px;
+    gap: 10px;
+    height: 32px;
+    color: var(--neutralDark);
+    line-height: 32px;
+    padding: 0 12px 0 var(--cellsGroupHeaderIndent);
+    user-select: none;
+}
+
+    .CellsGroup > header[b-3chwvg8zdu] {
+        white-space: nowrap;
+    }
+/* _content/BergSoft.UI.Blazor/Components/GridControl/GridCell.razor.rz.scp.css */
+.GridCell[b-ozzmicwdua] {
+    padding: var(--gridCellPadding, 6px 0 6px 6px);
+    margin-right: 9px;
+}
+
+    .GridCell:not(:first-child)[b-ozzmicwdua] {
+        padding: 6px 0 6px 10px;
+        margin-left: 1px;
+        margin-right: 15px;
+    }
+
+    .GridCell:not(:first-child).GridLinesBoth[b-ozzmicwdua] {
+        border-left: 1px solid var(--neutralTertiaryAlt, silver);
+        margin-right: 16px;
+        margin-left: 0;
+    }
+
+    .GridCell > input[b-ozzmicwdua],
+    .GridCell > input:focus[b-ozzmicwdua] {
+        border: 0;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        font-size: var( --control-font-size);
+    }
+
+.GridCell autosize[b-ozzmicwdua] {
+    flex: 1;
+}
+
+.GridCell.UserSelectNone[b-ozzmicwdua] {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+    .GridCell.IsSelected[b-ozzmicwdua] {
+        background: #fff;
+    }
+
+.HorizontalAlignmentRight[b-ozzmicwdua] {
+    text-align: right;
+}
+
+.HorizontalAlignmentCenter[b-ozzmicwdua] {
+    text-align: center;
+}
+/* _content/BergSoft.UI.Blazor/Components/GridControl/GridCellsLayout.razor.rz.scp.css */
+/* _content/BergSoft.UI.Blazor/Components/GridControl/GridCellsList.razor.rz.scp.css */
+/* _content/BergSoft.UI.Blazor/Components/GridControl/GridFooter.razor.rz.scp.css */
+.GridFooter[b-ilk08agca9] {
+    padding: var(--gridCellPadding, 6px 0 6px 6px);
+    margin-right: 9px;
+}
+
+    .GridFooter:not(:first-child)[b-ilk08agca9] {
+        padding: 6px 0 6px 10px;
+        margin-left: 1px;
+        margin-right: 15px;
+    }
+
+    .GridFooter:not(:first-child).GridLinesBoth[b-ilk08agca9] {
+        border-left: 1px solid var(--neutralTertiaryAlt, silver);
+        margin-right: 16px;
+        margin-left: 0;
+    }
+/* _content/BergSoft.UI.Blazor/Components/GridControl/GridHeader.razor.rz.scp.css */
+.GridHeader[b-596mrixv5c] {
+    align-items: center;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    padding: 6px 0 6px 6px;
+    height: 30px;
+    user-select: none;
+    margin: 0;
+}
+
+    .GridHeader svg[b-596mrixv5c] {
+        margin-left: 5px;
+    }
+
+    .GridHeader svg path[b-596mrixv5c] {
+        fill: var(--sortArrowFill);
+    }
+
+    .GridHeader:hover[b-596mrixv5c] {
+        background: var(--neutralLighterAlt);
+    }
+
+        .GridHeader.sortDirectionDescending svg[b-596mrixv5c] {
+            transform: rotate(180deg);
+        }
+/* _content/BergSoft.UI.Blazor/Components/GridControl/GridItem.razor.rz.scp.css */
+.GridItem[b-onq8l6p9vx] {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+    .GridItem:focus[b-onq8l6p9vx] {
+    }
+
+    .GridItem:hover:not(.Selected)[b-onq8l6p9vx] {
+        cursor: var(--selectionCursorHover, default);
+        background-color: var(--selectionBackgroundHover, silver);
+    }
+
+.Selected[b-onq8l6p9vx] {
+    color: var(--selection-color, black);
+    background-color: var(--selectionBackground, whitesmoke);
+    border-radius: var(--selection-border-radius, 0);
+}
+
+.Focused[b-onq8l6p9vx] {
+    color: var(--selection-color-focus);
+    background-color: var(--selection-background-focus, lightblue);
+    outline: none;
+}
+
+        .Selected:focus svg[b-onq8l6p9vx] {
+            fill: var(--selection-color-focus);
+        }
+
+.GridLinesBoth[b-onq8l6p9vx], GridLinesHorizontalOnly[b-onq8l6p9vx] {
+    border-bottom: 1px solid var(--neutralTertiaryAlt);
+}
+/* _content/BergSoft.UI.Blazor/Components/GridControl/HeaderSplitter.razor.rz.scp.css */
+.HeaderSplitter[b-m3ljkrgyu8] {
+    border-right: 1px solid var(--headerSplitterBorderColor, gray);
+    cursor: col-resize;
+    margin: 6px;
+    width: 4px;
+    padding: 0 1px;
+}
+/* _content/BergSoft.UI.Blazor/Components/GridControl/InplaceEdit.razor.rz.scp.css */
+.InplaceEdit[b-rmh9brbyn9] {
+    border: 0;
+    font: inherit;
+    width: 100%;
+    height: 100%;
+    outline: none;
+}
+/* _content/BergSoft.UI.Blazor/Components/GridControl/InplaceInput.razor.rz.scp.css */
+.InplaceInput[b-qovchzg0la] {
+    background: inherit;
+    border: 0;
+    font: inherit;
+    width: 100%;
+    outline: none;
+}
+/* _content/BergSoft.UI.Blazor/Components/HeaderPanel/Header.razor.rz.scp.css */
+.Header[b-4ef7vknsr0] {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+    .Header div[b-4ef7vknsr0] {
+        flex-grow: 1;
+    }
+/* _content/BergSoft.UI.Blazor/Components/ListBox.razor.rz.scp.css */
+.ListBox[b-u75a893qc0] {
+    overflow-y: auto;
+}
+
+.ListBox:focus[b-u75a893qc0] {
+    outline: none;
+}
+
+.Item[b-u75a893qc0] {
+    border-radius: var(--selectionBorderRadius, 0);
+    cursor: pointer;
+    color: #242424;
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 8px;
+    user-select: none;
+}
+
+    .Item:hover[b-u75a893qc0] {
+        background-color: var(--selectionHover, silver);
+    }
+
+    .Item.Selected[b-u75a893qc0] {
+        color: var(--selection-color, black);
+        background-color: var(--selection, whitesmoke);
+    }
+
+.ListBox:focus .Item.Selected[b-u75a893qc0] {
+    color: var(--selection-color-focus);
+    background-color: var(--selectionFocus, lightblue);
+    outline: none;
+}
+/* _content/BergSoft.UI.Blazor/Components/NavigationView/NavigationGroupHeader.razor.rz.scp.css */
+.NavigationGroupHeader[b-bov9zue3yt] {
+    cursor: pointer;
+    color: inherit;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    transition: color 80ms cubic-bezier(.165, .84, .44,1), background 80ms linear;
+    user-select: none;
+}
+
+    .NavigationGroupHeader.expanded[b-bov9zue3yt] {
+        background: var(--nav-vertical-active-group-background);
+    }
+
+    .NavigationGroupHeader[b-bov9zue3yt]  > span {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    .NavigationGroupHeader[b-bov9zue3yt]  .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 47px;
+    }
+
+    .NavigationGroupHeader:hover[b-bov9zue3yt] {
+        background: rgba(0, 0, 0, 0.06);
+    }
+
+    .NavigationGroupHeader img[b-bov9zue3yt] {
+        height: 24px;
+        width: 24px;
+        margin: 8px;
+    }
+/* _content/BergSoft.UI.Blazor/Components/NavigationView/NavigationView.razor.rz.scp.css */
+    .NavigationView[b-erfsr00sg2] {
+        background: var(--nav-vertical-background-color);
+        display: flex;
+        flex-direction: column;
+    }
+
+        .NavigationView:last-child[b-erfsr00sg2] {
+            margin-top: auto;
+            border: 0;
+        }
+
+    .NavigationGroup[b-erfsr00sg2] {
+        position: relative;
+    }
+
+    .NavigationGroup.expanded[b-erfsr00sg2] {
+        background: var(--nav-vertical-active-group-background);
+    }
+
+    .NavigationGroup.expanded[b-erfsr00sg2]::before {
+        bottom: 0;
+        background-color: rgba(0,0,0,.2);
+        background-color: var(--palette-black-alpha-20,rgba(0, 0, 0, .2));
+        content: "";
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 3px;
+    }
+
+    .NavigationView a[b-erfsr00sg2] {
+        align-items: center;
+        display: flex;
+        height: 40px;
+        position: relative;
+    }
+
+��� .NavigationView a span[b-erfsr00sg2] {
+        background: yellow;
+        width: 47px;
+    }
+
+���� .NavigationView a.expanded[b-erfsr00sg2] {
+    }
+
+    .NavigationView a.expanded[b-erfsr00sg2]::before {
+        background-color: rgba(0, 120, 212, 1);
+        background-color: var(--communication-background,rgba(0, 120, 212, 1));
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 3px;
+    }
+/* _content/BergSoft.UI.Blazor/Components/NextGrid/BaseGridCell.razor.rz.scp.css */
+.GridCell[b-5p7zvyraro] {
+    align-items: center;
+    cursor: default;
+    padding: 0 6px;
+    height: 28px;
+    overflow: hidden;
+}
+
+    .GridCell:hover:not(.IsSelected)[b-5p7zvyraro] {
+        cursor: var(--selectionCursorHover, default);
+        background-color: var(--selectionBackgroundHover, silver);
+    }
+
+    .GridCell.IsEditing[b-5p7zvyraro] {
+        background: #FFF;
+        outline: 1px solid red;
+    }
+
+    .GridCell.IsSelected:not(.IsEditing)[b-5p7zvyraro]
+    {
+        background-color: var(--selectionBackground, whitesmoke);
+
+    }
+
+    .GridCell.IsSelected[b-5p7zvyraro] {
+        color: var(--selection-color, black);
+        border-radius: var(--selection-border-radius, 0);
+    }
+
+    .GridCell.IsFocused:not(.IsEditing)[b-5p7zvyraro] {
+        color: var(--selection-color-focus);
+        background-color: var(--selection-background-focus, lightblue);
+        outline: none;
+    }
+
+    .GridCell:not(:first-child).GridLinesBoth[b-5p7zvyraro] {
+        border-left: 1px solid var(--neutralTertiaryAlt, silver);
+    }
+/* _content/BergSoft.UI.Blazor/Components/NextGrid/BaseGridHeader.razor.rz.scp.css */
+.GridHeader[b-ps8xvyt3o3] {
+    align-items: center;
+    cursor: pointer;
+    font: inherit;
+    font-weight: normal;
+    height: 30px;
+    user-select: none;
+}
+
+    .GridHeader .Content[b-ps8xvyt3o3] {
+        display: flex;
+        padding: 6px;
+        flex: 1;
+        overflow: hidden;
+        align-items: center;
+        margin-right: -6px;
+    }
+
+        .GridHeader .Content .HeaderText[b-ps8xvyt3o3] {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    .GridHeader > div[b-ps8xvyt3o3] {
+        display: flex;
+        position: relative;
+        height: 100%;
+    }
+
+    .GridHeader:not(:first-child) .Content[b-ps8xvyt3o3] {
+        margin-left: 6px;
+    }
+
+    .GridHeader .Content:hover[b-ps8xvyt3o3] {
+        background: var(--neutralLighterAlt);
+    }
+
+    .GridHeader svg[b-ps8xvyt3o3] {
+        margin-left: 5px;
+    }
+
+        .GridHeader svg path[b-ps8xvyt3o3] {
+            fill: var(--sortArrowFill);
+        }
+
+    .GridHeader.sortDirectionDescending svg[b-ps8xvyt3o3] {
+        transform: rotate(180deg);
+    }
+/* _content/BergSoft.UI.Blazor/Components/NextGrid/DetailsGridCells.razor.rz.scp.css */
+.GridRow[b-01vwu8rqwz] {
+}
+
+.GridLinesBoth[b-01vwu8rqwz], GridLinesHorizontalOnly[b-01vwu8rqwz] {
+    border-bottom: 1px solid var(--neutralTertiaryAlt);
+}
+/* _content/BergSoft.UI.Blazor/Components/NextGrid/HeaderDivider.razor.rz.scp.css */
+.HeaderDivider[b-yk3gzlz3l0] {
+    cursor: col-resize;
+    width: 13px;
+    position: relative;
+    left: 6px;
+    padding: 6px;
+    z-index: 1000;
+}
+
+    .HeaderDivider hr[b-yk3gzlz3l0] {
+        border: 0;
+    }
+
+    .HeaderDivider hr[b-yk3gzlz3l0] {
+        background: var(--headerSplitterBorderColor, gray);
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+/* _content/BergSoft.UI.Blazor/Components/NextGrid/NextGrid.razor.rz.scp.css */
+.NextGrid[b-qhew7i48fs] {
+    border-collapse: collapse;
+    user-select: none;
+    outline: none;
+}
+
+.GridHeaders[b-qhew7i48fs] {
+    border-bottom: 1px solid var(--neutralTertiaryAlt);
+}
+/* _content/BergSoft.UI.Blazor/Components/PageControl/PageControl.razor.rz.scp.css */
+.PageControl[b-a9o19hu2lb] {
+    display: flex;
+}
+
+    .PageControl .Tabs[b-a9o19hu2lb] {
+        display: flex;
+        background: var(--buttonHover);
+        width: 100%;
+    }
+
+    .PageControl.tabsLocationLeft .Tabs[b-a9o19hu2lb] {
+        flex-direction: column;
+        padding: 4px;
+        width: 48px;
+    }
+
+    .PageControl.tabsLocationTop[b-a9o19hu2lb] {
+        flex-direction: column;
+    }
+
+    .PageControl.tabsLocationLeft[b-a9o19hu2lb] {
+        flex-direction: row;
+    }
+
+        .PageControl .SideContent[b-a9o19hu2lb] {
+            display: flex;
+            flex: 1;
+            padding-left: 32px;
+        }
+
+        .PageControl .Buttons[b-a9o19hu2lb] {
+            display: flex;
+        }
+
+        .PageControl .Buttons::deep button[b-a9o19hu2lb] {
+            background: red;
+            width: 28px;
+        }
+
+        .TabCloseButton[b-a9o19hu2lb] {
+            border: none;
+            background: inherit;
+            padding: 8px;
+        }
+
+            .TabCloseButton:hover[b-a9o19hu2lb] {
+                background: var(--buttonHover);
+            }
+
+        .flex-container[b-a9o19hu2lb] {
+            display: flex;
+            height: 100%;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .flex-container:hover[b-a9o19hu2lb] {
+                color: rgb(37, 36, 35);
+                outline: transparent dashed 2px;
+                border-color: transparent;
+                font-weight: 600;
+            }
+
+        .text-container[b-a9o19hu2lb] {
+            flex-grow: 1;
+        }
+
+            .button-label[b-a9o19hu2lb] {
+                margin: 0px 4px;
+                line-height: 100%;
+                display: block;
+            }
+
+                .button-label:hover[b-a9o19hu2lb] {
+                    color: rgb(37, 36, 35);
+                    outline: transparent dashed 2px;
+                    border-color: transparent;
+                    font-weight: 600;
+                }
+/* _content/BergSoft.UI.Blazor/Components/PageControl/PageTab.razor.rz.scp.css */
+.PageTab[b-6ra703wnpa] {
+    font-size: 14px;
+    font-weight: 400;
+    background: inherit;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(37, 36, 35);
+    user-select: none;
+}
+
+    .PageTab:hover[b-6ra703wnpa] {
+        color: rgb(37, 36, 35);
+        outline: transparent dashed 2px;
+        border-color: transparent;
+        font-weight: 600;
+    }
+
+    .PageTab.tabsLocationTop[b-6ra703wnpa] {
+        padding: 0px 10px;
+    }
+
+    .PageTab.tabsLocationLeft:hover[b-6ra703wnpa] {
+        background: #FFF;
+        border-radius: 4px;
+    }
+
+    .PageTab.tabsLocationLeft.isActive[b-6ra703wnpa] {
+    }
+/* _content/BergSoft.UI.Blazor/Components/PathControl/PathControl.razor.rz.scp.css */
+.PathControl[b-mknvlo2byo] {
+    display: flex;
+    gap: 8px;
+}
+
+    .PathControl button[b-mknvlo2byo] {
+        border: 0;
+        background: inherit;
+    }
+
+        .PathControl button:hover[b-mknvlo2byo] {
+            background: var(--toolButton, silver);
+        }
+
+.DropDownItem[b-mknvlo2byo] {
+    cursor: pointer;
+    padding: 4px;
+}
+
+    .DropDownItem:hover[b-mknvlo2byo] {
+        background: var(--toolButton, silver);
+    }
+/* _content/BergSoft.UI.Blazor/Components/PivotGrid/PivotGrid.razor.rz.scp.css */
+.PivotGrid[b-djvcd04jvc] {
+    user-select: none;
+}
+
+.Row[b-djvcd04jvc] {
+    display: flex;
+    flex-direction: row;
+    min-height: 40px;
+    padding: 0 40px;
+}
+/*    .Row:hover {
+        background: var(--neutralLight);
+    }
+*/
+    .Row.Selected[b-djvcd04jvc] {
+        background: var(--themeLight);
+    }
+
+.HeaderCell[b-djvcd04jvc] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 200px;
+    gap: 8px;
+}
+
+.Cell[b-djvcd04jvc] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    padding: 0 4px;
+}
+
+.Cell[b-djvcd04jvc] {
+}
+
+/* _content/BergSoft.UI.Blazor/Components/Planner/MonthDays.razor.rz.scp.css */
+.MonthDays[b-1tin8ywk3c] {
+}
+
+    .MonthDays .week[b-1tin8ywk3c] {
+        display: flex;
+    }
+/* _content/BergSoft.UI.Blazor/Components/Planner/Planner.razor.rz.scp.css */
+.Planner[b-5fwo27fa0j] {
+    box-shadow: rgb(0 0 0 / 14%) 0px 1px 2px 0px, rgb(0 0 0 / 12%) 0px 0px 2px 0px;
+}
+
+    .Planner > header[b-5fwo27fa0j] {
+        display: flex;
+        align-items: center;
+    }
+
+    .Planner > header button[b-5fwo27fa0j] {
+        border: 0;
+        background: inherit;
+    }
+
+    .Planner > header button:hover[b-5fwo27fa0j] { background: var(--buttonHover, lightgray); }
+    .Planner > header button:active[b-5fwo27fa0j] { background: var(--toolButtonActive, gray); }
+/* _content/BergSoft.UI.Blazor/Components/Planner/PlannerDay.razor.rz.scp.css */
+.PlannerDay[b-drmn0px4bm] {
+    flex-direction: column;
+    display: flex;
+    cursor: pointer;
+    padding: 2px;
+    height: 108px;
+    flex: 1;
+    border-bottom: 1px solid;
+    border-bottom-color: var(--neutralTertiaryAlt);
+}
+
+    .PlannerDay .Day[b-drmn0px4bm] {
+        padding-left: 12px;
+    }
+
+    .PlannerDay div[b-drmn0px4bm] {
+    }
+
+    .PlannerDay.today[b-drmn0px4bm]::before {
+        background-color: var(--themePrimary);
+        content: "";
+        height: 4px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+.ikN5J[b-drmn0px4bm] {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background-color: var(--neutralPrimarySurface);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 14px;
+    height: 100%;
+    padding: 2px;
+}
+
+.PlannerDay.inactive[b-drmn0px4bm] {
+    color: gray;
+}
+
+.PlannerDay.active[b-drmn0px4bm] {
+    background-color: var(--neutralSecondarySurface);
+}
+
+.PlannerDay.selected[b-drmn0px4bm] {
+    background-color: var(--themeLighter);
+}
+/* _content/BergSoft.UI.Blazor/Components/Planner/WeekDays.razor.rz.scp.css */
+.WeekDays[b-y9h25iaqdk] {
+    grid-area: WeekDays;
+    display: flex;
+}
+
+    .WeekDays div[b-y9h25iaqdk] {
+        align-items: flex-end;
+        display: flex;
+        margin: 0 0 9px 0;
+        padding: 0 0 0 12px;
+        height: 39px;
+        flex: 1;
+    }
+
+        .WeekDays div span[b-y9h25iaqdk] {
+            font-size: 12px;
+        }
+/* _content/BergSoft.UI.Blazor/Components/ProgressBar.razor.rz.scp.css */
+.ProgressBar[b-m5bh4xte6a] {
+    --fallbackBorderColor: #E0E0E0;
+    --fallbackBarBackground: blue;
+    --fallbackBorderRadius: 4px;
+}
+
+    .ProgressBar.BorderStyleSingle[b-m5bh4xte6a],
+    .ProgressBar.BorderStyleRoundCorners[b-m5bh4xte6a] {
+        border: 1px solid var(--neutralDark, --fallbackBorderColor);
+    }
+
+        .ProgressBar.BorderStyleRoundCorners[b-m5bh4xte6a] {
+            border-radius: var(--borderRadius, fallbackBorderRadius);
+        }
+
+        .ProgressBar .Bar[b-m5bh4xte6a] {
+            background: var(--primary, --fallbackBarBackground);
+            height: 100%;
+        }
+/* _content/BergSoft.UI.Blazor/Components/RadioButton.razor.rz.scp.css */
+.RadioButton[b-jg0lexvjy2] {
+    --themePrimary: #0078d4;
+    --themeDark: #005A9E;
+    --neutralSecondary: #605e5c;
+    --neutralPrimary: black;
+    --white: white;
+
+    cursor: pointer;
+    font: normal 400 14px "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
+    position: relative;
+}
+
+    .RadioButton input[b-jg0lexvjy2] {
+        position: absolute;
+        opacity: 0;
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+    }
+
+    .RadioButton label[b-jg0lexvjy2]::before {
+        content: "";
+        display: inline-block;
+        background-color: var(--white);
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--neutralPrimary);
+        width: 20px;
+        height: 20px;
+        font-weight: normal;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-sizing: border-box;
+        transition-property: border-color;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+        border-radius: 50%;
+    }
+
+    .RadioButton label:hover[b-jg0lexvjy2]::before {
+        border-color: var(--neutralPrimary);
+    }
+
+    .RadioButton label:hover[b-jg0lexvjy2]::after {
+        content: "";
+        transition-property: background-color;
+        left: 5px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        background-color: var(--neutralSecondary);
+    }
+
+    .RadioButton.IsChecked label[b-jg0lexvjy2]::before {
+        border-color: var(--themePrimary);
+    }
+
+    .RadioButton.IsChecked label[b-jg0lexvjy2]::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        left: 5px;
+        right: 0px;
+        transition-property: border-width;
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+        box-sizing: border-box;
+        border-width: 5px;
+        border-style: solid;
+        border-color: var(--themePrimary);
+        background: var(--themePrimary);
+        top: 5px;
+    }
+
+.RadioButton span[b-jg0lexvjy2] {
+    display: inline-block;
+    padding-left: 26px;
+}
+/* _content/BergSoft.UI.Blazor/Components/SlidePanel/SlidePanel.razor.rz.scp.css */
+.SlidePanel[b-x30eozdo6s] {
+    --headerHeight: 40px;
+    --headerFontSize: 14px;
+}
+
+.SlidePanelHeader[b-x30eozdo6s] {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: var(--headerHeight, 40px);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+    .SlidePanelHeader.HeaderHotTrack:hover[b-x30eozdo6s] {
+        background: rgb(243, 242, 241);
+    }
+
+.SlidePanelHeader > h3[b-x30eozdo6s] {
+    margin: 0 8px;
+    font-size: var(--headerFontSize, 14px);
+    font-weight: 600;
+}
+
+    .SlidePanelHeader > button[b-x30eozdo6s] {
+        background: inherit;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .SlidePanelHeader > button svg[b-x30eozdo6s] {
+        transform: rotate(0deg);
+        transition-duration: 0.2s;
+        transition-property: transform;
+    }
+
+    .SlidePanelHeader.IsExpanded > button svg[b-x30eozdo6s] {
+        transform: rotate(90deg);
+    }
+/* _content/BergSoft.UI.Blazor/Components/Splitter/Splitter.razor.rz.scp.css */
+.Splitter[b-k5gtfogyly] {
+    cursor: ns-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .Splitter:hover[b-k5gtfogyly] {
+        background: var(--headerSplitterBorderColor, silver);
+    }
+
+.Splitter:not(.vertical) svg[b-k5gtfogyly] {
+    height: 5px;
+}
+
+    .Splitter.vertical[b-k5gtfogyly] {
+        cursor: ew-resize;
+    }
+
+    .Splitter.vertical svg[b-k5gtfogyly] {
+        min-width: 20px;
+        min-height: 5px;
+        transform: rotate(90deg);
+    }
+
+.Splitter:hover[b-k5gtfogyly] {  }
+
+    .Splitter:hover svg path[b-k5gtfogyly] {
+        transition: all, ease-in-out, 0.5s;
+    }
+
+.Splitter svg path[b-k5gtfogyly] { fill: #b5b5b5; }
+
+    .Splitter:hover svg[b-k5gtfogyly] { }
+
+    .Splitter:hover svg path[b-k5gtfogyly] {
+        fill: #444;
+    }
+
+    .Splitter.dragging:hover[b-k5gtfogyly] {
+        background: yellow;
+    }
+/* _content/BergSoft.UI.Blazor/Components/TabsControl/TabsControl.razor.rz.scp.css */
+.TabsControl[b-jyry9g0w8i] {
+    background: var(--tabsControlBackground);
+    display: flex;
+    flex-direction: column;
+    gap: var(--tabsControlButtonsSpacing);
+    height: 100%;
+    width: var(--tabsControlWidth);
+    padding: var(--tabsControlPadding);
+}
+
+    .TabsControl button[b-jyry9g0w8i] {
+        background: var(--tabsControlButtonBackgroundColor);
+        border: 0;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        user-select: none;
+    }
+
+    .TabsControl button:hover[b-jyry9g0w8i],
+    .TabsControl button.selected[b-jyry9g0w8i] {
+        background: var(--colorNeutralBackground4Selected);
+        border-radius: var(--tabsControlButtonRadius);
+    }
+/* _content/BergSoft.UI.Blazor/Components/TagsBar.razor.rz.scp.css */
+.TagsBar[b-v7grzz7xez] {
+    --tagsSpacing: 1px;
+
+    display: inline-flex;
+    gap: var(--tagsSpacing);
+    padding: 1px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+    .TagsBar .BaseTag[b-v7grzz7xez] {
+        cursor: default;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .TagsBar .Tag[b-v7grzz7xez] {
+        background: var(--buttonHover, silver);
+        padding: 0 4px;
+    }
+
+        /** TagShape */
+        .Tag.Rectangle[b-v7grzz7xez] { border-radius: 0; }
+        .Tag.RoundCorners[b-v7grzz7xez] { border-radius: 2px; }
+        .Tag.PillShape[b-v7grzz7xez] { 
+            border-radius: 50vh;
+            padding: 0 8px;
+        }
+
+        .Tag:hover[b-v7grzz7xez] { }
+
+        .TagsBar .Tag.Selected[b-v7grzz7xez] {
+            background: var(--themeLight, yellow);
+        }
+/* _content/BergSoft.UI.Blazor/Components/TextBox/ButtonTextBox.razor.rz.scp.css */
+.ButtonTextBoxBase[b-e35m3td202] {
+    display: inline-flex;
+}
+
+.ButtonTextBox:not(.Inplace)[b-e35m3td202] {
+    padding-left: 4px;
+    border: 1px solid #D1D1D1;
+    min-height: 26px;
+}
+/* _content/BergSoft.UI.Blazor/Components/TextBox/DatePicker.razor.rz.scp.css */
+.DatePickerBase[b-gswrzn827i] {
+    display: inline-flex;
+    position: relative;
+}
+
+.DatePickerBase[b-gswrzn827i] {
+    height: 32px;
+}
+
+    .DatePickerBase.Inplace[b-gswrzn827i] {
+        height: auto;
+        padding: 0;
+        width: 100%;
+    }
+
+.DatePicker[b-gswrzn827i] {
+    border: 1px solid #808080;
+    border-radius: 2px;
+    padding-left: 8px;
+}
+
+    .DatePicker.Inplace[b-gswrzn827i] {
+        border: 0;
+    }
+
+    .DatePicker:focus[b-gswrzn827i], .DatePicker:focus-within[b-gswrzn827i] {
+        border-color: var(--primary, blue);
+    }
+
+        .DatePicker:focus[b-gswrzn827i]:after,
+        .DatePicker:focus-visible[b-gswrzn827i]:after {
+            border: 2px solid var(--primary, blue);
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+        }
+
+    .DatePicker > input[b-gswrzn827i] {
+        border: 0;
+        font: inherit;
+        outline: 0;
+        width: 100%;
+    }
+
+    .DatePicker > button[b-gswrzn827i] {
+        border: 0;
+        background: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+    }
+
+        .DatePicker > button:hover[b-gswrzn827i] {  }
+
+        .Buttons[b-gswrzn827i] {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+.DatePickerPanel[b-gswrzn827i] {
+    padding: var(--spacing-xl, 12px);
+}
+
+/* _content/BergSoft.UI.Blazor/Components/TextBox/DateSelector.razor.rz.scp.css */
+.DateSelector[b-4jcimh1qdn] {
+    --daySize: 28px;
+    display: inline-flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+    .DateSelector header[b-4jcimh1qdn] {
+        align-items: center;
+        display: flex;
+        height: var(--daySize, 28);
+        margin-bottom: var(--spacing, 4px);
+    }
+
+    .DateSelector header h2[b-4jcimh1qdn] {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 600;
+        padding-left: 10px;
+        flex: 1;
+    }
+
+        .DateSelector header button[b-4jcimh1qdn] {
+            background: inherit;
+            border: 0;
+            border-radius: 2px;
+            cursor: pointer;
+            height: var(--daySize, 28);
+            width: var(--daySize, 28);
+        }
+
+            .DateSelector header button:hover[b-4jcimh1qdn] { background: var(--buttonHover, lightgray); }
+            .DateSelector header button:active[b-4jcimh1qdn] {
+                background: var(--toolButtonActive, gray);
+            }
+
+
+    .DateSelector .WeekDays[b-4jcimh1qdn] {
+        display: flex;
+    }
+
+        .DateSelector .WeekDays > div[b-4jcimh1qdn] {
+            text-align: center;
+            line-height: var(--daySize, 28);
+            height: var(--daySize, 28);
+            width: var(--daySize, 28);
+        }
+
+    .DateSelector .Week[b-4jcimh1qdn] {
+        display: flex;
+    }
+
+        .DateSelector .Week .Day[b-4jcimh1qdn] {
+            border-radius: var(--radius-s);
+            cursor: pointer;
+            text-align: center;
+            height: var(--daySize, 28);
+            width: var(--daySize, 28);
+            line-height: var(--daySize, 28);
+        }
+
+            .DateSelector .Week .Day:hover:not(:active)[b-4jcimh1qdn] { background: var(--buttonHover); }
+            .DateSelector .Day:active[b-4jcimh1qdn] { background: var(--datePushed, darkblue ); }
+
+    .DateSelector .Today[b-4jcimh1qdn] {
+        background: var(--primary, blue);
+        color: #FFF;
+        display: block;
+        height: 100%;
+        border-radius: 100%;
+    }
+
+.outsideMonth[b-4jcimh1qdn] { color: silver; }
+
+.selectedDay[b-4jcimh1qdn] { background: var(--dateSelected, blue); }
+/* _content/BergSoft.UI.Blazor/Components/TextBox/DropDownList.razor.rz.scp.css */
+.DropDownButton[b-hmzupq7752] {
+    display: inline-flex;
+    position: relative;
+    min-height: 21px;
+    min-width: 21px;
+    align-items: center;
+    background: inherit;
+    border: 0;
+    border-radius: var(--borderRadius, 4px);
+    cursor: pointer;
+    font: inherit;
+    padding: 8px;
+}
+
+    .DropDownButton:hover[b-hmzupq7752] {
+        background-color: var(--buttonHover);
+    }
+
+    .DropDownButton.isOpen[b-hmzupq7752] {
+        background-color: var(--toolButtonPushed);
+    }
+
+.DropDownList[b-hmzupq7752] {
+    min-width: 200px;
+    min-height: 100px;
+    background: #fff;
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 3.2px 7.2px 0px, rgba(0, 0, 0, 0.11) 0px 0.6px 1.8px 0px;
+    z-index: 1000;
+}
+
+.Item[b-hmzupq7752] {
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    gap: 4px;
+    min-height: 32px;
+    padding: 0 8px;
+}
+
+    .Item:active[b-hmzupq7752] {
+        background-color: var(--toolButtonActive, lightskyblue);
+    }
+
+    .Item:hover[b-hmzupq7752] {
+        background-color: var(--buttonHover, lightskyblue);
+    }
+
+    .Item.Selected:not(:hover)[b-hmzupq7752] {
+        color: var(--selection-color, black);
+        background-color: var(--selection, whitesmoke);
+    }
+/* _content/BergSoft.UI.Blazor/Components/TextBox/DropPanel.razor.rz.scp.css */
+.DropPanel[b-4ia522vjn1] {
+    background: var(--baseBackground, #fff);
+    border-radius: var(--radius-s, 2px);
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 6.4px 14.4px 0px, rgba(0, 0, 0, 0.11) 0px 1.2px 3.6px 0px;
+    position: absolute;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+    left: 0;
+    top: 100%;
+}
+
+    .DropPanel.Transition[b-4ia522vjn1] {
+
+    }
+
+    .DropPanel.IsOpen[b-4ia522vjn1] { opacity: 1; }
+
+    .DropPanel.AddPadding[b-4ia522vjn1] {
+        padding: 5px;
+    }
+/* _content/BergSoft.UI.Blazor/Components/TextBox/InplaceControl.razor.rz.scp.css */
+.InplaceControlBase[b-1bdkgwdq4u] {
+    display: flex;
+}
+
+[b-1bdkgwdq4u] input {
+    border: 0;
+    font: inherit;
+    outline: none;
+    width: 100%;
+}
+/* _content/BergSoft.UI.Blazor/Components/TextBox/InputButton.razor.rz.scp.css */
+.InputButtonBase[b-hgysxgcnb4] {
+    border: 0;
+    display: flex;
+    outline: none;
+}
+
+.InputButton[b-hgysxgcnb4] {
+    align-items: center;
+    background: inherit;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+    .InputButton:hover[b-hgysxgcnb4] {
+        background: var(--buttonHover, silver);
+    }
+
+    .InputButton:active[b-hgysxgcnb4] {
+        background: var(--toolButtonActive, gray);
+    }
+/* _content/BergSoft.UI.Blazor/Components/TextBox/SearchBox.razor.rz.scp.css */
+.SearchBoxBase[b-cbwwqsiooo] {
+    position: relative;
+}
+
+.SearchResults[b-cbwwqsiooo] {
+    display: flex;
+    flex-direction: column;
+}
+
+.SearchResult[b-cbwwqsiooo] {
+    cursor: default;
+    padding: 8px;
+}
+
+    .SearchResult:hover[b-cbwwqsiooo] {
+        background-color: var(--buttonHover, lightskyblue);
+    }
+
+    .SearchResult.Selected[b-cbwwqsiooo] {
+        background: var(--themeLight, lightskyblue);
+    }
+/* _content/BergSoft.UI.Blazor/Components/TextBox/SpinTextBox.razor.rz.scp.css */
+.SpinTextBox[b-6ln0ucxk48] {
+    display: inline-flex;
+    align-items: stretch;
+    min-height: 32px;
+    padding: 0 8px;
+}
+
+    .SpinTextBox.borderStyleSingle[b-6ln0ucxk48] {
+        border: 1px solid silver;
+        padding: 0 0 0 8px;
+    }
+
+    .SpinTextBox .borderStyleExtended[b-6ln0ucxk48] {
+        border-radius: 4px;
+        background-clip: border-box;
+        border-bottom: 1px solid rgb(97, 97, 97);
+        border-left: 1px solid rgb(209, 209, 209);
+        border-right: 1px solid rgb(209, 209, 209);
+        border-top: 1px solid rgb(209, 209, 209);
+    }
+
+    .SpinTextBox.Inplace[b-6ln0ucxk48] {
+        font: inherit;
+        padding: 0;
+        width: 100%;
+        min-height: inherit;
+    }
+
+    .SpinTextBox > input[b-6ln0ucxk48] {
+        border: 0;
+        font: inherit;
+        outline: none;
+        width: 100%;
+    }
+
+.SpinButtons[b-6ln0ucxk48] { display: flex; }
+
+    .SpinButtons svg[b-6ln0ucxk48] {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .SpinButtons.horizontal[b-6ln0ucxk48] { flex-direction: row; }
+    .SpinButtons.vertical[b-6ln0ucxk48] { flex-direction: column-reverse; }
+
+.SpinButtons > button[b-6ln0ucxk48] {
+    background: inherit;
+    border: 0;
+    cursor: pointer;
+    flex: 1;
+    width: 28px;
+}
+
+    .SpinButtons.Compact > button[b-6ln0ucxk48] {
+        width: 16px;
+    }
+
+
+    .SpinButtons > button:hover[b-6ln0ucxk48] { background: var(--toolButton); }
+    .SpinButtons > button:active[b-6ln0ucxk48] { background: var(--toolButtonActive); }
+/* _content/BergSoft.UI.Blazor/Components/TextBox/TextBox.razor.rz.scp.css */
+.TextBox[b-kriey90e0o] {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 32px;
+    border-radius: 4px;
+    background-clip: border-box;
+
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+
+    border-bottom: 1px solid rgb(97, 97, 97);
+    border-left: 1px solid rgb(209, 209, 209);
+    border-right: 1px solid rgb(209, 209, 209);
+    border-top: 1px solid rgb(209, 209, 209);
+
+    padding: 0 8px;
+}
+
+    .TextBox > input[b-kriey90e0o] {
+        border: 0;
+        outline: none;
+        height: 20px;
+        min-width: 0;
+    }
+
+.ClearButton[b-kriey90e0o] {
+    height: 14px;    
+    width: 14px;
+}
+/* _content/BergSoft.UI.Blazor/Components/TextBox/TextBoxPanel.razor.rz.scp.css */
+.TextBoxPanel[b-lur2hljkuj] {
+    display: inline-flex;
+    border: 1px solid #504948;
+    border-radius: 2px;
+}
+
+[b-lur2hljkuj] input {
+    border: 0;
+    font-size: inherit;
+    padding: 4px;
+    outline: none;
+}
+
+/* _content/BergSoft.UI.Blazor/Components/Toggle.razor.rz.scp.css */
+.Toggle[b-olhuecb82u] {
+    align-items: center;
+    background: inherit;
+    border: 1px solid var(--neutralSecondary);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    height: 20px;
+    padding: 3px;
+    width: 40px;
+    transition: all 0.1s ease 0s;
+}
+
+    .Toggle:hover[b-olhuecb82u] {
+        border-color: var(--neutralPrimary);
+    }
+
+    .Toggle div[b-olhuecb82u] {
+        background: var(--neutralSecondary);
+        height: 12px;
+        width: 12px;
+        border-radius: 6px;
+    }
+
+    .Toggle:hover div[b-olhuecb82u] {
+        background: var(--neutralPrimary);
+    }
+
+    .Toggle.IsChecked[b-olhuecb82u] {
+        background-color: var(--toggleChecked);
+        border: 0;
+        justify-content: flex-end;
+    }
+
+    .Toggle.IsChecked:hover[b-olhuecb82u] {
+        background-color: var(--toggleCheckedHover);
+    }
+
+    .Toggle.IsChecked div[b-olhuecb82u] {
+        background: white;
+    }
+/* _content/BergSoft.UI.Blazor/Components/Toolbar/Toolbar.razor.rz.scp.css */
+.Toolbar[b-o8dc3488zu] {
+    align-items: center;
+    background: inherit;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+}
+
+    .hasPadding[b-o8dc3488zu] {
+        padding: 5px;
+    }
+/* _content/BergSoft.UI.Blazor/Components/Toolbar/ToolButton.razor.rz.scp.css */
+.ToolButton[b-7d52exlwjm] {
+    align-items: center;
+    background: inherit;
+    
+    border: var(--toolButtonBorder) solid transparent;
+    border-radius: var(--toolButtonBorderRadius);
+    cursor: pointer;
+    display: inline-flex;
+    gap: var(--space, 4px);
+    justify-content: center;
+}
+
+.ToolButton:not(.compact)[b-7d52exlwjm] {
+    padding: 6px;
+}
+
+    .ToolButton.compact[b-7d52exlwjm] {
+        padding: 0 2px;
+    }
+
+    .ToolButton:hover[b-7d52exlwjm] {
+        background: var(--toolButton);
+    }
+
+    .ToolButton:active[b-7d52exlwjm] {
+        background: var(--toolButtonActive);
+    }
+
+    .ToolButton.checked[b-7d52exlwjm] {
+        background: var(--toolButtonChecked);
+    }
+
+    .ToolButton:focus[b-7d52exlwjm] {
+        outline: none;
+    }
+/* _content/BergSoft.UI.Blazor/Components/Toolbar/ToolDivider.razor.rz.scp.css */
+.ToolDivider[b-ervwsiag1x] {
+    fill: #cdcdcd;
+    padding: .5em;
+    display: flex;
+    align-items: center;
+}

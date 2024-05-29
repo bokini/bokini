@@ -1,0 +1,26 @@
+@import '_content/BergSoft.UI.Blazor/BergSoft.UI.Blazor.bundle.scp.css';
+
+/* /Components/Heading.razor.rz.scp.css */
+.Heading[b-roj93vf4vt] {
+    align-items: center;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.Heading h1[b-roj93vf4vt] {
+    flex: 1;
+}
+
+.Heading a[b-roj93vf4vt] {
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    padding: 4px;
+    text-decoration: none;
+}
+
+    .Heading a:hover[b-roj93vf4vt] {
+        background: var(--buttonHover);
+    }
