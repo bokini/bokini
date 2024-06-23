@@ -5,6 +5,4 @@ export function connect(dotnet, el) {
             window.removeEventListener('mousedown', handler);
         }
     });
-
-    /// need to be destroyed also when selected value
 }

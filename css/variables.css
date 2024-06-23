@@ -90,6 +90,13 @@
 
     /** Basics */
     --primary: #0078d4;
+
+    --danger: #E81123;
+    --dangerSurface: #FEF2F3;
+
+    --success: #107c10;
+    --successSurface: #f1faf1;
+
     --buttonHover: #f5f5f5;
     --baseBackground: #fff;
 

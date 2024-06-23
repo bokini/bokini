@@ -264,6 +264,11 @@
     height: 80px;
 }
 
+    .DialogBase.Medium[b-s0uk22s0hf] {
+        width: 400px;
+        height: 160px;
+    }
+
     .DialogBase.Standard[b-s0uk22s0hf] {
         width: 480px;
         height: 320px;
@@ -667,13 +672,17 @@
         top: 0;
         width: 3px;
     }
+
+    .NavigationView .Toggle[b-erfsr00sg2] {
+        border: 0;
+        cursor: pointer;
+    }
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/BaseGridCell.razor.rz.scp.css */
 .GridCell[b-5p7zvyraro] {
     align-items: center;
     cursor: default;
     padding: 0 6px;
     height: 28px;
-    overflow: hidden;
 }
 
     .GridCell:hover:not(.IsSelected)[b-5p7zvyraro] {
@@ -683,7 +692,7 @@
 
     .GridCell.IsEditing[b-5p7zvyraro] {
         background: #FFF;
-        outline: 1px solid red;
+        outline: 1px solid var(--primary, blue);
     }
 
     .GridCell.IsSelected:not(.IsEditing)[b-5p7zvyraro]
@@ -705,6 +714,18 @@
 
     .GridCell:not(:first-child).GridLinesBoth[b-5p7zvyraro] {
         border-left: 1px solid var(--neutralTertiaryAlt, silver);
+    }
+
+    .GridCell.HorizontalAlignmentLeft[b-5p7zvyraro] {
+        text-align: left;
+    }
+
+    .GridCell.HorizontalAlignmentCenter[b-5p7zvyraro] {
+        text-align: center;
+    }
+
+    .GridCell.HorizontalAlignmentRight[b-5p7zvyraro] {
+        text-align: right;
     }
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/BaseGridHeader.razor.rz.scp.css */
 .GridHeader[b-ps8xvyt3o3] {
@@ -756,12 +777,20 @@
     .GridHeader.sortDirectionDescending svg[b-ps8xvyt3o3] {
         transform: rotate(180deg);
     }
-/* _content/BergSoft.UI.Blazor/Components/NextGrid/DetailsGridCells.razor.rz.scp.css */
-.GridRow[b-01vwu8rqwz] {
+/* _content/BergSoft.UI.Blazor/Components/NextGrid/GridLayout/DetailsGridLayout.razor.rz.scp.css */
+.GridRow[b-z1phg7br10] {
 }
 
-.GridLinesBoth[b-01vwu8rqwz], GridLinesHorizontalOnly[b-01vwu8rqwz] {
+.GridLinesBoth[b-z1phg7br10], GridLinesHorizontalOnly[b-z1phg7br10] {
     border-bottom: 1px solid var(--neutralTertiaryAlt);
+}
+/* _content/BergSoft.UI.Blazor/Components/NextGrid/GridLayout/StacksGridLayout.razor.rz.scp.css */
+.StacksGridLayout[b-hhen1y2vqi] {
+    display: flex;
+}
+
+.CellsStack[b-hhen1y2vqi] {
+    display: flex;
 }
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/HeaderDivider.razor.rz.scp.css */
 .HeaderDivider[b-yk3gzlz3l0] {
@@ -770,7 +799,7 @@
     position: relative;
     left: 6px;
     padding: 6px;
-    z-index: 1000;
+    z-index: 99;
 }
 
     .HeaderDivider hr[b-yk3gzlz3l0] {
@@ -793,6 +822,15 @@
 
 .GridHeaders[b-qhew7i48fs] {
     border-bottom: 1px solid var(--neutralTertiaryAlt);
+}
+
+.GroupHeader[b-qhew7i48fs] {
+    text-align: left;
+    font-weight: 600;
+    padding: 0 0 0 6px;
+    background: #F5F5F5;
+    height: 32px;
+    border-bottom: 1px solid #E0E0E0;
 }
 /* _content/BergSoft.UI.Blazor/Components/PageControl/PageControl.razor.rz.scp.css */
 .PageControl[b-a9o19hu2lb] {
@@ -907,6 +945,10 @@
 
     .PageTab.tabsLocationLeft.isActive[b-6ra703wnpa] {
     }
+/* _content/BergSoft.UI.Blazor/Components/Panel.razor.rz.scp.css */
+.Panel[b-yc14y8jhkt] {
+
+}
 /* _content/BergSoft.UI.Blazor/Components/PathControl/PathControl.razor.rz.scp.css */
 .PathControl[b-mknvlo2byo] {
     display: flex;
@@ -1065,6 +1107,44 @@
         .WeekDays div span[b-y9h25iaqdk] {
             font-size: 12px;
         }
+/* _content/BergSoft.UI.Blazor/Components/PopupMenu/PopupMenu.razor.rz.scp.css */
+.PopupMenu[b-oygzgu9c83] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 180px;
+}
+/* _content/BergSoft.UI.Blazor/Components/PopupMenu/PopupMenuGroup.razor.rz.scp.css */
+.PopupMenuGroup[b-uguiotaqfa] {
+    display: flex;
+    flex-direction: column;
+}
+
+.Title[b-uguiotaqfa] {
+    text-align: left;
+    padding: 6px;
+    font-weight: 500;
+    margin: 8px 8px 1px 8px;
+}
+/* _content/BergSoft.UI.Blazor/Components/PopupMenu/PopupMenuOption.razor.rz.scp.css */
+.PopupMenuOption[b-0q7qz8q625] {
+    align-items: center;
+    border: 0;
+    background: inherit;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    padding: 0 8px;
+    height: 36px;
+}
+
+    .PopupMenuOption:hover[b-0q7qz8q625] {
+        background: #F5F5F5;
+    }
+
+    .PopupMenuOption:active[b-0q7qz8q625] {
+        background: #E0E0E0;
+    }
 /* _content/BergSoft.UI.Blazor/Components/ProgressBar.razor.rz.scp.css */
 .ProgressBar[b-m5bh4xte6a] {
     --fallbackBorderColor: #E0E0E0;
@@ -1195,9 +1275,10 @@
 }
 
     .SlidePanelHeader > button[b-x30eozdo6s] {
-        background: inherit;
+        background: none;
         border: 0;
         cursor: pointer;
+        margin-left: var(--spacing, 4px)
     }
 
     .SlidePanelHeader > button svg[b-x30eozdo6s] {
@@ -1209,6 +1290,13 @@
     .SlidePanelHeader.IsExpanded > button svg[b-x30eozdo6s] {
         transform: rotate(90deg);
     }
+
+.SlidePanelContent[b-x30eozdo6s] {
+    --indentationFallback: 8px;
+}
+
+    .SlidePanelContent.LeftIndentation[b-x30eozdo6s] { padding-left: var(--spacing-l, --indentationFallback); }
+    .SlidePanelContent.TopIndentation[b-x30eozdo6s] { padding-top: var(--spacing-l, --indentationFallback); }
 /* _content/BergSoft.UI.Blazor/Components/Splitter/Splitter.razor.rz.scp.css */
 .Splitter[b-k5gtfogyly] {
     cursor: ns-resize;
@@ -1316,6 +1404,10 @@
 /* _content/BergSoft.UI.Blazor/Components/TextBox/ButtonTextBox.razor.rz.scp.css */
 .ButtonTextBoxBase[b-e35m3td202] {
     display: inline-flex;
+}
+
+.ButtonTextBoxBase.Inplace[b-e35m3td202] {
+    width: 100%;
 }
 
 .ButtonTextBox:not(.Inplace)[b-e35m3td202] {
@@ -1484,6 +1576,12 @@
     font: inherit;
     padding: 8px;
 }
+
+    .DropDownButton footer[b-hmzupq7752] {
+        display: flex;
+        border-top: 1px solid var(--buttonHover);
+        padding: 4px;
+    }
 
     .DropDownButton:hover[b-hmzupq7752] {
         background-color: var(--buttonHover);
@@ -1710,6 +1808,10 @@
     outline: none;
 }
 
+/* _content/BergSoft.UI.Blazor/Components/Toast.razor.rz.scp.css */
+.BaseToast[b-ej8q3plal3] {
+    padding: 5px;
+}
 /* _content/BergSoft.UI.Blazor/Components/Toggle.razor.rz.scp.css */
 .Toggle[b-olhuecb82u] {
     align-items: center;
@@ -1769,7 +1871,8 @@
 .ToolButton[b-7d52exlwjm] {
     align-items: center;
     background: inherit;
-    
+    position: relative;
+
     border: var(--toolButtonBorder) solid transparent;
     border-radius: var(--toolButtonBorderRadius);
     cursor: pointer;
@@ -1801,6 +1904,75 @@
     .ToolButton:focus[b-7d52exlwjm] {
         outline: none;
     }
+
+    .ToolButton.Light:hover:not(:active)[b-7d52exlwjm] {
+        background: var(--toolButton);
+    }
+
+    .ToolButton.Danger:hover:not(:active)[b-7d52exlwjm] {
+        background: var(--dangerSurface);
+        fill: var(--danger);
+    }
+
+    .ToolButton.Success:hover:not(:active)[b-7d52exlwjm] {
+        background: var(--successSurface);
+        fill: var(--success);
+    }
+
+    .ToolButton .ChildContent[b-7d52exlwjm] {
+        display: flex;
+    }
+
+.ToolButton .Scale[b-7d52exlwjm] {
+    transition: transform 0.2s ease;
+}
+
+        .ToolButton:hover .Scale[b-7d52exlwjm] {
+            transform: scale(1.2);
+        }
+
+    .ToolButton .Bounce[b-7d52exlwjm] {
+        transition: transform 0.2s ease;
+    }
+
+    .ToolButton:hover .Bounce[b-7d52exlwjm] {
+        animation: bounce-b-7d52exlwjm 0.75s ease;
+    }
+
+    .ToolButton .FadeIn[b-7d52exlwjm] {
+        transition: opacity 0.2s ease;
+        opacity: 0.5;
+    }
+
+    .ToolButton:hover .FadeIn[b-7d52exlwjm] {
+        opacity: 1;
+    }
+
+    .ToolButton .Saturation[b-7d52exlwjm] {
+        filter: grayscale(100%);
+        transition: filter 0.2s ease-in-out;
+    }
+
+    .ToolButton:hover .Saturation[b-7d52exlwjm] {
+        filter: grayscale(0%);
+    }
+
+@keyframes bounce-b-7d52exlwjm {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    75% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
 /* _content/BergSoft.UI.Blazor/Components/Toolbar/ToolDivider.razor.rz.scp.css */
 .ToolDivider[b-ervwsiag1x] {
     fill: #cdcdcd;

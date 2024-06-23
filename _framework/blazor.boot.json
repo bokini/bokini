@@ -1,7 +1,7 @@
 {
   "entryAssembly": "BergSoft.UI.Blazor.Demo",
   "resources": {
-    "hash": "sha256-MPg0v2eHlcFYz2JhZ9LBckYvUVube31T3rp+mM2cuII=",
+    "hash": "sha256-AaVQFJqmYCedV+GlyhgWkBORKon+iPBdTcm/xSUxJ6s=",
     "runtime": {
       "dotnet.7.0.20.jxsib5h8sf.js": "sha256-JRsWXXfIrfehLeaNljpse36iRMoeoQSIcWQURq2OThk=",
       "dotnet.timezones.blat": "sha256-gbATD5HDsHYtW8vdPYh9iSBY4O5CjvMeCSF5xXWF1xo=",
@@ -11,12 +11,12 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "BergSoft.UI.Blazor.Demo.dll": "sha256-SplwwK48zG8QC9Vbz3kISj4OcDpKfN8jeohXTPgD4pM=",
-      "BergSoft.UI.Blazor.dll": "sha256-xiy317vEBO/fe0xJSd0e48kK9CoJ9ym0SRxMvpqABVg=",
-      "BergSoft.UI.dll": "sha256-NCEzDTSU+PsPU1vexApNZRvkiJpezQv920dRKeMVe8g=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-mKlDYQbH4Eo0NHMEd5P0VqhVAGYPG9BEdw5ykajHtSs=",
+      "BergSoft.UI.Blazor.Demo.dll": "sha256-NUuo6D55OOnKjuuPO+CQ1/Cp9ODAjG25uJdoox9wEKA=",
+      "BergSoft.UI.Blazor.dll": "sha256-kASR9ra/HF+DwW5aEJFV7C8nBBsKBrhHmM+cOQnmFmA=",
+      "BergSoft.UI.dll": "sha256-kwPrkemi9elpnf37zqerDk79jajDD/KRn9jmPMfTZkU=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-HlEWMv3Ys1WxWzQsKvjO88uAihbz3zWu9w5QanTlm0I=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-MjP3oL0zPPfjfL9B98ZoxjoPmlU+/qAtoz/eRau3e6I=",
-      "Microsoft.AspNetCore.Components.Web.dll": "sha256-qYHJKjRDG+mdkG99mVMhJaVoy02fVBRYWkV8ImuSq78=",
+      "Microsoft.AspNetCore.Components.Web.dll": "sha256-mL9ZJ8vOqTbvFLwnqAngmuJEZIcxrDTdoaLPq3xy3ys=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-2+ToeRN36ZfEtkp9zMTrXxaWTBvesGRQ8aS31mr1II0=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-X/f4fDl2cuIRXeWHhK/f2UqQbFioD+RU4a4CEh0zrrQ=",
       "Microsoft.Extensions.Configuration.dll": "sha256-DBOKSPriP2JDxVbbWrLXyD3K4/x3RBifNBWk/q1I39M=",
@@ -30,7 +30,7 @@
       "Microsoft.JSInterop.dll": "sha256-JNIwb8EZ1DZvNyFfJ8JklynGrQyAe6eBFhjYuYgs+k4=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-4cMfifCYL/bv5qiC8T6HyABhOewZlTXovRc+E/CrUbc=",
       "System.Collections.Concurrent.dll": "sha256-2NHX6vnPxOwJXfnjzHJtWl83LtClv0afysraVnw+Y3M=",
-      "System.Collections.dll": "sha256-rLrA+Ot3xOG5lHaNM8MhfEEP39oLC11KB1o338yT5o0=",
+      "System.Collections.dll": "sha256-UyN3puqPncjrWf3jYgUKYW418L0hVr6UHPx9yuwdmTM=",
       "System.Collections.NonGeneric.dll": "sha256-URL6CAqsvmL0RxSSLx0PKhvQ1l2cv9KOTSN2sbWqJJY=",
       "System.Collections.Specialized.dll": "sha256-FZgrMEUmkkCeoLcaEVyXi7x6ru0fNdOF9T5iNOaCQdY=",
       "System.ComponentModel.dll": "sha256-7vcDBo/3bcYI/CjzxGeFgD2a7r2TJ0a+atwSTcxZv/E=",
@@ -38,7 +38,7 @@
       "System.ComponentModel.TypeConverter.dll": "sha256-L0E7efALGrfjwVo+onLU7kMq9mQG6DLLEA3s3obFLxw=",
       "System.Console.dll": "sha256-ZeEuB6z0tWYtFHLC3eLK+mObBqIDj1EgpXes3X7b3c8=",
       "System.dll": "sha256-LfkaaAcFv7atiyjqRh9bcYSpLFkeAGhipjz5+flLf4A=",
-      "System.Linq.dll": "sha256-3MkYh5ZD88qn0lGBgTjFV9qm+vqC9JT7SF521f4up6k=",
+      "System.Linq.dll": "sha256-xgGOiZaOxHv+WHISEZtUiMWEqqUrxxcTYJBAjqja2Y0=",
       "System.Linq.Expressions.dll": "sha256-4FYweBbSyiUMSme5T0YZOP6AsuH6mp1BSlFpFS9AA1g=",
       "System.Memory.dll": "sha256-NYdInsTzDaKdk4uq46a0o94ld6TltVbEy5tyrfGjKcM=",
       "System.Net.Http.dll": "sha256-U4mXV6S98jmJJ/jmIIFaC9Ys/epLK2WNsYd/lb+mhts=",
@@ -46,7 +46,7 @@
       "System.ObjectModel.dll": "sha256-vLw29Zc6e8Ebc+BP17db3u0C6+7QBxuq9nprlsTkg98=",
       "System.Private.CoreLib.dll": "sha256-ODPBHjfM2PrNWml841fS1mR90YxTygku+SoSGdEFSUE=",
       "System.Private.Uri.dll": "sha256-uQJ63Du9MV2u7evQ5W9sUosR0IksAmUY7EKH94pRLjU=",
-      "System.Runtime.dll": "sha256-uAU4ofWRx5CrBjgelIWknkOF+UBubkgPlH8oPi4bw5A=",
+      "System.Runtime.dll": "sha256-0MOFEFnbG8/PWfSwyEVo7P+42ZgzPEPgmn68IgELfIQ=",
       "System.Runtime.InteropServices.JavaScript.dll": "sha256-GyzghjbgwrJGTPSnLaEm7YE/LlCBgdmv52UbOTD50Fc=",
       "System.Text.Encodings.Web.dll": "sha256-kVB4lTg+oQyav/B+6jgQckSkCqypLtSdieUtX9C97v0=",
       "System.Text.Json.dll": "sha256-NK5paz8fSdiv909TdihlKlQWFGmos8TYyAAnVXgmP6g=",
