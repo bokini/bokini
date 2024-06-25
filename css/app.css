@@ -106,9 +106,17 @@ h1:focus {
 code {
     padding: 6px 8px;
     border-radius: 50vh;
-    background-color: bisque;
+    background-color: #efefef;
+    background-position: 8px center;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
     font-family: Consolas, "Cascadia Mono", "Courier";
 }
+
+    code.parameter {
+        background-image: url(../images/parameter.svg);
+        padding-left: 28px;
+    }
 
 .PageControlTabs {
     padding: 4px;
