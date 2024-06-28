@@ -820,6 +820,10 @@
     -webkit-user-select: none;
 }
 
+.GridFooters[b-qhew7i48fs] {
+    border-top: 1px solid var(--neutralTertiaryAlt);
+}
+
 .GridHeaders[b-qhew7i48fs] {
     border-bottom: 1px solid var(--neutralTertiaryAlt);
 }
