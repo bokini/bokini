@@ -1111,6 +1111,14 @@
         .WeekDays div span[b-y9h25iaqdk] {
             font-size: 12px;
         }
+/* _content/BergSoft.UI.Blazor/Components/Popover.razor.rz.scp.css */
+.PopoverBase[b-gze0vtkise] {
+    z-index: 30000;
+    background: var(--neutralLighter);
+    border-radius: 4px;
+    display: flex;
+    position: absolute;
+}
 /* _content/BergSoft.UI.Blazor/Components/PopupMenu/PopupMenu.razor.rz.scp.css */
 .PopupMenu[b-oygzgu9c83] {
     display: flex;
@@ -1157,7 +1165,8 @@
 }
 
     .ProgressBar.BorderStyleSingle[b-m5bh4xte6a],
-    .ProgressBar.BorderStyleRoundCorners[b-m5bh4xte6a] {
+    .ProgressBar.BorderStyleRoundCorners[b-m5bh4xte6a],
+    .ProgressBar.BorderStylePill[b-m5bh4xte6a] {
         border: 1px solid var(--neutralDark, --fallbackBorderColor);
     }
 
@@ -1165,9 +1174,21 @@
             border-radius: var(--borderRadius, fallbackBorderRadius);
         }
 
-        .ProgressBar .Bar[b-m5bh4xte6a] {
-            background: var(--primary, --fallbackBarBackground);
-            height: 100%;
+        .ProgressBar.BorderStylePill[b-m5bh4xte6a] {
+            border-radius: 100vh;
+        }
+
+.ProgressBar .Bar[b-m5bh4xte6a] {
+    background: var(--primary, --fallbackBarBackground);
+    height: 100%;
+}
+
+        .ProgressBar .BarStyleRectanle[b-m5bh4xte6a] {
+            border-radius: 0;
+        }
+
+        .ProgressBar .BarStylePill[b-m5bh4xte6a] {
+            border-radius: 100vh;
         }
 /* _content/BergSoft.UI.Blazor/Components/RadioButton.razor.rz.scp.css */
 .RadioButton[b-jg0lexvjy2] {
@@ -1770,6 +1791,7 @@
     align-items: center;
     gap: 4px;
     min-height: 32px;
+    background-color: #FFF;
     border-radius: 4px;
     background-clip: border-box;
 
@@ -1925,6 +1947,8 @@
 
     .ToolButton .ChildContent[b-7d52exlwjm] {
         display: flex;
+        gap: 4px;
+        align-items: center;
     }
 
 .ToolButton .Scale[b-7d52exlwjm] {

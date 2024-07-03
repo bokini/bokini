@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+html {   
+    overscroll-behavior: none;
+}
+
 html,
 body {
     height: 100%;
