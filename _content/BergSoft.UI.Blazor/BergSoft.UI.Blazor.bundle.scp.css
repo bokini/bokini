@@ -777,6 +777,10 @@
     .GridHeader.sortDirectionDescending svg[b-ps8xvyt3o3] {
         transform: rotate(180deg);
     }
+/* _content/BergSoft.UI.Blazor/Components/NextGrid/GridHeaders.razor.rz.scp.css */
+.GridHeaders[b-vqar7efb0n] {
+    border-bottom: 1px solid var(--neutralTertiaryAlt);
+}
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/GridLayout/DetailsGridLayout.razor.rz.scp.css */
 .GridRow[b-z1phg7br10] {
 }
@@ -822,10 +826,6 @@
 
 .GridFooters[b-qhew7i48fs] {
     border-top: 1px solid var(--neutralTertiaryAlt);
-}
-
-.GridHeaders[b-qhew7i48fs] {
-    border-bottom: 1px solid var(--neutralTertiaryAlt);
 }
 
 .GroupHeader[b-qhew7i48fs] {
