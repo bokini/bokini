@@ -1816,6 +1816,11 @@
         min-width: 0;
     }
 
+    .TextBox > textarea[b-kriey90e0o] {
+        border: 0;
+        outline: none;
+    }
+
 .ClearButton[b-kriey90e0o] {
     height: 14px;    
     width: 14px;
