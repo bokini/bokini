@@ -727,6 +727,10 @@
     .GridCell.HorizontalAlignmentRight[b-5p7zvyraro] {
         text-align: right;
     }
+/* _content/BergSoft.UI.Blazor/Components/NextGrid/BaseGridFooter.razor.rz.scp.css */
+.BaseGridFooter[b-zkvdjnf5df] {
+    padding: 6px 4px;
+}
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/BaseGridHeader.razor.rz.scp.css */
 .GridHeader[b-ps8xvyt3o3] {
     align-items: center;
@@ -1156,6 +1160,10 @@
 
     .PopupMenuOption:active[b-0q7qz8q625] {
         background: #E0E0E0;
+    }
+
+    .PopupMenuOption:disabled[b-0q7qz8q625] {
+        color: silver;
     }
 /* _content/BergSoft.UI.Blazor/Components/ProgressBar.razor.rz.scp.css */
 .ProgressBar[b-m5bh4xte6a] {
