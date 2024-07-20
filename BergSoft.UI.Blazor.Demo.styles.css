@@ -24,3 +24,9 @@
     .Heading a:hover[b-roj93vf4vt] {
         background: var(--buttonHover);
     }
+/* /Components/Subscribe.razor.rz.scp.css */
+.Subscribe[b-aii9ugq31s] {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}

@@ -1915,6 +1915,7 @@
     border: var(--toolButtonBorder) solid transparent;
     border-radius: var(--toolButtonBorderRadius);
     cursor: pointer;
+    color: black;
     display: inline-flex;
     gap: var(--space, 4px);
     justify-content: center;
