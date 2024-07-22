@@ -29,4 +29,6 @@
     display: flex;
     gap: 8px;
     align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c7e0f4;
 }

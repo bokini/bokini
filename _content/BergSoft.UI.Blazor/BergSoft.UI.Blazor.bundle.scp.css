@@ -1158,7 +1158,7 @@
         background: #F5F5F5;
     }
 
-    .PopupMenuOption:active[b-0q7qz8q625] {
+    .PopupMenuOption:active:not(:disabled)[b-0q7qz8q625] {
         background: #E0E0E0;
     }
 
@@ -1800,22 +1800,26 @@
     gap: 4px;
     min-height: 32px;
     background-color: #FFF;
-    border-radius: 4px;
-    background-clip: border-box;
-
-    border-image-outset: 0;
-    border-image-repeat: stretch;
-    border-image-slice: 100%;
-    border-image-source: none;
-    border-image-width: 1;
-
-    border-bottom: 1px solid rgb(97, 97, 97);
-    border-left: 1px solid rgb(209, 209, 209);
-    border-right: 1px solid rgb(209, 209, 209);
-    border-top: 1px solid rgb(209, 209, 209);
-
     padding: 0 8px;
 }
+
+    .TextBox.borderStyleSingle[b-kriey90e0o] {
+        border: 1px solid #D1D1D1;
+    }
+
+    .TextBox.borderStyleStyled[b-kriey90e0o] {
+        border-radius: 4px;
+        background-clip: border-box;
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-bottom: 1px solid rgb(97, 97, 97);
+        border-left: 1px solid rgb(209, 209, 209);
+        border-right: 1px solid rgb(209, 209, 209);
+        border-top: 1px solid rgb(209, 209, 209);
+    }
 
     .TextBox > input[b-kriey90e0o] {
         border: 0;
