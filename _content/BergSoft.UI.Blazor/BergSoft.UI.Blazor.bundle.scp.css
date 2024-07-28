@@ -202,58 +202,6 @@
     .CollapseButton[aria-expanded="false"] svg {
         transform: rotate(0deg);
     }*/
-/* _content/BergSoft.UI.Blazor/Components/DataGrid/DataGrid.razor.rz.scp.css */
-.DataGrid[b-3cvxvooqij] {
-    background: white;
-    cursor: default;
-    display: flex;
-    flex-direction: column;
-    font-size: var( --control-font-size);
-}
-
-    .DataGrid:focus[b-3cvxvooqij] {
-        outline: none;
-    }
-
-    .DataGrid:not(.HideFocus):focus[b-3cvxvooqij] {
-        outline: 2px solid var(--selection-background-focus);
-    }
-
-    .DataGrid .Headers[b-3cvxvooqij],
-    .DataGrid .Footers[b-3cvxvooqij] {
-        display: flex;
-        user-select: none;
-        -webkit-user-select: none;
-    }
-
-    .DataGrid .Footers[b-3cvxvooqij] {
-        border-top: 1px solid var(--neutralTertiaryAlt);
-    }
-
-    .DataGrid .Headers[b-3cvxvooqij] {
-        border-bottom: 1px solid var(--neutralTertiaryAlt);
-    }
-
-    .DataGrid .GridContent[b-3cvxvooqij] {
-        overflow: auto;
-        flex: 1;
-    }
-
-    .GroupHeader[b-3cvxvooqij] {
-        font-size: 12px;
-    }
-
-    .EmptyText[b-3cvxvooqij] {
-        color: gray;
-        text-align: center;       
-        padding: 5px;
-    }
-
-    .StackedLayout[b-3cvxvooqij] {
-        display: flex;
-        height: 128px;
-        flex-direction: row;
-    }
 /* _content/BergSoft.UI.Blazor/Components/Dialog/Dialog.razor.rz.scp.css */
 .DialogBase[b-s0uk22s0hf] {
 
@@ -360,30 +308,6 @@
 .closed[b-s0uk22s0hf] {
     display: none;
 }
-/* _content/BergSoft.UI.Blazor/Components/GridControl/CellsGroup.razor.rz.scp.css */
-:root[b-3chwvg8zdu] {
-    --cellsGroupHeaderFontWeight: normal;
-    --cellsGroupHeaderIndent: 8px;
-}
-
-.CellsGroup header[b-3chwvg8zdu] {
-    align-items: center;
-    background: var(--neutralSecondarySurface);
-    border-bottom: 1px solid var(--neutralTertiaryAlt);
-    display: flex;
-    font-weight: var(--cellsGroupHeaderFontWeight);
-    font-size: 12px;
-    gap: 10px;
-    height: 32px;
-    color: var(--neutralDark);
-    line-height: 32px;
-    padding: 0 12px 0 var(--cellsGroupHeaderIndent);
-    user-select: none;
-}
-
-    .CellsGroup > header[b-3chwvg8zdu] {
-        white-space: nowrap;
-    }
 /* _content/BergSoft.UI.Blazor/Components/GridControl/GridCell.razor.rz.scp.css */
 .GridCell[b-ozzmicwdua] {
     padding: var(--gridCellPadding, 6px 0 6px 6px);
@@ -432,93 +356,6 @@
     text-align: center;
 }
 /* _content/BergSoft.UI.Blazor/Components/GridControl/GridCellsLayout.razor.rz.scp.css */
-/* _content/BergSoft.UI.Blazor/Components/GridControl/GridCellsList.razor.rz.scp.css */
-/* _content/BergSoft.UI.Blazor/Components/GridControl/GridFooter.razor.rz.scp.css */
-.GridFooter[b-ilk08agca9] {
-    padding: var(--gridCellPadding, 6px 0 6px 6px);
-    margin-right: 9px;
-}
-
-    .GridFooter:not(:first-child)[b-ilk08agca9] {
-        padding: 6px 0 6px 10px;
-        margin-left: 1px;
-        margin-right: 15px;
-    }
-
-    .GridFooter:not(:first-child).GridLinesBoth[b-ilk08agca9] {
-        border-left: 1px solid var(--neutralTertiaryAlt, silver);
-        margin-right: 16px;
-        margin-left: 0;
-    }
-/* _content/BergSoft.UI.Blazor/Components/GridControl/GridHeader.razor.rz.scp.css */
-.GridHeader[b-596mrixv5c] {
-    align-items: center;
-    background: white;
-    cursor: pointer;
-    display: flex;
-    padding: 6px 0 6px 6px;
-    height: 30px;
-    user-select: none;
-    margin: 0;
-}
-
-    .GridHeader svg[b-596mrixv5c] {
-        margin-left: 5px;
-    }
-
-    .GridHeader svg path[b-596mrixv5c] {
-        fill: var(--sortArrowFill);
-    }
-
-    .GridHeader:hover[b-596mrixv5c] {
-        background: var(--neutralLighterAlt);
-    }
-
-        .GridHeader.sortDirectionDescending svg[b-596mrixv5c] {
-            transform: rotate(180deg);
-        }
-/* _content/BergSoft.UI.Blazor/Components/GridControl/GridItem.razor.rz.scp.css */
-.GridItem[b-onq8l6p9vx] {
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-}
-
-    .GridItem:focus[b-onq8l6p9vx] {
-    }
-
-    .GridItem:hover:not(.Selected)[b-onq8l6p9vx] {
-        cursor: var(--selectionCursorHover, default);
-        background-color: var(--selectionBackgroundHover, silver);
-    }
-
-.Selected[b-onq8l6p9vx] {
-    color: var(--selection-color, black);
-    background-color: var(--selectionBackground, whitesmoke);
-    border-radius: var(--selection-border-radius, 0);
-}
-
-.Focused[b-onq8l6p9vx] {
-    color: var(--selection-color-focus);
-    background-color: var(--selection-background-focus, lightblue);
-    outline: none;
-}
-
-        .Selected:focus svg[b-onq8l6p9vx] {
-            fill: var(--selection-color-focus);
-        }
-
-.GridLinesBoth[b-onq8l6p9vx], GridLinesHorizontalOnly[b-onq8l6p9vx] {
-    border-bottom: 1px solid var(--neutralTertiaryAlt);
-}
-/* _content/BergSoft.UI.Blazor/Components/GridControl/HeaderSplitter.razor.rz.scp.css */
-.HeaderSplitter[b-m3ljkrgyu8] {
-    border-right: 1px solid var(--headerSplitterBorderColor, gray);
-    cursor: col-resize;
-    margin: 6px;
-    width: 4px;
-    padding: 0 1px;
-}
 /* _content/BergSoft.UI.Blazor/Components/GridControl/InplaceEdit.razor.rz.scp.css */
 .InplaceEdit[b-rmh9brbyn9] {
     border: 0;
@@ -545,6 +382,11 @@
     .Header div[b-4ef7vknsr0] {
         flex-grow: 1;
     }
+/* _content/BergSoft.UI.Blazor/Components/IconPanel.razor.rz.scp.css */
+.IconPanel[b-lz6nrlcehs] {
+    display: flex;
+    gap: 8px;
+}
 /* _content/BergSoft.UI.Blazor/Components/ListBox.razor.rz.scp.css */
 .ListBox[b-u75a893qc0] {
     overflow-y: auto;
@@ -739,6 +581,7 @@
     font-weight: normal;
     height: 30px;
     user-select: none;
+    border-bottom: 1px solid var(--neutralTertiaryAlt);
 }
 
     .GridHeader .Content[b-ps8xvyt3o3] {
@@ -783,7 +626,10 @@
     }
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/GridHeaders.razor.rz.scp.css */
 .GridHeaders[b-vqar7efb0n] {
-    border-bottom: 1px solid var(--neutralTertiaryAlt);
+    background: white;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
 }
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/GridLayout/DetailsGridLayout.razor.rz.scp.css */
 .GridRow[b-z1phg7br10] {
@@ -823,9 +669,12 @@
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/NextGrid.razor.rz.scp.css */
 .NextGrid[b-qhew7i48fs] {
     border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
     user-select: none;
     outline: none;
     -webkit-user-select: none;
+    overflow: auto;
 }
 
 .GridFooters[b-qhew7i48fs] {
@@ -1734,6 +1583,7 @@
     }
 /* _content/BergSoft.UI.Blazor/Components/TextBox/SpinTextBox.razor.rz.scp.css */
 .SpinTextBox[b-6ln0ucxk48] {
+    background: white;
     display: inline-flex;
     align-items: stretch;
     min-height: 32px;
@@ -1741,13 +1591,18 @@
 }
 
     .SpinTextBox.borderStyleSingle[b-6ln0ucxk48] {
-        border: 1px solid silver;
+        border: 1px solid #D1D1D1;
         padding: 0 0 0 8px;
     }
 
-    .SpinTextBox .borderStyleExtended[b-6ln0ucxk48] {
+    .SpinTextBox.borderStyleStyled[b-6ln0ucxk48] {
         border-radius: 4px;
         background-clip: border-box;
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
         border-bottom: 1px solid rgb(97, 97, 97);
         border-left: 1px solid rgb(209, 209, 209);
         border-right: 1px solid rgb(209, 209, 209);
