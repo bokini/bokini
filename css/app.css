@@ -175,4 +175,20 @@ code {
     background: #FAFAFA;
     height: 100px;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+    .cards header a {
+        text-decoration: none;
+    }
+
+    .cards h3 {
+        font-size: 36px;
+        line-height: 1;
+        font-weight: 600;
+        background: linear-gradient(to top left,#ff75c3,#ffa647,#ffe83f,#9fff5b,#70e2ff,#cd93ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }

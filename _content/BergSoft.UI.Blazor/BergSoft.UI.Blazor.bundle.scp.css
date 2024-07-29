@@ -387,6 +387,14 @@
     display: flex;
     gap: 8px;
 }
+
+.IconPanel aside[b-lz6nrlcehs] {
+    padding-top: 4px;
+}
+
+.IconPanel h2[b-lz6nrlcehs] {
+    margin: 0 0 4px 0;
+}
 /* _content/BergSoft.UI.Blazor/Components/ListBox.razor.rz.scp.css */
 .ListBox[b-u75a893qc0] {
     overflow-y: auto;
