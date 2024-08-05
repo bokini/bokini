@@ -107,8 +107,8 @@ h1:focus {
     }
 
 code {
-    padding: 6px 8px;
-    border-radius: 50vh;
+    padding: 5px;
+    border-radius: 2px;
     background-color: #efefef;
     background-position: 8px center;
     background-size: 16px 16px;
@@ -167,13 +167,13 @@ code {
 .cards {
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-bottom: 20px;
 }
 
 .cards .banner {
     background: #FAFAFA;
-    height: 120px;
+    height: 140px;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -192,3 +192,14 @@ code {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+.stack-avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+}

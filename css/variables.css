@@ -1,180 +1,29 @@
 ﻿:root {
-    --spacing-s: 2px;
-    --spacing: 4px;
-    --spacing-l: 8px;
-    --spacing-xl: 12px;
-    --spacing-xxl: 16px;
+    --themePrimary: #0f6cbd; /* Primary button */
+    --themeLight: #b4d6fa; /* Toolbutton dropped-down */
+    --themeDark: #0f548c; /* Primary button hover */
+    --themeDarker: #0c3b5e; /* Primary button hover & active */
+    --neutralQuaternaryAlt: #ebebeb; /* Button hover & active */
 
-    --radius-s: 2px;
+    --themeSecondarySurfaceSelected: #cfe4fa; /* ListBox selection */
 
-
-
-    --fallback-neutralLighter: #F5F5F5;
-
-    /** Blue primary color, checked toggle or button */
-
-    --themePrimary: #0078d4; /* remove */
-
-    /** Checked but also hover */
-    --themeDark: #005A9E;
-    --themeDarker: #0C3B5E;
-
-    /** Selected row in grid and lists */
-    --themeLight: #c7e0f4;
-    --themeLighter: #cfe4fa; /** also themeSecondarySurfaceSelected */
-
-
-    /** Button face hover, row hover etc. */
-    --neutralLight: #edebe9;
+    --neutralLight: #f0f0f0; /* Toolbutton hover */
+    --neutralLighter: #f5f5f5; /* Toolbutton active */
+    --neutralLighterAlt: #fafafa; /* GridHeader hover */
     --neutralDark: #242424;
+    --colorNeutralBackground1Pressed: #e0e0e0; /* ToolButton hover & active */
+    --neutralTertiaryAlt: #e0e0e0;
 
-    /** Button face active & hover */
-    --neutralQuaternary: #E5E5E5;
-    --neutralQuaternaryAlt: #e1dfdd;
-    
-    --neutralSecondary: #605e5c;
-    --neutralTertiaryAlt: #E0E0E0;
-    
-    /** Active date */
-    --neutralSecondarySurface: #FAFAFA;
-
-    --neutralLighter: var(--fallback-neutralLighter);
-    --neutralLighterAlt: #FAFAFA;
-
-    --neutralPrimary: #323130;
-    --white: #ffffff;
-    --borderRadiusNone: 0;
-    --borderRadiusSmall: 2px;
-    --borderRadiusMedium: 4px;
-    --borderRadiusLarge: 6px;
-    --borderRadiusXLarge: 8px;
-    --buttonPressedIconColor: #444;
-
-    /** Sizes */
-    --buttonRoundSize: 34px;
-    --hypelinkColor: #0C71A1;
-    --colorNeutralBackground4: #f0f0f0;
-    --colorNeutralBackground4Selected: #ffffff;
-
-    /*#region Toggle */
-
-    --toggleChecked: var(--themePrimary);
-    --toggleCheckedHover: var(--themeDark);
-    /*#endregion */
-
-    /*#region TabsControl */
-
-    --tabsControlBackground: var(--colorNeutralBackground4);
-    --tabsControlButtonsSpacing: 6px;
-    --tabsControlButtonBackgroundColor: inherit;
-    --tabsControlPadding: 4px;
-    --tabsControlWidth: 48px;
-    --tabsControlButtonRadius: var(--borderRadiusMedium);
-
-    /*#endregion */
-
-    --blackTranslucent40: rgba(0, 0, 0, 0.4);
-
-
-    --palette-neutral-8: 234, 234, 234;
-    --palette-primary: 0, 120, 212;
-    --palette-neutral-100: 0, 0, 0;
-    --palette-black-alpha-20: rgba(var(--palette-neutral-100), 0.20);
-
-    --communication-background: rgba(var(--palette-primary), 1);
-
-    /** navigation */
-    --nav-vertical-active-group-background: rgba(var(--palette-neutral-100), 0.06);
-    --nav-vertical-background-color: rgba(var(--palette-neutral-8), 1);
-
-
-    /** Basics */
-    --primary: #0078d4;
-
-    --danger: #E81123;
-    --dangerSurface: #FEF2F3;
-
+    --danger: #e81123;
+    --dangerSurface: #fef2f3;
     --success: #107c10;
     --successSurface: #f1faf1;
 
-    --buttonHover: #f5f5f5;
-    --baseBackground: #fff;
+    --borderRadiusMedium: 4px;
+    --borderRadiusSmall: 2px;
+    --spacingHorizontalS: 8px;
+    --spacingVerticalS: 8px;
 
-    --dateSelected: #cfe4fa; /** themeSecondarySurfaceSelected */
-    --datePushed: #b4d6fA;
-
-    --toolButtonPushed: #edebe9; /** e.g. button dropped down */
-
-    --toolButtonActive: #e0e0e0;  /*background-color: var(--neutralTertiaryAlt);*/
-
-    --primaryControl: #1e7aCb;
-
-    --primaryText: #fff;
-    --primaryHover: #0f548c;
-    --primaryActive: #0c3b5e;
-
-    --buttonFontSize: 14px;
-
-    --disabled: #f5f5f5;
-    --borderRadius: 4px;
-
-
-    /** toolButton */
-    /** Backgrounds */
-    --toolButton: #f5f5f5;
-    --toolButtonActive: var(--neutralQuaternary);
-    --toolButtonChecked: var(--neutralQuaternary);
-
-    --toolButtonBorderRadius: .4em;
-    --toolButtonBorder: 1px;
-
-    --toolButtonBorderActiveColor: rgb(209, 209, 209);
-    --toolButtonBorderCheckedColor: rgb(229, 229, 229);
-
-    /** spacing */
-    --control-font-size: 12px;
-    --font-size-s: 12px;
-    --font-size-m: 14px;
-
-    --spacing-horz-s: 4px;
-    --spacing-vert-s: 2px;
-
-    --gridCellInset: 6px;
-    --gridCellPadding: var(--gridCellInset) 0 var(--gridCellInset) var(--gridCellInset);
-
-    --grid-cell-indent: 6px;
-    --grid-cell-padding: 6px 0 6px 6px;
-
-    --selection-height: inherited;
-    --selection-color: black;
-    --selection-border-radius: 0;
-    --selection-background: var(--neutralLighterAlt);
-
-    --selection-background-focus: var(--themeLight);
-
-    --selectionBackground: var(--neutralSecondarySurface);
-    --selectionBackgroundFocused: var(--selection-background-focus);
-
-    /**
-        Selection
-    */
-    --selection: var(--neutralSecondarySurface);
-    --selectionBackgroundHover: var(--neutralSecondarySurface);
-
-    --selectionHover: #ebebeb;
-    --selectionFocus: var(--themeLight);
-    --selectionBorderRadius: 4px;
-
-    --shadow4: 0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14);    
-
-
-    /** DataGrid */
-    --sortArrowFill: #101010;
-    --cellsGroupHeaderFontWeight: 600;
-    --cellsGroupHeaderIndent: 8px;
-    --headerSplitterBorderColor: var(--neutralTertiaryAlt);
-
-    /** CheckBox */
-    --checkboxBackgroundChecked: rgb(15, 108, 189);
-    --checkboxBackgroundCheckedHover: #0e548c;
+    --black: #000;
+    --white: #fff;
 }
