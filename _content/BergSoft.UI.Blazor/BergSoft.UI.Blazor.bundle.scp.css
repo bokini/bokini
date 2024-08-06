@@ -48,9 +48,7 @@
         border: 0;
         flex-direction: column;
         justify-content: center;
-        border-radius: 50%;
-        height: var(--buttonRoundSize);
-        width: var(--buttonRoundSize);
+        border-radius: 1000vh;
     }
 
     .Button.Primary[b-ce0ui9l70q] {
@@ -123,6 +121,9 @@
     }
 /* _content/BergSoft.UI.Blazor/Components/CheckBox.razor.rz.scp.css */
 .CheckBox[b-4bm9qzg942] {
+    --checkboxBackgroundChecked: rgb(15, 108, 189);
+    --checkboxBackgroundCheckedHover: #0e548c;
+
     background: yellow;
 }
 
@@ -318,14 +319,6 @@
     display: none;
 }
 /* _content/BergSoft.UI.Blazor/Components/GridControl/GridCellsLayout.razor.rz.scp.css */
-/* _content/BergSoft.UI.Blazor/Components/GridControl/InplaceEdit.razor.rz.scp.css */
-.InplaceEdit[b-rmh9brbyn9] {
-    border: 0;
-    font: inherit;
-    width: 100%;
-    height: 100%;
-    outline: none;
-}
 /* _content/BergSoft.UI.Blazor/Components/GridControl/InplaceInput.razor.rz.scp.css */
 .InplaceInput[b-qovchzg0la] {
     background: inherit;
@@ -645,10 +638,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-width: 100px;
     padding: var(--spacingHorizontalS, --fallback-spacingHorizontalS) var(--spacingVerticalS, --fallback-spacingVerticalS);
 }
+
+    .CellsStack:hover[b-hhen1y2vqi] {
+        background: var(--neutralLighter, --fallback-neutralLighter);
+    }
 
     .CellsStack.Selected[b-hhen1y2vqi] {
         background: var(--neutralLighter, --fallback-neutralLighter);
@@ -1315,7 +1312,6 @@
         font: inherit;
         width: 100%;
         height: 100%;
-        min-height: inherit;
     }
 
 .ButtonTextBox:not(.Inplace)[b-e35m3td202] {
@@ -1670,9 +1666,12 @@
     background: white;
     display: inline-flex;
     align-items: stretch;
-    min-height: 32px;
     padding: 0 8px;
 }
+
+    .SpinTextBox:not(.Inplace)[b-6ln0ucxk48] {
+        min-height: 32px;
+    }
 
     .SpinTextBox.borderStyleSingle[b-6ln0ucxk48] {
         border: 1px solid #D1D1D1;
@@ -1699,7 +1698,6 @@
         font: inherit;
         width: 100%;
         height: 100%;
-        min-height: inherit;
     }
 
     .SpinTextBox > input[b-6ln0ucxk48] {
@@ -1747,10 +1745,13 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    min-height: 32px;
     background-color: #FFF;
     padding: 0 8px;
 }
+
+    .TextBox:not(.Inplace)[b-kriey90e0o] {
+        min-height: 32px;
+    }
 
     .TextBox.borderStyleSingle[b-kriey90e0o] {
         border: 1px solid #D1D1D1;
@@ -1788,7 +1789,6 @@
         font: inherit;
         width: 100%;
         height: 100%;
-        min-height: inherit;
     }
 
 
@@ -1815,6 +1815,14 @@
     padding: 5px;
 }
 /* _content/BergSoft.UI.Blazor/Components/Toggle.razor.rz.scp.css */
+.Toggle[b-olhuecb82u] {
+    --neutralSecondary: #605e5c;
+    --neutralPrimary: #323130;
+
+    --fallback-themePrimary: #0f6cbd;
+    --fallback-themeDark: #0f548c;
+}
+
 .Toggle[b-olhuecb82u] {
     align-items: center;
     background: inherit;
@@ -1844,14 +1852,14 @@
     }
 
     .Toggle.IsChecked[b-olhuecb82u] {
-        background-color: var(--toggleChecked);
+        background-color: var(--themePrimary, --fallback-themePrimary);
         border: 0;
         justify-content: flex-end;
     }
 
-    .Toggle.IsChecked:hover[b-olhuecb82u] {
-        background-color: var(--toggleCheckedHover);
-    }
+        .Toggle.IsChecked:hover[b-olhuecb82u] {
+            background-color: var(--themeDark, --fallback-themeDark);
+        }
 
     .Toggle.IsChecked div[b-olhuecb82u] {
         background: white;
