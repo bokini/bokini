@@ -1199,6 +1199,10 @@
     .SlidePanelContent.TopIndentation[b-x30eozdo6s] { padding-top: var(--spacing-l, --indentationFallback); }
 /* _content/BergSoft.UI.Blazor/Components/Splitter/Splitter.razor.rz.scp.css */
 .Splitter[b-k5gtfogyly] {
+    --fallback-neutralTertiaryAlt: #e0e0e0;
+}
+
+.Splitter[b-k5gtfogyly] {
     cursor: ns-resize;
     display: flex;
     align-items: center;
@@ -1206,7 +1210,7 @@
 }
 
     .Splitter:hover[b-k5gtfogyly] {
-        background: var(--headerSplitterBorderColor, silver);
+        background: var(--neutralTertiaryAlt, --fallback-neutralTertiaryAlt);
     }
 
 .Splitter:not(.vertical) svg[b-k5gtfogyly] {
@@ -1267,8 +1271,12 @@
     }
 /* _content/BergSoft.UI.Blazor/Components/TagsBar.razor.rz.scp.css */
 .TagsBar[b-v7grzz7xez] {
+    --fallback-themeLight: #b4d6fa;
+    --fallback-neutralLight: #f0f0f0;
     --tagsSpacing: 1px;
+}
 
+.TagsBar[b-v7grzz7xez] {
     display: inline-flex;
     gap: var(--tagsSpacing);
     padding: 1px;
@@ -1284,23 +1292,30 @@
     }
 
     .TagsBar .Tag[b-v7grzz7xez] {
-        background: var(--buttonHover, silver);
+        background: var(--neutralLight, --fallback-neutralLight);
         padding: 0 4px;
     }
 
-        /** TagShape */
-        .Tag.Rectangle[b-v7grzz7xez] { border-radius: 0; }
-        .Tag.RoundCorners[b-v7grzz7xez] { border-radius: 2px; }
-        .Tag.PillShape[b-v7grzz7xez] { 
-            border-radius: 50vh;
-            padding: 0 8px;
-        }
+.Tag.Rectangle[b-v7grzz7xez] {
+    border-radius: 0;
+}
 
-        .Tag:hover[b-v7grzz7xez] { }
+.Tag.RoundCorners[b-v7grzz7xez] {
+    border-radius: 2px;
+}
 
-        .TagsBar .Tag.Selected[b-v7grzz7xez] {
-            background: var(--themeLight, yellow);
-        }
+.Tag.PillShape[b-v7grzz7xez] {
+    border-radius: 50vh;
+    padding: 0 8px;
+}
+
+.Tag:hover[b-v7grzz7xez] {
+
+}
+
+.TagsBar .Tag.Selected[b-v7grzz7xez] {
+    background: var(--themeLight, --fallback-themeLight);
+}
 /* _content/BergSoft.UI.Blazor/Components/TextBox/ButtonTextBox.razor.rz.scp.css */
 .ButtonTextBoxBase[b-e35m3td202] {
     display: inline-flex;
