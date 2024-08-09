@@ -20,12 +20,14 @@ export function connect(splitter) {
                     prevPos = e.clientY; 
                 } else {
                     let minWidth = style.getPropertyValue("min-width");
-                    let width = originalSize - (originalPosition - e.clientX);
-                    console.log(e.clientX);
-                    if (width < parseInt(minWidth)) {
-                        width = parseInt(minWidth);
+                    let delta = originalPosition - e.clientX;
+                    console.log(`delta: ${delta}`);
+                    let newWidth = originalSize - (originalPosition - e.clientX);
+                    console.log(`New width: ${newWidth}`);
+                    if (newWidth < parseInt(minWidth)) {
+                        newWidth = parseInt(minWidth);
                     }
-                    sibling.style.width = width + "px";
+                    sibling.style.width = newWidth + "px";
                 }
             }
         }
@@ -36,7 +38,7 @@ export function connect(splitter) {
         sibling = e.currentTarget.previousElementSibling;
         isDragging = true;
         e.currentTarget.setPointerCapture(e.pointerId);
-        console.log(`pointerdown ${e.clientX}`)
+        console.log(`e.clientX ${e.clientX} | siblingl.offsetWidth: ${sibling.offsetWidth}`)
         prevPos = horizontal ? e.clientY : e.clientX;
 
         originalSize = horizontal ? sibling.offsetHeight : sibling.offsetWidth;

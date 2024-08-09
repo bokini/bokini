@@ -1,7 +1,7 @@
 {
   "entryAssembly": "BergSoft.UI.Blazor.Demo",
   "resources": {
-    "hash": "sha256-YrKjcZYYy0gMYqx/m6nUa50YEr58tTqfSGnYYx3CP7o=",
+    "hash": "sha256-ZCxmrfAx8eQrp/3evKeoTmcZZN+AWVKcHV/rNARyTMs=",
     "runtime": {
       "dotnet.7.0.20.jxsib5h8sf.js": "sha256-JRsWXXfIrfehLeaNljpse36iRMoeoQSIcWQURq2OThk=",
       "dotnet.timezones.blat": "sha256-gbATD5HDsHYtW8vdPYh9iSBY4O5CjvMeCSF5xXWF1xo=",
@@ -11,12 +11,12 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "BergSoft.UI.Blazor.Demo.dll": "sha256-NJG+mi9Te6GFav60uHkCqQusbcJpDQLx308pfmY8vYY=",
-      "BergSoft.UI.Blazor.dll": "sha256-Jo4qq59yHhG2wN2qB6mzHlMhbBY90guKetZVStkK7C4=",
+      "BergSoft.UI.Blazor.Demo.dll": "sha256-O7tUL+d4Q5FiUIAIjguFltrNopQLQT8N9glqcneWYhE=",
+      "BergSoft.UI.Blazor.dll": "sha256-2pUfAsIuqumf8NPZhJBF3tPjW6YfgU6pL6B1s6s6IBY=",
       "BergSoft.UI.dll": "sha256-BTeMszctwDQwgSdh/n9xKsWPjMmecqh5l0U6cY2tWb0=",
       "Microsoft.AspNetCore.Components.dll": "sha256-TSU5qY/v4shoqfqYQ5+1D6mQ5hlU/K/TsL9Y+UA4HtY=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-8BVJBwlTDS3M6+YM3yIp1zsvLmtTy7ml4S97hlTmlz0=",
-      "Microsoft.AspNetCore.Components.Web.dll": "sha256-Ke9MVJl5eh8Blkm0Vu3aAcxthoM33JucwoXALIFwH0I=",
+      "Microsoft.AspNetCore.Components.Web.dll": "sha256-ISlYvBWUBHL8osI0ERcIxKxyMF1ZQ6HZ8xN6RR6iSCI=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-2+ToeRN36ZfEtkp9zMTrXxaWTBvesGRQ8aS31mr1II0=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-X/f4fDl2cuIRXeWHhK/f2UqQbFioD+RU4a4CEh0zrrQ=",
       "Microsoft.Extensions.Configuration.dll": "sha256-DBOKSPriP2JDxVbbWrLXyD3K4/x3RBifNBWk/q1I39M=",

@@ -123,8 +123,7 @@
 .CheckBox[b-4bm9qzg942] {
     --checkboxBackgroundChecked: rgb(15, 108, 189);
     --checkboxBackgroundCheckedHover: #0e548c;
-
-    background: yellow;
+    --neutralSecondary: #605e5c;
 }
 
 .CheckBox input[type="checkbox"][b-4bm9qzg942] {
@@ -427,6 +426,17 @@
         margin: 8px;
     }
 /* _content/BergSoft.UI.Blazor/Components/NavigationView/NavigationView.razor.rz.scp.css */
+.NavigationView[b-erfsr00sg2] {
+    --palette-neutral-8: 234, 234, 234;
+    --palette-primary: 0, 120, 212;
+    --palette-neutral-100: 0, 0, 0;
+    --palette-black-alpha-20: rgba(var(--palette-neutral-100), 0.20);
+    --communication-background: rgba(var(--palette-primary), 1);
+    /** navigation */
+    --nav-vertical-active-group-background: rgba(var(--palette-neutral-100), 0.06);
+    --nav-vertical-background-color: rgba(var(--palette-neutral-8), 1);
+}
+
     .NavigationView[b-erfsr00sg2] {
         background: var(--nav-vertical-background-color);
         display: flex;
@@ -449,7 +459,7 @@
     .NavigationGroup.expanded[b-erfsr00sg2]::before {
         bottom: 0;
         background-color: rgba(0,0,0,.2);
-        background-color: var(--palette-black-alpha-20,rgba(0, 0, 0, .2));
+        background-color: var(--palette-black-alpha-20, rgba(0, 0, 0, .2));
         content: "";
         left: 0;
         position: absolute;
@@ -474,7 +484,7 @@
 
     .NavigationView a.expanded[b-erfsr00sg2]::before {
         background-color: rgba(0, 120, 212, 1);
-        background-color: var(--communication-background,rgba(0, 120, 212, 1));
+        background-color: var(--communication-background, rgba(0, 120, 212, 1));
         bottom: 0;
         content: "";
         left: 0;
@@ -631,8 +641,8 @@
 .StacksGridLayout[b-hhen1y2vqi] {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacingHorizontalS, --fallback-spacingHorizontalS);
-}
+/*    gap: var(--spacingHorizontalS, --fallback-spacingHorizontalS);
+*/}
 
 .CellsStack[b-hhen1y2vqi] {
     display: flex;
@@ -654,6 +664,10 @@
     .CellsStack.Focused[b-hhen1y2vqi] {
         background-color: var(--themeSecondarySurfaceSelected, --fallback-themeSecondarySurfaceSelected);
         outline: none;
+    }
+
+    .CellsStack td[b-hhen1y2vqi] {
+        line-height: 28px;
     }
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/HeaderDivider.razor.rz.scp.css */
 .HeaderDivider[b-yk3gzlz3l0] {
@@ -688,6 +702,7 @@
     outline: none;
     -webkit-user-select: none;
     overflow: auto;
+    table-layout: fixed;
 }
 
 .GridFooters[b-qhew7i48fs] {
@@ -1205,6 +1220,7 @@
 .Splitter[b-k5gtfogyly] {
     cursor: ns-resize;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
 }
