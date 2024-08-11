@@ -503,12 +503,14 @@
     --fallback-themeSecondarySurfaceSelected: #cfe4fa;
     --fallback-colorNeutralBackground1Pressed: #e0e0e0;
     --fallback-themePrimary: #0f6cbd;
+    --fallback-borderRadiusLarge: 6px;
 }
 
 .GridCell[b-2qzmwtczp0] {
     align-items: center;
     cursor: default;
-    padding: 0 6px;
+    padding: 0 var(--borderRadiusLarge, var(--fallback-borderRadiusLarge));
+    height: inherit;
 }
 
     .GridCell:hover:not(.IsSelected)[b-2qzmwtczp0] {
@@ -684,11 +686,8 @@
 }
 
     .HeaderDivider hr[b-yk3gzlz3l0] {
-        border: 0;
-    }
-
-    .HeaderDivider hr[b-yk3gzlz3l0] {
         background: var(--neutralTertiaryAlt, var(--fallback-neutralTertiaryAlt));
+        border: 0;
         margin: 0;
         padding: 0;
         height: 100%;
@@ -1546,13 +1545,13 @@
     align-items: center;
     background: inherit;
     border: 0;
-    border-radius: var(--borderRadiusMedium, --fallback-borderRadiusMedium);
     color: black;
     cursor: pointer;
     font: inherit;
 }
 
     .DropDownButton:not(.Inplace)[b-hmzupq7752] {
+        border-radius: var(--borderRadiusMedium, --fallback-borderRadiusMedium);
         min-width: 21px;
         min-height: 21px;
         padding: 8px;
@@ -1561,6 +1560,8 @@
     .DropDownButton.Inplace[b-hmzupq7752] {
         width: 100%;
         height: 100%;
+        padding: 0 6px;
+        height: inherit;
     }
 
     .DropDownButton footer[b-hmzupq7752] {
