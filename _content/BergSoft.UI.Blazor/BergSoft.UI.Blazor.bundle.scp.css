@@ -23,17 +23,17 @@
 }
 
     .Button:disabled[b-ce0ui9l70q] {
-        background: var(--neutralLighter, --fallback-neutralLighter);
+        background: var(--neutralLighter, var(--fallback-neutralLighter));
         color: graytext;
         cursor: default;
     }
 
     .Button:hover:not(:disabled)[b-ce0ui9l70q] {
-        background: var(--neutralLight, --fallback-neutralLight);
+        background: var(--neutralLight, var(--fallback-neutralLight));
     }
 
     .Button:active:hover:not(:disabled)[b-ce0ui9l70q] {
-        background: var(--neutralQuaternaryAlt, --fallback-neutralQuaternaryAlt);
+        background: var(--neutralQuaternaryAlt, var(--fallback-neutralQuaternaryAlt));
     }
 
     .Button.IsChecked[b-ce0ui9l70q] {
@@ -52,17 +52,17 @@
     }
 
     .Button.Primary[b-ce0ui9l70q] {
-        background-color: var(--themePrimary, --fallback-themePrimary);
+        background-color: var(--themePrimary, var(--fallback-themePrimary));
         border: 0;
         color: var(--primaryText, #fff);
     }
 
         .Button.Primary:hover[b-ce0ui9l70q] {
-            background-color: var(--themeDark, --fallback-themeDark);
+            background-color: var(--themeDark, var(--fallback-themeDark));
         }
 
         .Button.Primary:active:is(:hover)[b-ce0ui9l70q] {
-            background-color: var(--themeDarker, --fallback-themeDarker);
+            background-color: var(--themeDarker, var(--fallback-themeDarker));
         }
 /* _content/BergSoft.UI.Blazor/Components/Callout.razor.rz.scp.css */
 .CalloutBase[b-tkbxn2ysad] {
@@ -366,9 +366,9 @@
 }
 
 .Item[b-u75a893qc0] {
-    border-radius: var(--borderRadiusMedium, --fallback-borderRadiusMedium);
+    border-radius: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium));
     cursor: pointer;
-    color: var(--neutralDark, --fallback-neutralDark);
+    color: var(--neutralDark, var(--fallback-neutralDark));
     display: flex;
     align-items: center;
     height: 28px;
@@ -377,15 +377,15 @@
 }
 
     .Item:hover[b-u75a893qc0] {
-        background-color: var(--neutralQuaternaryAlt, --fallback-neutralQuaternaryAlt);
+        background-color: var(--neutralQuaternaryAlt, var(--fallback-neutralQuaternaryAlt));
     }
 
     .Item.Selected[b-u75a893qc0] {
-        background-color: var(--neutralQuaternaryAlt, --fallback-neutralQuaternaryAlt);
+        background-color: var(--neutralQuaternaryAlt, var(--fallback-neutralQuaternaryAlt));
     }
 
 .ListBox:focus .Item.Selected[b-u75a893qc0] {
-    background-color: var(--themeSecondarySurfaceSelected, --fallback-themeSecondarySurfaceSelected);
+    background-color: var(--themeSecondarySurfaceSelected, var(--fallback-themeSecondarySurfaceSelected));
     outline: none;
 }
 /* _content/BergSoft.UI.Blazor/Components/NavigationView/NavigationGroupHeader.razor.rz.scp.css */
@@ -513,17 +513,17 @@
 
     .GridCell:hover:not(.IsSelected)[b-2qzmwtczp0] {
         cursor: var(--selectionCursorHover, default);
-        background: var(--neutralLighter, --fallback-neutralLighter);
+        background: var(--neutralLighter, var(--fallback-neutralLighter));
     }
 
     .GridCell.IsEditing[b-2qzmwtczp0] {
         background: #fff;
         padding: 0;
-        outline: 1px solid var(--themePrimary, --fallback-themePrimary);
+        outline: 1px solid var(--themePrimary, var(--fallback-themePrimary));
     }
 
     .GridCell.IsSelected:not(.IsEditing)[b-2qzmwtczp0] {
-        background: var(--neutralLighter, --fallback-neutralLighter);
+        background: var(--neutralLighter, var(--fallback-neutralLighter));
     }
 
     .GridCell.IsSelected[b-2qzmwtczp0] {
@@ -531,12 +531,12 @@
     }
 
     .GridCell.IsFocused:not(.IsEditing)[b-2qzmwtczp0] {
-        background-color: var(--themeSecondarySurfaceSelected, --fallback-themeSecondarySurfaceSelected);
+        background-color: var(--themeSecondarySurfaceSelected, var(--fallback-themeSecondarySurfaceSelected));
         outline: none;
     }
 
     .GridCell:not(:first-child).GridLinesBoth[b-2qzmwtczp0] {
-        border-left: 1px solid var(--colorNeutralBackground1Pressed, --fallback-colorNeutralBackground1Pressed);
+        border-left: 1px solid var(--colorNeutralBackground1Pressed, var(--fallback-colorNeutralBackground1Pressed));
     }
 
     .GridCell.HorizontalAlignmentLeft[b-2qzmwtczp0] {
@@ -568,7 +568,7 @@
     font-weight: normal;
     height: 30px;
     user-select: none;
-    border-bottom: 1px solid var(--fallback-neutralTertiaryAlt, --neutralTertiaryAlt);
+    border-bottom: 1px solid var(--neutralTertiaryAlt, var(--fallback-neutralTertiaryAlt));
 }
 
     .GridHeader .Content[b-rr7i3d088r] {
@@ -597,11 +597,11 @@
     }
 
     .GridHeader .Content:hover[b-rr7i3d088r] {
-        background: var(--neutralLighterAlt, --fallback-neutralLighterAlt);
+        background: var(--neutralLighterAlt, var(--fallback-neutralLighterAlt));
     }
 
         .GridHeader .Content:hover:active[b-rr7i3d088r] {
-            background: var(--colorNeutralBackground1Pressed, --fallback-colorNeutralBackground1Pressed);
+            background: var(--colorNeutralBackground1Pressed, var(--fallback-colorNeutralBackground1Pressed));
         }
 
     .GridHeader svg[b-rr7i3d088r] {
@@ -688,7 +688,7 @@
     }
 
     .HeaderDivider hr[b-yk3gzlz3l0] {
-        background: var(--neutralTertiaryAlt, --fallback-neutralTertiaryAlt);
+        background: var(--neutralTertiaryAlt, var(--fallback-neutralTertiaryAlt));
         margin: 0;
         padding: 0;
         height: 100%;
@@ -1056,11 +1056,11 @@
     .ProgressBar.BorderStyleSingle[b-m5bh4xte6a],
     .ProgressBar.BorderStyleRoundCorners[b-m5bh4xte6a],
     .ProgressBar.BorderStylePill[b-m5bh4xte6a] {
-        border: 1px solid var(--neutralDark, --fallback-neutralDark);
+        border: 1px solid var(--neutralDark, var(--fallback-neutralDark));
     }
 
     .ProgressBar.BorderStyleRoundCorners[b-m5bh4xte6a] {
-        border-radius: var(--borderRadiusMedium, --fallback-borderRadiusMedium);
+        border-radius: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium));
     }
 
     .ProgressBar.BorderStylePill[b-m5bh4xte6a] {
@@ -1068,7 +1068,7 @@
     }
 
     .ProgressBar .Bar[b-m5bh4xte6a] {
-        background: var(--themePrimary, --fallback-themePrimary);
+        background: var(--themePrimary, var(--fallback-themePrimary));
         height: 100%;
     }
 
@@ -1308,7 +1308,7 @@
     }
 
     .TagsBar .Tag[b-v7grzz7xez] {
-        background: var(--neutralLight, --fallback-neutralLight);
+        background: var(--neutralLight, var(--fallback-neutralLight));
         padding: 0 4px;
     }
 
@@ -1330,7 +1330,7 @@
 }
 
 .TagsBar .Tag.Selected[b-v7grzz7xez] {
-    background: var(--themeLight, --fallback-themeLight);
+    background: var(--themeLight, var(--fallback-themeLight));
 }
 /* _content/BergSoft.UI.Blazor/Components/TextBox/ButtonTextBox.razor.rz.scp.css */
 .ButtonTextBoxBase[b-e35m3td202] {
@@ -1543,8 +1543,6 @@
 .DropDownButton[b-hmzupq7752] {
     display: inline-flex;
     position: relative;
-    min-height: 21px;
-    min-width: 21px;
     align-items: center;
     background: inherit;
     border: 0;
@@ -1552,8 +1550,18 @@
     color: black;
     cursor: pointer;
     font: inherit;
-    padding: 8px;
 }
+
+    .DropDownButton:not(.Inplace)[b-hmzupq7752] {
+        min-width: 21px;
+        min-height: 21px;
+        padding: 8px;
+    }
+
+    .DropDownButton.Inplace[b-hmzupq7752] {
+        width: 100%;
+        height: 100%;
+    }
 
     .DropDownButton footer[b-hmzupq7752] {
         display: flex;
@@ -1562,11 +1570,11 @@
     }
 
     .DropDownButton:hover[b-hmzupq7752] {
-        background: var(--neutralLight, --fallback-neutralLight);
+        background: var(--neutralLight, var(--fallback-neutralLight));
     }
 
     .DropDownButton.isOpen[b-hmzupq7752] {
-        background: var(--themeLight, --fallback-themeLight);
+        background: var(--themeLight, var(--fallback-themeLight));
     }
 
 .DropDownList[b-hmzupq7752] {
@@ -1590,15 +1598,15 @@
 }
 
     .Item:active[b-hmzupq7752] {
-        background: var(--themeSecondarySurfaceSelected, --fallback-themeSecondarySurfaceSelected);
+        background: var(--themeSecondarySurfaceSelected, var(--fallback-themeSecondarySurfaceSelected));
     }
 
     .Item:hover[b-hmzupq7752] {
-        background: var(--neutralLight, --fallback-neutralLight);
+        background: var(--neutralLight, var(--fallback-neutralLight));
     }
 
     .Item.Selected:not(:hover)[b-hmzupq7752] {
-        background: var(--neutralLight, --fallback-neutralLight);
+        background: var(--neutralLight, var(--fallback-neutralLight));
     }
 /* _content/BergSoft.UI.Blazor/Components/TextBox/DropPanel.razor.rz.scp.css */
 .DropPanel[b-4ia522vjn1] {
@@ -1920,7 +1928,7 @@
     background: inherit;
     position: relative;
     border: 0 solid transparent;
-    border-radius: var(--borderRadiusMedium, --fallback-borderRadiusMedium);
+    border-radius: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium));
     cursor: pointer;
     color: black;
     display: inline-flex;
@@ -1937,11 +1945,11 @@
     }
 
     .ToolButton:hover[b-7d52exlwjm] {
-        background: var(--neutralLight, --fallback-neutralLight);
+        background: var(--neutralLight, var(--fallback-neutralLight));
     }
 
         .ToolButton:hover:active[b-7d52exlwjm] {
-            background: var(--colorNeutralBackground1Pressed, --fallback-colorNeutralBackground1Pressed);
+            background: var(--colorNeutralBackground1Pressed, var(--fallback-colorNeutralBackground1Pressed));
         }
 
     .ToolButton.checked[b-7d52exlwjm] {
@@ -1953,7 +1961,7 @@
     }
 
     .ToolButton.Light:hover:not(:active)[b-7d52exlwjm] {
-        background: var(--neutralLight, --fallback-neutralLight);
+        background: var(--neutralLight, var(--fallback-neutralLight));
     }
 
     .ToolButton.Danger:hover:not(:active)[b-7d52exlwjm] {
