@@ -1561,7 +1561,7 @@
         width: 100%;
         height: 100%;
         padding: 0 6px;
-        height: inherit;
+        justify-content: space-between;
     }
 
     .DropDownButton footer[b-hmzupq7752] {
