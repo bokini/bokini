@@ -349,23 +349,23 @@
 .IconPanel h2[b-lz6nrlcehs] {
     margin: 0 0 4px 0;
 }
-/* _content/BergSoft.UI.Blazor/Components/ListBox.razor.rz.scp.css */
-.ListBox[b-u75a893qc0] {
+/* _content/BergSoft.UI.Blazor/Components/ListBox/ListBox.razor.rz.scp.css */
+.ListBox[b-uub2d46a4b] {
     --fallback-themeSecondarySurfaceSelected: #cfe4fa;
     --fallback-neutralDark: #242424;
     --fallback-neutralQuaternaryAlt: #ebebeb;
     --fallback-borderRadiusMedium: 4px;
 }
 
-.ListBox[b-u75a893qc0] {
+.ListBox[b-uub2d46a4b] {
     overflow-y: auto;
 }
 
-.ListBox:focus[b-u75a893qc0] {
+.ListBox:focus[b-uub2d46a4b] {
     outline: none;
 }
 
-.Item[b-u75a893qc0] {
+.Item[b-uub2d46a4b] {
     border-radius: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium));
     cursor: pointer;
     color: var(--neutralDark, var(--fallback-neutralDark));
@@ -376,15 +376,15 @@
     user-select: none;
 }
 
-    .Item:hover[b-u75a893qc0] {
+    .Item:hover[b-uub2d46a4b] {
         background-color: var(--neutralQuaternaryAlt, var(--fallback-neutralQuaternaryAlt));
     }
 
-    .Item.Selected[b-u75a893qc0] {
+    .Item.Selected[b-uub2d46a4b] {
         background-color: var(--neutralQuaternaryAlt, var(--fallback-neutralQuaternaryAlt));
     }
 
-.ListBox:focus .Item.Selected[b-u75a893qc0] {
+.ListBox:focus .Item.Selected[b-uub2d46a4b] {
     background-color: var(--themeSecondarySurfaceSelected, var(--fallback-themeSecondarySurfaceSelected));
     outline: none;
 }
@@ -425,6 +425,16 @@
         width: 24px;
         margin: 8px;
     }
+/* _content/BergSoft.UI.Blazor/Components/NavigationView/NavigationItem.razor.rz.scp.css */
+.NavigationItem[b-qliwi4wrp4] {
+    display: flex;
+    height: 40px;
+    align-items: center;
+}
+
+    .NavigationItem:hover[b-qliwi4wrp4] {
+        background: rgba(0, 0, 0, 0.06);
+    }
 /* _content/BergSoft.UI.Blazor/Components/NavigationView/NavigationView.razor.rz.scp.css */
 .NavigationView[b-erfsr00sg2] {
     --palette-neutral-8: 234, 234, 234;
@@ -432,6 +442,7 @@
     --palette-neutral-100: 0, 0, 0;
     --palette-black-alpha-20: rgba(var(--palette-neutral-100), 0.20);
     --communication-background: rgba(var(--palette-primary), 1);
+
     /** navigation */
     --nav-vertical-active-group-background: rgba(var(--palette-neutral-100), 0.06);
     --nav-vertical-background-color: rgba(var(--palette-neutral-8), 1);
@@ -493,9 +504,22 @@
         width: 3px;
     }
 
-    .NavigationView .Toggle[b-erfsr00sg2] {
-        border: 0;
-        cursor: pointer;
+.NavigationView .Footer[b-erfsr00sg2] {
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.NavigationView .Toggle[b-erfsr00sg2] {
+    background: inherit;
+    border: 0;
+    cursor: pointer;
+    width: 47px;
+}
+
+    .NavigationView .Toggle.IsCompact svg[b-erfsr00sg2] {
+        transform: rotate(180deg);
     }
 /* _content/BergSoft.UI.Blazor/Components/NextGrid/GridCell.razor.rz.scp.css */
 .GridCell[b-2qzmwtczp0] {
@@ -1162,6 +1186,16 @@
     display: inline-block;
     padding-left: 26px;
 }
+/* _content/BergSoft.UI.Blazor/Components/Rating/Rating.razor.rz.scp.css */
+.BaseRating[b-675hzpbygs] {
+    display: inline-flex;
+}
+
+.BaseRating > button[b-675hzpbygs] {
+    padding: 0;
+    background: inherit;
+    border: 0;
+}
 /* _content/BergSoft.UI.Blazor/Components/SlidePanel/SlidePanel.razor.rz.scp.css */
 .SlidePanel[b-x30eozdo6s] {
     --fallback-neutralLight: #f0f0f0;
@@ -1550,6 +1584,10 @@
     font: inherit;
 }
 
+    .DropDownButton:focus[b-hmzupq7752] {
+        outline: none;
+    }
+
     .DropDownButton:not(.Inplace)[b-hmzupq7752] {
         border-radius: var(--borderRadiusMedium, --fallback-borderRadiusMedium);
         min-width: 21px;
@@ -1744,8 +1782,13 @@
         border: 0;
         font: inherit;
         outline: none;
-        width: 100%;
+        width: fit-content;
     }
+
+.Suffix[b-6ln0ucxk48] {
+    display: flex;
+    align-items: center;
+}
 
 .SpinButtons[b-6ln0ucxk48] { display: flex; }
 
@@ -1850,10 +1893,24 @@
     outline: none;
 }
 
-/* _content/BergSoft.UI.Blazor/Components/Toast.razor.rz.scp.css */
-.BaseToast[b-ej8q3plal3] {
-    padding: 5px;
+/* _content/BergSoft.UI.Blazor/Components/Toast/Toast.razor.rz.scp.css */
+.BaseToast[b-mdg9yx0bi0] {
+    --fallback-neutralLight: #f0f0f0;
+    --fallback-borderRadiusMedium: 4px;
 }
+
+.BaseToast[b-mdg9yx0bi0] {
+    background: var(--neutralLight, var(--fallback-neutralLight));
+    border-radius: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium));
+    padding: 8px;
+    position: absolute;
+    right: 40px;
+    width: 200px;
+}
+
+    .BaseToast h2[b-mdg9yx0bi0] {
+        margin: 0;
+    }
 /* _content/BergSoft.UI.Blazor/Components/Toggle.razor.rz.scp.css */
 .Toggle[b-olhuecb82u] {
     --neutralSecondary: #605e5c;
