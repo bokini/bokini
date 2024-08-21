@@ -1191,11 +1191,16 @@
     display: inline-flex;
 }
 
-.BaseRating > button[b-675hzpbygs] {
+.BaseRating button[b-675hzpbygs] {
     padding: 0;
     background: inherit;
     border: 0;
 }
+
+    .BaseRating button:hover[b-675hzpbygs] {
+        cursor: pointer;
+        transform: scale(110%);
+    }
 /* _content/BergSoft.UI.Blazor/Components/SlidePanel/SlidePanel.razor.rz.scp.css */
 .SlidePanel[b-x30eozdo6s] {
     --fallback-neutralLight: #f0f0f0;
@@ -1797,8 +1802,8 @@
         margin: 0 auto;
     }
 
-    .SpinButtons.horizontal[b-6ln0ucxk48] { flex-direction: row; }
-    .SpinButtons.vertical[b-6ln0ucxk48] { flex-direction: column-reverse; }
+    .SpinButtons.SideBySide[b-6ln0ucxk48] { flex-direction: row; }
+    .SpinButtons.Vertical[b-6ln0ucxk48] { flex-direction: column-reverse; }
 
 .SpinButtons > button[b-6ln0ucxk48] {
     background: inherit;
@@ -1808,20 +1813,20 @@
     width: 28px;
 }
 
-    .SpinButtons.Compact > button[b-6ln0ucxk48] {
+    .SpinButtons.Condensed > button[b-6ln0ucxk48] {
         width: 16px;
     }
 
     .SpinButtons > button:hover[b-6ln0ucxk48] {
-        background: var(--neutralLight, --fallback-neutralLight);
+        background: var(--neutralLight, var(--fallback-neutralLight));
     }
 
     .SpinButtons > button:active[b-6ln0ucxk48] {
-        background: var(--neutralLighter, --fallback-neutralLighter);
+        background: var(--neutralLighter, var(--fallback-neutralLighter));
     }
 
     .SpinButtons > button:hover:active[b-6ln0ucxk48] {
-        background: var(--colorNeutralBackground1Pressed, --fallback-colorNeutralBackground1Pressed);
+        background: var(--colorNeutralBackground1Pressed, var(--fallback-colorNeutralBackground1Pressed));
     }
 /* _content/BergSoft.UI.Blazor/Components/TextBox/TextBox.razor.rz.scp.css */
 .TextBox[b-kriey90e0o] {
