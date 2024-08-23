@@ -1250,6 +1250,109 @@
 
     .SlidePanelContent.LeftIndentation[b-x30eozdo6s] { padding-left: var(--spacing-l, --indentationFallback); }
     .SlidePanelContent.TopIndentation[b-x30eozdo6s] { padding-top: var(--spacing-l, --indentationFallback); }
+/* _content/BergSoft.UI.Blazor/Components/SpinTextBox/SpinButton.razor.rz.scp.css */
+.SpinButton[b-dywb4fd183] {
+    --fallback-neutralLight: #f0f0f0;
+    --fallback-neutralLighter: #f5f5f5;
+    --fallback-colorNeutralBackground1Pressed: #e0e0e0;
+}
+
+.SpinButton[b-dywb4fd183] {
+    background: inherit;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    flex: 1;
+    width: 28px;
+    display: flex;
+    align-items: center;
+}
+
+    .SpinButton.Condensed[b-dywb4fd183] {
+        width: 16px;
+    }
+
+    .SpinButton:hover[b-dywb4fd183] {
+        background: var(--neutralLight, var(--fallback-neutralLight));
+    }
+
+    .SpinButton:active[b-dywb4fd183] {
+        background: var(--neutralLighter, var(--fallback-neutralLighter));
+    }
+
+    .SpinButton:hover:active[b-dywb4fd183] {
+        background: var(--colorNeutralBackground1Pressed, var(--fallback-colorNeutralBackground1Pressed));
+    }
+/* _content/BergSoft.UI.Blazor/Components/SpinTextBox/SpinTextBox.razor.rz.scp.css */
+.SpinTextBox[b-rw065xi5qj] {
+    --fallback-neutralLight: #f0f0f0;
+    --fallback-neutralLighter: #f5f5f5;
+    --fallback-colorNeutralBackground1Pressed: #e0e0e0;
+}
+
+.SpinTextBox[b-rw065xi5qj] {
+    background: white;
+    display: inline-flex;
+    align-items: stretch;
+    padding: 0 8px;
+}
+
+    .SpinTextBox:not(.Inplace)[b-rw065xi5qj] {
+        min-height: 32px;
+    }
+
+    .SpinTextBox.borderStyleSingle[b-rw065xi5qj] {
+        border: 1px solid #D1D1D1;
+        padding: 0 0 0 8px;
+    }
+
+    .SpinTextBox.borderStyleStyled[b-rw065xi5qj] {
+        border-radius: 4px;
+        background-clip: border-box;
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-bottom: 1px solid rgb(97, 97, 97);
+        border-left: 1px solid rgb(209, 209, 209);
+        border-right: 1px solid rgb(209, 209, 209);
+        border-top: 1px solid rgb(209, 209, 209);
+    }
+
+    .SpinTextBox.Inplace[b-rw065xi5qj] {
+        border: 0;
+        padding: 0;
+        font: inherit;
+        width: 100%;
+        height: 100%;
+    }
+
+        .SpinTextBox.Inplace:not(.OpositeSides)[b-rw065xi5qj] {
+            padding: 0 0 0 6px;
+        }
+
+    .SpinTextBox > input[b-rw065xi5qj] {
+        border: 0;
+        font: inherit;
+        outline: none;
+        width: fit-content;
+    }
+
+.Suffix[b-rw065xi5qj] {
+    display: flex;
+    align-items: center;
+}
+
+.SpinTextBox svg[b-rw065xi5qj] {
+    display: block;
+    margin: 0 auto;
+}
+
+.SpinButtons[b-rw065xi5qj] { display: flex; }
+
+    .SpinButtons.SideBySide[b-rw065xi5qj] { flex-direction: row; }
+    .SpinButtons.Vertical[b-rw065xi5qj] { flex-direction: column-reverse; }
 /* _content/BergSoft.UI.Blazor/Components/Splitter/Splitter.razor.rz.scp.css */
 .Splitter[b-k5gtfogyly] {
     --fallback-neutralTertiaryAlt: #e0e0e0;
@@ -1732,101 +1835,11 @@
 }
 
     .SearchResult:hover[b-cbwwqsiooo] {
-        background-color: var(--neutralLight, --fallback-neutralLight);
+        background-color: var(--neutralLight, var(--fallback-neutralLight));
     }
 
     .SearchResult.Selected[b-cbwwqsiooo] {
-        background: var(--themeLight, --fallback-themeLight);
-    }
-/* _content/BergSoft.UI.Blazor/Components/TextBox/SpinTextBox.razor.rz.scp.css */
-.SpinTextBox[b-6ln0ucxk48] {
-    --fallback-neutralLight: #f0f0f0;
-    --fallback-neutralLighter: #f5f5f5;
-    --fallback-colorNeutralBackground1Pressed: #e0e0e0;
-}
-
-.SpinTextBox[b-6ln0ucxk48] {
-    background: white;
-    display: inline-flex;
-    align-items: stretch;
-    padding: 0 8px;
-}
-
-    .SpinTextBox:not(.Inplace)[b-6ln0ucxk48] {
-        min-height: 32px;
-    }
-
-    .SpinTextBox.borderStyleSingle[b-6ln0ucxk48] {
-        border: 1px solid #D1D1D1;
-        padding: 0 0 0 8px;
-    }
-
-    .SpinTextBox.borderStyleStyled[b-6ln0ucxk48] {
-        border-radius: 4px;
-        background-clip: border-box;
-        border-image-outset: 0;
-        border-image-repeat: stretch;
-        border-image-slice: 100%;
-        border-image-source: none;
-        border-image-width: 1;
-        border-bottom: 1px solid rgb(97, 97, 97);
-        border-left: 1px solid rgb(209, 209, 209);
-        border-right: 1px solid rgb(209, 209, 209);
-        border-top: 1px solid rgb(209, 209, 209);
-    }
-
-    .SpinTextBox.Inplace[b-6ln0ucxk48] {
-        border: 0;
-        padding: 0 0 0 6px;
-        font: inherit;
-        width: 100%;
-        height: 100%;
-    }
-
-    .SpinTextBox > input[b-6ln0ucxk48] {
-        border: 0;
-        font: inherit;
-        outline: none;
-        width: fit-content;
-    }
-
-.Suffix[b-6ln0ucxk48] {
-    display: flex;
-    align-items: center;
-}
-
-.SpinButtons[b-6ln0ucxk48] { display: flex; }
-
-    .SpinButtons svg[b-6ln0ucxk48] {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .SpinButtons.SideBySide[b-6ln0ucxk48] { flex-direction: row; }
-    .SpinButtons.Vertical[b-6ln0ucxk48] { flex-direction: column-reverse; }
-
-.SpinButtons > button[b-6ln0ucxk48] {
-    background: inherit;
-    border: 0;
-    cursor: pointer;
-    flex: 1;
-    width: 28px;
-}
-
-    .SpinButtons.Condensed > button[b-6ln0ucxk48] {
-        width: 16px;
-    }
-
-    .SpinButtons > button:hover[b-6ln0ucxk48] {
-        background: var(--neutralLight, var(--fallback-neutralLight));
-    }
-
-    .SpinButtons > button:active[b-6ln0ucxk48] {
-        background: var(--neutralLighter, var(--fallback-neutralLighter));
-    }
-
-    .SpinButtons > button:hover:active[b-6ln0ucxk48] {
-        background: var(--colorNeutralBackground1Pressed, var(--fallback-colorNeutralBackground1Pressed));
+        background: var(--themeLight, var(--fallback-themeLight));
     }
 /* _content/BergSoft.UI.Blazor/Components/TextBox/TextBox.razor.rz.scp.css */
 .TextBox[b-kriey90e0o] {
