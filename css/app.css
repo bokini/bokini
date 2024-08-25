@@ -202,3 +202,17 @@ code {
     justify-content: center;
     font-size: larger;
 }
+
+.order-button {
+    align-items: center;
+    background: #b32121;
+    border: 0;
+    border-radius: 16px;
+    cursor: pointer;
+    color: #fff;
+    display: inline-flex;
+    font-weight: 600;
+    font-size: 14px;
+    height: 32px;
+    padding: 0 12px;
+}

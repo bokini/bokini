@@ -213,7 +213,7 @@
     }*/
 /* _content/BergSoft.UI.Blazor/Components/Dialog/Dialog.razor.rz.scp.css */
 .DialogBase[b-s0uk22s0hf] {
-
+    --fallback-white: #fff;
 }
 
 .DialogBase.Compact[b-s0uk22s0hf] {
@@ -232,7 +232,7 @@
     }
 
 .Dialog[b-s0uk22s0hf] {
-    background: var(--neutralLighter);
+    background: var(--white, var(--fallback-white));
     border-radius: 4px;
     display: flex;
     flex-direction: column;
