@@ -317,6 +317,14 @@
 .closed[b-s0uk22s0hf] {
     display: none;
 }
+/* _content/BergSoft.UI.Blazor/Components/GridControl/Columns/ImageColumn.razor.rz.scp.css */
+.BaseImage[b-61de2gd8yj] {
+    height: 100%;
+}
+
+.RoundCorners[b-61de2gd8yj] {
+    border-radius: 4px;
+}
 /* _content/BergSoft.UI.Blazor/Components/GridControl/GridCellsLayout.razor.rz.scp.css */
 /* _content/BergSoft.UI.Blazor/Components/GridControl/InplaceInput.razor.rz.scp.css */
 .InplaceInput[b-qovchzg0la] {
@@ -348,6 +356,14 @@
 
 .IconPanel h2[b-lz6nrlcehs] {
     margin: 0 0 4px 0;
+}
+/* _content/BergSoft.UI.Blazor/Components/Image.razor.rz.scp.css */
+.BaseImage[b-wd1l55z66n] {
+    height: 100%;
+}
+
+.RoundCorners[b-wd1l55z66n] {
+    border-radius: 4px;
 }
 /* _content/BergSoft.UI.Blazor/Components/ListBox/ListBox.razor.rz.scp.css */
 .ListBox[b-uub2d46a4b] {

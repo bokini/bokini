@@ -3,6 +3,46 @@
 
 /*#region Blazor Default */
 
+:root {
+    --cards-cols: 1fr 1fr 1fr 1fr;
+}
+
+#topbar {
+    display: none;
+    padding: 0 8px;
+    background: var(--neutralLighter);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    #topbar svg rect {
+        fill: #212121;
+    }
+
+#subscribe-bar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #c7e0f4;
+    padding-bottom: 10px
+}
+
+@media (max-width: 600px) {
+    :root {
+        --cards-cols: 1fr 1fr;
+    }
+
+    #navbar {
+        display: none;
+    }
+    #topbar {
+        display: flex;
+    }
+    #subscribe-bar {
+        display: none;
+    }
+}
+
 h1:focus {
     outline: none;
 }
@@ -39,11 +79,14 @@ h1:focus {
 /*#endregion */
 
 #app main {
+}
+
+#app > main > section {
     display: flex;
 }
 
-#app > main > aside {
-    background: #f5f5f5;
+#app > main > section > aside {
+    background: var(--neutralLighter);
     padding: 20px;
     width: 240px;
 }
@@ -167,7 +210,7 @@ code {
 .cards {
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: var(--cards-cols);
     margin-bottom: 20px;
 }
 
@@ -215,4 +258,8 @@ code {
     font-size: 14px;
     height: 32px;
     padding: 0 12px;
+}
+
+.order-button svg {
+    fill: #fff;
 }

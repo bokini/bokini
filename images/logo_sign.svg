@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="logo_sign" x="0.353" y="0" width="29" height="30" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0.353" y="0" width="29" height="30"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g>
+            <g>
+                <path d="M28.223,15.824c-1.556,-2.696 -5.007,-3.621 -7.703,-2.064l-9.84,5.681c-2.695,1.556 -3.62,5.008 -2.064,7.703l0.021,0.036c1.556,2.696 5.008,3.621 7.703,2.064l9.84,-5.681c2.696,-1.556 3.621,-5.008 2.064,-7.703l-0.021,-0.036Z" style="fill:#008af4;"/>
+                <path d="M20.716,2.82c-1.557,-2.696 -5.008,-3.621 -7.704,-2.064l-9.84,5.681c-2.695,1.556 -3.62,5.008 -2.064,7.703l0.021,0.036c1.556,2.696 5.008,3.621 7.703,2.064l9.841,-5.681c2.695,-1.556 3.62,-5.008 2.064,-7.703l-0.021,-0.036Z" style="fill:#ff4c1a;"/>
+            </g>
+        </g>
+    </g>
+</svg>
