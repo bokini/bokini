@@ -5,6 +5,9 @@
 
 :root {
     --cards-cols: 1fr 1fr 1fr 1fr;
+    --splitterDisplay: flex;
+
+    --cardsFontSize: 36px;
 }
 
 #topbar {
@@ -30,6 +33,8 @@
 @media (max-width: 600px) {
     :root {
         --cards-cols: 1fr 1fr;
+        --splitterDisplay: none;
+        --cardsFontSize: 28px;
     }
 
     #navbar {
@@ -228,7 +233,7 @@ code {
     }
 
     .cards h3 {
-        font-size: 36px;
+        font-size: var(--cardsFontSize);
         line-height: 1;
         font-weight: 400;
         color: #333;
