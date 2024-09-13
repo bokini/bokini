@@ -1712,11 +1712,18 @@
         outline: none;
     }
 
+    .DropDownButton.Condensed[b-hmzupq7752] {
+        padding: 2px 4px;
+    }
+
+    .DropDownButton:not(.Condensed)[b-hmzupq7752] {
+        padding: 8px;
+    }
+
     .DropDownButton:not(.Inplace)[b-hmzupq7752] {
         border-radius: var(--borderRadiusMedium, --fallback-borderRadiusMedium);
         min-width: 21px;
         min-height: 21px;
-        padding: 8px;
     }
 
     .DropDownButton.Inplace[b-hmzupq7752] {
@@ -2129,3 +2136,131 @@
     display: flex;
     align-items: center;
 }
+/* _content/BergSoft.UI.Blazor/Components/Tooltip/Tooltip.razor.rz.scp.css */
+.TooltipContainer[b-xf2pm28b0k] {
+    --fallback-neutralQuaternaryAlt: #ebebeb;
+    --fallback-borderRadiusSmall: 2px;
+    --fallback-borderRadiusMedium: 4px;
+    --beakSize: 12px;
+    position: relative;
+    display: inline-block;
+}
+
+    .TooltipContainer .ChildContent[b-xf2pm28b0k] {
+        cursor: pointer;
+    }
+
+.TooltipBase[b-xf2pm28b0k] {
+    visibility: hidden;
+    position: absolute;
+    z-index: 10002;
+    left: -50%;
+    margin-left: 0;
+    opacity: 0;
+    margin-top: 8px;
+}
+
+    .BeakBase[b-xf2pm28b0k] {
+        width: var(--beakSize, 12px);
+        height: var(--beakSize, 12px);
+        position: absolute;
+        z-index: 15000;
+        box-shadow: inherit;
+        transform: rotate(45deg);
+        left: 50%;
+        top: 0;
+    }
+
+    .Beak[b-xf2pm28b0k] {
+        background: inherit;
+        border-radius: var(--borderRadiusSmall, var(--fallback-borderRadiusSmall));
+    }
+
+    .Tooltip[b-xf2pm28b0k] {
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+        padding: 8px;
+        border-radius: 4px;
+        z-index: 20000;
+    }
+
+    .Tooltip header[b-xf2pm28b0k] {
+        font-weight: 600;
+    }
+
+    .Separator[b-xf2pm28b0k] {
+        border-bottom: 1px solid var(--neutralQuaternaryAlt, var(--fallback-neutralQuaternaryAlt));
+        margin: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium)) 0;
+    }
+
+.TooltipContainer:hover .TooltipBase[b-xf2pm28b0k] {
+    visibility: visible;
+    opacity: 1;
+}
+/* _content/BergSoft.UI.Blazor/Components/TreeView/TreeList.razor.rz.scp.css */
+.TreeList[b-p6dgfo23d4] {
+    --fallback-neutralLight: #f0f0f0;
+    --fallback-colorNeutralBackground1Pressed: #e0e0e0;
+    --fallback-borderRadiusMedium: 4px;
+    --fallback-themeSecondarySurfaceSelected: #cfe4fa;
+}
+
+.TreeList[b-p6dgfo23d4] {
+    padding: 0;
+    list-style-type: none;
+}
+
+.Item[b-p6dgfo23d4] {
+    padding: 0;
+    list-style-type: none;
+}
+
+.Toggle:first-child[b-p6dgfo23d4] {
+    transform: rotate(0deg);
+    transition-duration: 0.2s;
+    transition-property: transform;
+}
+
+.Toggle.Expanded:first-child[b-p6dgfo23d4] {
+    transform: rotate(90deg);
+}
+
+.ItemText[b-p6dgfo23d4] {
+    border-radius: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium));
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 4px;
+}
+
+    .ItemText:hover[b-p6dgfo23d4] {
+        background: var(--neutralLight, var(--fallback-neutralLight));
+    }
+
+    .ItemText.Selected[b-p6dgfo23d4] {
+        background: var(--neutralLight, var(--fallback-neutralLight));
+    }
+
+    .ItemText.Selected.Focused[b-p6dgfo23d4] {
+        background: var(--themeSecondarySurfaceSelected, var(--fallback-themeSecondarySurfaceSelected));
+    }
+
+.Content[b-p6dgfo23d4] {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    height: 28px;
+    cursor: default;
+}
+
+.Content button[b-p6dgfo23d4] {
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+}
+
+/*.Content button:hover {
+    border-radius: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium));
+    background: var(--neutralLight, var(--fallback-neutralLight));
+}*/

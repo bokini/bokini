@@ -268,3 +268,44 @@ code {
 .order-button svg {
     fill: #fff;
 }
+
+.dark-tooltip {
+    background-color: #1A4870;
+    padding: 8px;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+}
+
+.dark-tooltip header {
+    font-weight: 600;
+}
+
+.dark-tooltip footer {
+    font-size: smaller;
+    text-align: right;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.dark-beak {
+    background: #1A4870;
+    border-radius: 2px;
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.new {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    font-size: smaller;
+    text-transform: uppercase;
+    background-color: brown;    
+    margin-left: auto;
+    border-radius: var(--borderRadiusSmall);
+}

@@ -2,6 +2,9 @@ export function setupHeaderDivider(divider) {
 
     let curCol, pageX, curColWidth;
 
+    if (divider == null)
+        return;
+
     divider.addEventListener("pointerdown", (e) => {
         e.currentTarget.setPointerCapture(e.pointerId);
 
