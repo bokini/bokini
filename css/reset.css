@@ -1,32 +1,38 @@
-* {
-    font-family: 'Segoe UI', Verdana, Ariel, Geneva, sans-serif;
-    box-sizing: border-box;
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap');
+
+*,
+*:after,
+*:before {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html {   
-    overscroll-behavior: none;
+* {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-}
-
-body {
+a, p, label, div, span, ul, li, input, text-area, label {
     font-size: 12px;
 }
 
-h1, h2, h3 {
-    font-weight: 400;
+p {
+    margin: 2em 0 1em 0;
 }
 
-h1, h2, h3 { margin: 1em 0; }
+code {
+    font-weight: 800;
+    font-family: monospace;
+}
 
-p {
-    line-height: 2.0em;
+table {
+    border-collapse: collapse;
+}
+
+h1 {
+    font-size: 1.75em;
     margin-bottom: 1em;
 }

@@ -3,19 +3,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>BergSoft Blazor Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0, user-scalable=no" />
+    <title>BergSoft.Blazor.Demo</title>
     <base href="https://demo.bergsoft.net/" />
-    <link href="css/app.css" rel="stylesheet" />
-    <meta property="og:image" content="images/preview.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link href="BergSoft.UI.Blazor.Demo.styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link href="BergSoft.Blazor.Demo.styles.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="app">
-        <div style="display: flex; height: 100%">
-            Loading...
-        </div>
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
     </div>
 
     <div id="blazor-error-ui">

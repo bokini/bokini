@@ -1,0 +1,17 @@
+﻿:root {
+    --surface: #eaecee;
+    --active: #0b0d0e;
+    --content: #000;
+    --activeText: #fff;
+    --focusBorder: #0095ff;
+    --fontSize: 12px;
+    --fontSizeS: 11px;
+    --fontSizeXS: 10px;
+    --borderRadius: 4px;
+    --borderRadiusLarge: 8px;
+    --borderRadiusXL: 12px;
+    --spacing: 4px;
+    --spacingLarge: 8px;
+    --selection: #d9efff;
+    --selectionText: #000;
+}

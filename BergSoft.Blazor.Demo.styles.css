@@ -1,0 +1,176 @@
+@import '_content/BergSoft.Blazor.Grids/BergSoft.Blazor.Grids.bundle.scp.css';
+@import '_content/BergSoft.Blazor.Tabs/BergSoft.Blazor.Tabs.bundle.scp.css';
+@import '_content/BergSoft.Blazor/BergSoft.Blazor.bundle.scp.css';
+
+/* /Components/CodeBlock.razor.rz.scp.css */
+.CodeBlock[b-mo323j7pmt] {
+    margin-bottom: 20px;
+}
+
+    .CodeBlock header[b-mo323j7pmt] {
+        align-items: center;
+        display: flex;
+        gap: 16px;
+        justify-content: var(--codeblock-justify-content);
+    }
+
+    .CodeBlock > section[b-mo323j7pmt] {
+        border-top: 1px solid #ccc;
+        top: -1px;
+    }
+
+    .CodeBlock .ChildContent.Padding[b-mo323j7pmt] {
+        padding: var(--codeblock-padding);
+    }
+
+    .CodeBlock button[b-mo323j7pmt] {
+        background: none;
+        border: 0;
+        font-size: 11px;
+        outline: 0;
+        padding: var(--codeblock-tab-padding);
+    }
+
+    .CodeBlock button:not(.active)[b-mo323j7pmt] {
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+    }
+
+    .CodeBlock button.active[b-mo323j7pmt] {
+        cursor: default;
+        border-bottom: 2px solid var(--selection);
+    }
+
+    .CodeBlock .FileType[b-mo323j7pmt] {
+        background: #fafafa;
+        display: block;
+        font-size: 9px;
+        color: #999;
+        padding: 10px 0 0 10px;
+        text-transform: uppercase;
+    }
+
+    .CodeBlock pre[b-mo323j7pmt] {
+        background: #fafafa;
+        font-family: monospace;
+        font-size: 12px;
+        padding: 10px;
+
+        word-break: break-word;
+        white-space: pre;
+        overflow-wrap: break-word;
+        -ms-word-break: break-word;
+        word-break: break-word;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+/* /Pages/BarsPage.razor.rz.scp.css */
+.BrushPresets[b-ywv87p1y1k] {
+    margin-bottom: 20px;
+}
+
+    .BrushPresets td[b-ywv87p1y1k] {
+        padding: 8px;
+    }
+
+    .Preset[b-ywv87p1y1k] {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+    }
+
+        .Selection[b-ywv87p1y1k] {
+            background: var(--focusBorder);
+        }
+
+        .Yolk[b-ywv87p1y1k] {
+            background: #fcc902;
+        }
+
+        .NeonHorizon[b-ywv87p1y1k] {
+            background: linear-gradient(to right, #f7c91e, #fb7f27, #f62df7, #00ffe7);
+        }
+
+        .Fire[b-ywv87p1y1k] {
+            background: linear-gradient(to right, #ff6d00, #ffe200);
+        }
+
+        .Marine[b-ywv87p1y1k] {
+            background: linear-gradient(to right, #00b48a, #49daff);
+        }
+
+        .Acid[b-ywv87p1y1k] {
+            background: linear-gradient(to right, #00d031, #e0ff42)
+        }
+
+    .title:not(:first-child)[b-ywv87p1y1k] {
+        margin: .5em 0 .5em 0;
+    }
+
+    .title:first-child[b-ywv87p1y1k] {
+        margin: 1em 0 .5em 0;
+    }
+
+    .description[b-ywv87p1y1k] {
+        margin: 0 0 1em 0;
+        font-size: 11px;
+    }
+
+    .over-title[b-ywv87p1y1k] {
+        font-size: 10px;
+        color: gray;
+        margin-top: 1em;
+    }
+
+.alert[b-ywv87p1y1k] {
+    background: #c7253e;
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    padding: 4px;
+    border-radius: 4px;
+    margin-top: 1em;
+}
+/* /Pages/DatePickerPage.razor.rz.scp.css */
+/* /Pages/Home.razor.rz.scp.css */
+#headings[b-n9hliwjast] {
+    padding: 40px var(--horz-padding);
+}
+
+    #headings h1[b-n9hliwjast] {
+        font-size: 48px;
+        font-weight: 800;
+    }
+
+#gallery[b-n9hliwjast] {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px var(--horz-padding);
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#gallery article[b-n9hliwjast] {
+    margin-bottom: 40px;
+}
+
+    #gallery > article > header[b-n9hliwjast] {
+        background: #fff;
+        border-radius: 16px;
+        width: 280px;
+        height: 200px;
+    }
+
+    #gallery h2[b-n9hliwjast] {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: 0.25em;
+    }
+
+    #gallery p[b-n9hliwjast] {
+        margin: 0;
+    }
+/* /Pages/ListBoxPage.razor.rz.scp.css */
