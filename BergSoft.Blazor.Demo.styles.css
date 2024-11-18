@@ -40,10 +40,10 @@
         border-bottom: 2px solid transparent;
     }
 
-    .CodeBlock button.active[b-mo323j7pmt] {
-        cursor: default;
-        border-bottom: 2px solid var(--selection);
-    }
+        .CodeBlock button.active[b-mo323j7pmt] {
+            cursor: default;
+            border-bottom: 2px solid var(--focusBorder);
+        }
 
     .CodeBlock .FileType[b-mo323j7pmt] {
         background: var(--background);
