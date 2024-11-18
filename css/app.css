@@ -10,11 +10,13 @@
 }
 
 main {
+    background: var(--baseSurface);
+    color: var(--content);
     line-height: 2em;
 }
 
     main:not(.inner) {
-        background: #f7f7f7;
+        background: var(--background);
     }
 
     main:is(.inner) > section {
@@ -24,11 +26,17 @@ main {
 
     main > header {
         align-items: center;
-        background: #fff;
+        background: var(--baseSurface);
+        color: var(--content);
         display: flex;
         justify-content: center;
         height: 80px;
         padding-left: var(--horz-padding);
+    }
+
+    main > header > section {
+        display: flex;
+        justify-content: space-between;
     }
 
     main > header > section,

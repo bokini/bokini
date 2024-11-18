@@ -14,14 +14,21 @@
 
 .Button[b-lai94y5usp] {
     background: var(--surface);
-    border-radius: var(--borderRadiusLarge, 8px);
     cursor: pointer;
-    color: black;
+    color: var(--content);
     font-weight: 500;
     font-size: var(--fontSize, 12px);
     height: 32px;
     padding: 0 24px;
 }
+
+    .Button.roundCorners[b-lai94y5usp] {
+        border-radius: var(--borderRadiusLarge, 8px);
+    }
+
+    .Button.pill[b-lai94y5usp] {
+        border-radius: 100vh;
+    }
 
     .Button:focus:not(:disabled)[b-lai94y5usp],
     .Button:focus-within:not(:disabled)[b-lai94y5usp] {
@@ -735,7 +742,7 @@
 .Item[b-387ivntc8y] {
     border-radius: var(--borderRadius, 4px);
     cursor: pointer;
-    color: var(--neutralDark, var(--fallback-neutralDark));
+    color: var(--content, black);
     display: flex;
     align-items: center;
     height: 28px;
@@ -1127,6 +1134,7 @@
     }
 
     .SlidePanelHeader > button svg[b-11xnsmo2z4] {
+        fill: var(--content);
         transform: rotate(0deg);
         transition-duration: 0.2s;
         transition-property: transform;

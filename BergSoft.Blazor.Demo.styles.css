@@ -15,7 +15,7 @@
     }
 
     .CodeBlock > section[b-mo323j7pmt] {
-        border-top: 1px solid #ccc;
+        border-top: 1px solid var(--gridLines);
         top: -1px;
     }
 
@@ -31,6 +31,10 @@
         padding: var(--codeblock-tab-padding);
     }
 
+    .CodeBlock button svg[b-mo323j7pmt] {
+        fill: var(--content);
+    }
+
     .CodeBlock button:not(.active)[b-mo323j7pmt] {
         cursor: pointer;
         border-bottom: 2px solid transparent;
@@ -42,7 +46,7 @@
     }
 
     .CodeBlock .FileType[b-mo323j7pmt] {
-        background: #fafafa;
+        background: var(--background);
         display: block;
         font-size: 9px;
         color: #999;
@@ -51,11 +55,11 @@
     }
 
     .CodeBlock pre[b-mo323j7pmt] {
-        background: #fafafa;
+        background: var(--background);
+        color: var(--content);
         font-family: monospace;
         font-size: 12px;
         padding: 10px;
-
         word-break: break-word;
         white-space: pre;
         overflow-wrap: break-word;

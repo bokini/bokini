@@ -122,7 +122,7 @@
 }
 
     .TabsBarBase .Selection[b-m8lktxf2ax] {
-        background: var(--active, #000);
+        background: var(--active, black);
         position: absolute;
         z-index: 1000;
         height: 34px;
@@ -135,19 +135,19 @@
     padding: 2px;
 }
 
-    .TabsBar.barShapeRoundCorners[b-m8lktxf2ax] {
+    .TabsBar.roundCorners[b-m8lktxf2ax] {
         border-radius: 7px;
     }
 
-        .TabsBar.barShapeRoundCorners .Selection[b-m8lktxf2ax] {
+        .TabsBar.roundCorners .Selection[b-m8lktxf2ax] {
             border-radius: 8px;
         }
 
-    .TabsBar.barShapePill[b-m8lktxf2ax] {
+    .TabsBar.pill[b-m8lktxf2ax] {
         border-radius: 100vh;
     }
 
-        .TabsBar.barShapePill .Selection[b-m8lktxf2ax] {
+        .TabsBar.pill .Selection[b-m8lktxf2ax] {
             border-radius: 100vh;
         }
 
@@ -161,6 +161,7 @@
         align-items: center;
         background: none;
         border: 0;
+        color: var(--content, black);
         cursor: pointer;
         display: flex;
         fill: #000;
@@ -178,6 +179,6 @@
     }
 
         .TabsBar button.selected[b-m8lktxf2ax] {
-            color: var(--activeText, #fff);
-            fill: var(--activeText, #fff);
+            color: var(--activeText, white);
+            fill: var(--activeText, white);
         }

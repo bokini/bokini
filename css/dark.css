@@ -1,12 +1,12 @@
 ﻿:root {
-    --baseSurface: #fff;
-    --background: #f7f7f7;
-    --surface: #eaecee;
-    --active: #0b0d0e;
-    --content: #000;
-    --activeText: #fff;
+    --baseSurface: #000;
+    --background: #121212;
+    --surface: #1b1b1b;
+    --active: #ffffff;
+    --content: #fff;
+    --activeText: #000;
+    --gridLines: #fff;
     --focusBorder: #0095ff;
-    --gridLines: #ccc;
     --fontSize: 12px;
     --fontSizeS: 11px;
     --fontSizeXS: 10px;
