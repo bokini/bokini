@@ -58,7 +58,8 @@ main > section > nav {
         --codeblock-justify-content: center;
         --codeblock-tab-padding: 10px;
         --nav-display: none;
-        --horz-padding: 40px;
+        --horz-padding: 15px;
+        --grid-template-columns: 1fr;
     }
 }
 
