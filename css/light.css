@@ -17,4 +17,10 @@
     --spacingLarge: 8px;
     --selection: #d9efff;
     --selectionText: #000;
+
+    --dangerSurface: #ffe9e7;
+    --dangerContent: #910808;
+
+    --successSurface: #e7ffed;
+    --successContent: #289208;
 }

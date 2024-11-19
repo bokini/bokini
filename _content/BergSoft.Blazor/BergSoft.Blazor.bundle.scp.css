@@ -1,3 +1,7 @@
+/* _content/BergSoft.Blazor/Breadcrumbs.razor.rz.scp.css */
+.Breadcrumbs[b-b7fajkpyz2] {
+
+}
 /* _content/BergSoft.Blazor/Button.razor.rz.scp.css */
 .ButtonBase[b-lai94y5usp] {
     align-items: center;
@@ -1572,6 +1576,7 @@
     border-radius: var(--borderRadius, 6px);
     color: var(--content);
     cursor: pointer;
+    font-size: var(--fontSize);
     fill: var(--content);
     justify-content: center;
     min-width: 2rem;
@@ -1626,6 +1631,18 @@
 
     .ToolButton:hover.Saturation[b-c7vfddci2r] {
         filter: grayscale(0%);
+    }
+
+    .ToolButton:hover.Danger[b-c7vfddci2r] {
+        color: var(--dangerContent);
+        fill: var(--dangerContent);
+        background: var(--dangerSurface);
+    }
+
+    .ToolButton:hover.Success[b-c7vfddci2r] {
+        color: var(--successContent);
+        fill: var(--successContent);
+        background: var(--successSurface);
     }
 
 @keyframes bounce-b-c7vfddci2r {
