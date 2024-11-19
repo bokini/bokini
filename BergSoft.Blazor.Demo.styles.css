@@ -140,7 +140,7 @@
 /* /Pages/DatePickerPage.razor.rz.scp.css */
 /* /Pages/Home.razor.rz.scp.css */
 #headings[b-n9hliwjast] {
-    padding: 40px var(--horz-padding);
+    padding: 40px 0;
 }
 
     #headings h1[b-n9hliwjast] {
@@ -151,7 +151,7 @@
 #gallery[b-n9hliwjast] {
     display: flex;
     justify-content: space-between;
-    padding: 40px var(--horz-padding);
+    padding: 40px 0;
     flex-wrap: wrap;
     width: 100%;
 }
