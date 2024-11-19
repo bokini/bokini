@@ -149,22 +149,23 @@
     }
 
 #gallery[b-n9hliwjast] {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: var(--grid-template-columns);
+    gap: 20px;
     padding: 40px 0;
-    flex-wrap: wrap;
-    width: 100%;
 }
 
 #gallery article[b-n9hliwjast] {
-    margin-bottom: 40px;
 }
 
     #gallery > article > header[b-n9hliwjast] {
-        background: #fff;
+        background: var(--baseSurface);
         border-radius: 16px;
-        width: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 200px;
+        overflow: hidden;
     }
 
     #gallery h2[b-n9hliwjast] {
@@ -176,5 +177,8 @@
 
     #gallery p[b-n9hliwjast] {
         margin: 0;
+        word-wrap: break-word; /* Break long words */
+        overflow: hidden; /* Hide any overflow */
+        white-space: normal; /* Allow text to wrap to the next line */
     }
 /* /Pages/ListBoxPage.razor.rz.scp.css */

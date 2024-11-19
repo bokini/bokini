@@ -5,7 +5,7 @@
     --active: #ffffff;
     --content: #fff;
     --activeText: #000;
-    --gridLines: #fff;
+    --gridLines: rgba(225, 225, 225, .25);
     --focusBorder: #0095ff;
     --fontSize: 12px;
     --fontSizeS: 11px;
