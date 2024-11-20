@@ -141,6 +141,16 @@
 /* /Pages/Home.razor.rz.scp.css */
 #headings[b-n9hliwjast] {
     padding: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+@media only screen and (max-width : 667px) {
+    #headings[b-n9hliwjast] {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
 }
 
     #headings h1[b-n9hliwjast] {
@@ -148,37 +158,37 @@
         font-weight: 800;
     }
 
-#gallery[b-n9hliwjast] {
-    display: grid;
-    grid-template-columns: var(--grid-template-columns);
-    gap: 20px;
-    padding: 40px 0;
-}
-
-#gallery article[b-n9hliwjast] {
-}
-
-    #gallery > article > header[b-n9hliwjast] {
-        background: var(--baseSurface);
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 200px;
-        overflow: hidden;
+    #gallery[b-n9hliwjast] {
+        display: grid;
+        grid-template-columns: var(--grid-template-columns);
+        gap: 20px;
+        padding: 40px 0;
     }
 
-    #gallery h2[b-n9hliwjast] {
-        font-size: 16px;
-        font-weight: 600;
-        margin-top: 10px;
-        margin-bottom: 0.25em;
-    }
+        #gallery article[b-n9hliwjast] {
+        }
 
-    #gallery p[b-n9hliwjast] {
-        margin: 0;
-        word-wrap: break-word; /* Break long words */
-        overflow: hidden; /* Hide any overflow */
-        white-space: normal; /* Allow text to wrap to the next line */
-    }
+        #gallery > article > header[b-n9hliwjast] {
+            background: var(--baseSurface);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        #gallery h2[b-n9hliwjast] {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 0.25em;
+        }
+
+        #gallery p[b-n9hliwjast] {
+            margin: 0;
+            word-wrap: break-word; /* Break long words */
+            overflow: hidden; /* Hide any overflow */
+            white-space: normal; /* Allow text to wrap to the next line */
+        }
 /* /Pages/ListBoxPage.razor.rz.scp.css */
