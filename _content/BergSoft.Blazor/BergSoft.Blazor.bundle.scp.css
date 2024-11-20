@@ -2,6 +2,26 @@
 .Breadcrumbs[b-b7fajkpyz2] {
 
 }
+
+    .Breadcrumbs button[b-b7fajkpyz2] {
+        background: none;
+        border: none;
+        padding: 4px var(--spacingLarge);
+        align-items: center;
+        border: 1px solid var(--borderColor);
+        border-radius: var(--borderRadius, 6px);
+        color: var(--content);
+        cursor: pointer;
+        font-size: var(--fontSize);
+        fill: var(--content);
+        justify-content: center;
+        min-width: 2rem;
+        min-height: 2rem;
+    }
+
+    .Breadcrumbs button:hover[b-b7fajkpyz2] {
+        background: var(--secondarySurface, silver);
+    }
 /* _content/BergSoft.Blazor/Button.razor.rz.scp.css */
 .ButtonBase[b-lai94y5usp] {
     align-items: center;
@@ -755,7 +775,7 @@
 }
 
     .Item:hover[b-387ivntc8y] {
-        background-color: var(--neutralQuaternaryAlt, var(--fallback-neutralQuaternaryAlt));
+        background-color: var(--surface, var(--fallback-neutralQuaternaryAlt));
     }
 
     .Item.Selected[b-387ivntc8y] {
@@ -1584,7 +1604,7 @@
 }
 
     .ToolButton:hover[b-c7vfddci2r] {
-        background: #f6f8fa;
+        background: var(--secondarySurface);
     }
 
     .ToolButton:active[b-c7vfddci2r] {

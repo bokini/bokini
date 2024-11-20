@@ -10,8 +10,11 @@
     --grid-template-columns: repeat(4, 1fr);
 }
 
-main {
+body {
     background: var(--baseSurface);
+}
+
+main {
     color: var(--content);
     line-height: 2em;
 }
