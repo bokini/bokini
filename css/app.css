@@ -59,7 +59,7 @@ main > section > nav {
     :root {
         --codeblock-padding: 50px;
         --codeblock-justify-content: center;
-        --codeblock-tab-padding: 10px;
+        --codeblock-tab-padding: 16px;
         --nav-display: none;
         --horz-padding: 15px;
         --grid-template-columns: 1fr;
