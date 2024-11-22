@@ -50,6 +50,10 @@
         top: -1px;
     }
 
+    .CodeBlock .ChildContent[b-mo323j7pmt] {
+        font-size: var(--fontSize);
+    }
+
     .CodeBlock .ChildContent.Padding[b-mo323j7pmt] {
         padding: var(--codeblock-padding);
     }
@@ -177,6 +181,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+}
+
+.Hero[b-n9hliwjast] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media only screen and (max-width : 667px) {

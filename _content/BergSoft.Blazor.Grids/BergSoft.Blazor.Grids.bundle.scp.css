@@ -34,7 +34,7 @@
     }
 
     .GridCell.IsSelected:not(.IsEditing)[b-gtv71d8mx9] {
-        background: var(--neutralLighter, var(--fallback-neutralLighter));
+        background: var(--surface, silver);
     }
 
     .GridCell.IsSelected[b-gtv71d8mx9] {
@@ -42,7 +42,7 @@
     }
 
     .GridCell.IsFocused:not(.IsEditing)[b-gtv71d8mx9] {
-        background-color: var(--themeSecondarySurfaceSelected, var(--fallback-themeSecondarySurfaceSelected));
+        background-color: var(--selection, blue);
         outline: none;
     }
 
@@ -68,18 +68,12 @@
 }
 /* _content/BergSoft.Blazor.Grids/GridHeader.razor.rz.scp.css */
 .GridHeader[b-z8s3g6i8ph] {
-    --fallback-colorNeutralBackground1Pressed: #e0e0e0;
-    --fallback-neutralTertiaryAlt: #e0e0e0;
-    --fallback-neutralLighterAlt: #fafafa;
-}
-
-.GridHeader[b-z8s3g6i8ph] {
     align-items: center;
     cursor: pointer;
     font-weight: normal;
     height: 30px;
     user-select: none;
-    border-bottom: 1px solid var(--neutralTertiaryAlt, var(--fallback-neutralTertiaryAlt));
+    border-bottom: 1px solid var(--gridLines, gray);
 }
 
     .GridHeader .Content[b-z8s3g6i8ph] {
@@ -91,7 +85,8 @@
         margin-right: -6px;
     }
 
-    .GridHeader .HeaderText[b-z8s3g6i8ph] {
+    .HeaderText[b-z8s3g6i8ph] {
+        font-size: var(--fontSize);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -108,7 +103,7 @@
     }
 
     .GridHeader .Content:hover[b-z8s3g6i8ph] {
-        background: var(--buttonHover, var(--fallback-neutralLighterAlt));
+        background: var(--secondarySurface, gray);
     }
 
         .GridHeader .Content:hover:active[b-z8s3g6i8ph] {
@@ -120,7 +115,7 @@
     }
 
         .GridHeader svg path[b-z8s3g6i8ph] {
-            fill: var(--black, #000000);
+            fill: var(--content, black);
         }
 
     .GridHeader.sortDirectionDescending svg[b-z8s3g6i8ph] {
@@ -128,16 +123,11 @@
     }
 /* _content/BergSoft.Blazor.Grids/GridHeaders.razor.rz.scp.css */
 .GridHeaders[b-8sfzoys14z] {
-    background: white;
     position: sticky;
     position: -webkit-sticky;
     top: 0;
 }
 /* _content/BergSoft.Blazor.Grids/HeaderDivider.razor.rz.scp.css */
-.HeaderDivider[b-zfpw6vqh3q] {
-    --fallback-neutralTertiaryAlt: #e0e0e0;
-}
-
 .HeaderDivider[b-zfpw6vqh3q] {
     cursor: col-resize;
     width: 13px;
@@ -148,7 +138,7 @@
 }
 
     .HeaderDivider hr[b-zfpw6vqh3q] {
-        background: var(--neutralTertiaryAlt, var(--fallback-neutralTertiaryAlt));
+        background: var(--gridLines, gray);
         border: 0;
         margin: 0;
         padding: 0;

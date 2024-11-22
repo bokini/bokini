@@ -130,7 +130,7 @@
     }
 
 .TabsBar[b-m8lktxf2ax] {
-    background: #f6f8fa;
+    background: var(--surface);
     font-size: var(--fontSize);
     padding: 2px;
 }
