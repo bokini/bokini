@@ -484,11 +484,6 @@
 }
 /* _content/BergSoft.Blazor/DropDownList.razor.rz.scp.css */
 .DropDownButton[b-dmizo25ezz] {
-    --fallback-neutralLight: #f0f0f0;
-    --fallback-colorNeutralBackground1Pressed: #e0e0e0;
-    --fallback-borderRadiusMedium: 4px;
-    --fallback-themeSecondarySurfaceSelected: #cfe4fa;
-    --fallback-themeLight: #b4d6fa;
 }
 
 .DropDownButton[b-dmizo25ezz] {
@@ -497,7 +492,7 @@
     align-items: center;
     background: inherit;
     border: 0;
-    color: black;
+    color: var(--content);
     cursor: pointer;
     font: inherit;
 }
@@ -515,7 +510,7 @@
     }
 
     .DropDownButton:not(.Inplace)[b-dmizo25ezz] {
-        border-radius: var(--borderRadiusMedium, --fallback-borderRadiusMedium);
+        border-radius: var(--borderRadius, 4px);
         min-width: 21px;
         min-height: 21px;
     }
@@ -534,11 +529,11 @@
     }
 
     .DropDownButton:hover[b-dmizo25ezz] {
-        background: var(--neutralLight, var(--fallback-neutralLight));
+        background: var(--surface, silver);
     }
 
     .DropDownButton.isOpen[b-dmizo25ezz] {
-        background: var(--themeLight, var(--fallback-themeLight));
+        background: var(--selection, blue);
     }
 
 .DropDownList[b-dmizo25ezz] {
@@ -562,23 +557,22 @@
 }
 
     .Item:active[b-dmizo25ezz] {
-        background: var(--themeSecondarySurfaceSelected, var(--fallback-themeSecondarySurfaceSelected));
+        background: var(--selection, blue);
     }
 
     .Item:hover[b-dmizo25ezz] {
-        background: var(--neutralLight, var(--fallback-neutralLight));
+        background: var(--surface, silver);
     }
 
     .Item.Selected:not(:hover)[b-dmizo25ezz] {
-        background: var(--neutralLight, var(--fallback-neutralLight));
+        background: var(--selection, blue);
     }
 /* _content/BergSoft.Blazor/DropPanel.razor.rz.scp.css */
 .DropPanelBase[b-3hrbal2cx3] {
-    --fallback-surface: #fff;
 }
 
 .DropPanel[b-3hrbal2cx3] {
-    background: var(--surface, var(--fallback-surface));
+    background: var(--background, white);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.133) 0px 6.4px 14.4px 0px, rgba(0, 0, 0, 0.11) 0px 1.2px 3.6px 0px;
     position: absolute;
@@ -623,6 +617,7 @@
 .InplaceInput[b-boanwn39y0] {
     background: none;
     border: 0;
+    color: var(--content);
     font: inherit;
     width: 100%;
     outline: none;
@@ -749,10 +744,6 @@
 }
 /* _content/BergSoft.Blazor/ListBox.razor.rz.scp.css */
 .ListBox[b-387ivntc8y] {
-    --fallback-themeSecondarySurfaceSelected: #cfe4fa;
-    --fallback-neutralDark: #242424;
-    --fallback-neutralQuaternaryAlt: #ebebeb;
-    --fallback-borderRadiusMedium: 4px;
 }
 
 .ListBox[b-387ivntc8y] {
@@ -775,11 +766,11 @@
 }
 
     .Item:hover[b-387ivntc8y] {
-        background-color: var(--surface, var(--fallback-neutralQuaternaryAlt));
+        background-color: var(--surface, silver);
     }
 
     .Item.Selected[b-387ivntc8y] {
-        background-color: var(--neutralQuaternaryAlt, var(--fallback-neutralQuaternaryAlt));
+        background-color: var(--selection, silver);
     }
 
 .ListBox:focus .Item.Selected[b-387ivntc8y] {
@@ -1090,8 +1081,6 @@
         }
 /* _content/BergSoft.Blazor/SearchBox.razor.rz.scp.css */
 .SearchBoxBase[b-sdmfwpmkng] {
-    --fallback-themeLight: #b4d6fa;
-    --fallback-neutralLight: #f0f0f0;
 }
 
 .SearchBoxBase[b-sdmfwpmkng] {
@@ -1101,7 +1090,7 @@
     .SearchBoxBase input[b-sdmfwpmkng] {
         background: none;
         border: 0;
-        font: inherit;
+        color: var(--content);
         width: 100%;
         outline: none;
         padding: 0 0 0 10px;
@@ -1118,11 +1107,11 @@
 }
 
     .SearchResult:hover[b-sdmfwpmkng] {
-        background-color: var(--neutralLight, var(--fallback-neutralLight));
+        background-color: var(--surface, silver);
     }
 
     .SearchResult.Selected[b-sdmfwpmkng] {
-        background: var(--themeLight, var(--fallback-themeLight));
+        background: var(--selection, blue);
     }
 /* _content/BergSoft.Blazor/SlidePanel.razor.rz.scp.css */
 .SlidePanel[b-11xnsmo2z4] {
