@@ -1,6 +1,6 @@
-@import '_content/BergSoft.Blazor.Grids/BergSoft.Blazor.Grids.bundle.scp.css';
-@import '_content/BergSoft.Blazor.Tabs/BergSoft.Blazor.Tabs.bundle.scp.css';
-@import '_content/BergSoft.Blazor/BergSoft.Blazor.bundle.scp.css';
+@import '_content/BergSoft.Blazor.Grids/BergSoft.Blazor.Grids.8p89avqugg.bundle.scp.css';
+@import '_content/BergSoft.Blazor.Tabs/BergSoft.Blazor.Tabs.kgnmw222s5.bundle.scp.css';
+@import '_content/BergSoft.Blazor/BergSoft.Blazor.dv1stokxu3.bundle.scp.css';
 
 /* /Components/Card.razor.rz.scp.css */
 .Card[b-zdexpg6iz1] {
@@ -199,6 +199,7 @@
     #headings h1[b-n9hliwjast] {
         font-size: 48px;
         font-weight: 800;
+        margin-bottom: .25em;
     }
 
     #gallery[b-n9hliwjast] {
