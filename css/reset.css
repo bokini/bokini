@@ -19,7 +19,7 @@ a {
     text-decoration: none;
 }
 
-a, p, label, div, span, ul, li, button, input, text-area, label {
+body {
     font-size: 14px;
 }
 

@@ -2,9 +2,10 @@
     --baseSurface: #000;
     --background: #121212;
     --surface: #1b1b1b;
-    --secondarySurface: #1b1b1b;
+    --secondarySurface: #262626;
+
     --active: #ffffff;
-    --content: #fff;
+    --content: #f2f2f2;
     --activeText: #000;
     --gridLines: rgba(225, 225, 225, .25);
     --focusBorder: #0095ff;
@@ -18,4 +19,8 @@
     --spacingLarge: 8px;
     --selection: #0a2e4a;
     --selectionText: #000;
+    --dangerSurface: #ffe9e7;
+    --dangerContent: #910808;
+    --successSurface: #e7ffed;
+    --successContent: #289208;
 }
