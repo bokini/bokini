@@ -64,6 +64,7 @@ main > section > nav {
         --horz-padding: 15px;
         --grid-template-columns: 1fr;
         --flex-direction: column;
+        --gridMax: 90vw;
     }
 }
 
