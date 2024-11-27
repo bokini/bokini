@@ -38,6 +38,23 @@ main {
         padding: 0 var(--horz-padding);
     }
 
+    main > footer {
+        align-items: center;
+        color: var(--content);
+        height: 80px;
+        margin-top: 20px;
+        padding: 0 var(--horz-padding);
+    }
+
+        main > footer a {
+            color: var(--content);
+            text-decoration: underline;
+        }
+
+        main > footer > section {
+            display: flex;
+        }
+
     main > header > section {
         display: flex;
         justify-content: space-between;
@@ -65,6 +82,7 @@ main > section > nav {
         --grid-template-columns: 1fr;
         --flex-direction: column;
         --gridMax: 90vw;
+        --bodyFontSize: 14px;
     }
 }
 

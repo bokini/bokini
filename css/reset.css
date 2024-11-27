@@ -20,7 +20,7 @@ a {
 }
 
 body {
-    font-size: 12px;
+    font-size: var(--bodyFontSize, 12px);
 }
 
 p {
