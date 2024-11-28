@@ -3,7 +3,6 @@
     --background: #121212;
     --surface: #1b1b1b;
     --secondarySurface: #262626;
-
     --active: #ffffff;
     --content: #f2f2f2;
     --activeText: #000;
@@ -19,8 +18,8 @@
     --spacingLarge: 8px;
     --selection: #0a2e4a;
     --selectionText: #000;
-    --dangerSurface: #ffe9e7;
-    --dangerContent: #910808;
-    --successSurface: #e7ffed;
-    --successContent: #289208;
+    --dangerSurface: #2b0f0b;
+    --dangerContent: #ff3b3b;
+    --successSurface: #112b0b;
+    --successContent: #32d600;
 }

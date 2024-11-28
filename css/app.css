@@ -41,16 +41,18 @@ main {
 
     main > footer {
         align-items: center;
+        background: var(--secondarySurface);
         color: var(--content);
-        height: 80px;
-        margin-top: 20px;
-        padding: 0 var(--horz-padding);
+        padding: 40px var(--horz-padding);
     }
 
         main > footer a {
             color: var(--content);
-            text-decoration: underline;
         }
+
+            main > footer a:hover {
+                text-decoration: underline;
+            }
 
         main > footer > section {
             display: flex;
