@@ -41,7 +41,7 @@ main {
 
     main > footer {
         align-items: center;
-        background: var(--secondarySurface);
+        background: var(--baseSurface);
         color: var(--content);
         padding: 40px var(--horz-padding);
     }
