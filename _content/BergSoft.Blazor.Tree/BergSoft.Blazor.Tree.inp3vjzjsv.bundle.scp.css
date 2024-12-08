@@ -1,0 +1,67 @@
+/* _content/BergSoft.Blazor.Tree/TreeList.razor.rz.scp.css */
+.TreeList[b-zlsgrpowp2] {
+    --fallback-neutralLight: #f0f0f0;
+    --fallback-colorNeutralBackground1Pressed: #e0e0e0;
+    --fallback-borderRadiusMedium: 4px;
+    --fallback-themeSecondarySurfaceSelected: #cfe4fa;
+}
+
+.TreeList[b-zlsgrpowp2] {
+    padding: 0;
+    list-style-type: none;
+}
+
+.Item[b-zlsgrpowp2] {
+    padding: 0;
+    list-style-type: none;
+}
+
+.Toggle:first-child[b-zlsgrpowp2] {
+    transform: rotate(0deg);
+    transition-duration: 0.2s;
+    transition-property: transform;
+}
+
+.Toggle.Expanded:first-child[b-zlsgrpowp2] {
+    transform: rotate(90deg);
+}
+
+.ItemText[b-zlsgrpowp2] {
+    border-radius: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium));
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 4px;
+}
+
+    .ItemText:hover[b-zlsgrpowp2] {
+        background: var(--neutralLight, var(--fallback-neutralLight));
+    }
+
+    .ItemText.Selected[b-zlsgrpowp2] {
+        background: var(--neutralLight, var(--fallback-neutralLight));
+    }
+
+    .ItemText.Selected.Focused[b-zlsgrpowp2] {
+        background: var(--themeSecondarySurfaceSelected, var(--fallback-themeSecondarySurfaceSelected));
+    }
+
+.Content[b-zlsgrpowp2] {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    height: 28px;
+    cursor: default;
+}
+
+.Content button[b-zlsgrpowp2] {
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+}
+
+/*.Content button:hover {
+    border-radius: var(--borderRadiusMedium, var(--fallback-borderRadiusMedium));
+    background: var(--neutralLight, var(--fallback-neutralLight));
+}*/
