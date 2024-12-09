@@ -1,7 +1,7 @@
-@import '_content/BergSoft.Blazor.Grids/BergSoft.Blazor.Grids.gsd379enwt.bundle.scp.css';
+@import '_content/BergSoft.Blazor.Grids/BergSoft.Blazor.Grids.ihgcfl3fg6.bundle.scp.css';
 @import '_content/BergSoft.Blazor.Tabs/BergSoft.Blazor.Tabs.uehwxouzvz.bundle.scp.css';
 @import '_content/BergSoft.Blazor.Tree/BergSoft.Blazor.Tree.inp3vjzjsv.bundle.scp.css';
-@import '_content/BergSoft.Blazor/BergSoft.Blazor.35xnebwv4x.bundle.scp.css';
+@import '_content/BergSoft.Blazor/BergSoft.Blazor.mpgkvlf3wb.bundle.scp.css';
 
 /* /Components/BackButton.razor.rz.scp.css */
 .BackButton[b-0l3igv2gv6] {
@@ -34,6 +34,7 @@
     }
 /* /Components/Card.razor.rz.scp.css */
 .Card[b-zdexpg6iz1] {
+    margin-bottom: 20px;
 }
 
     .Card header a[b-zdexpg6iz1] {
@@ -54,7 +55,6 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
-    margin-bottom: 0.25em;
 }
 
 .Card p[b-zdexpg6iz1] {
@@ -198,6 +198,16 @@
     margin-top: 1em;
 }
 /* /Pages/DatePickerPage.razor.rz.scp.css */
+/* /Pages/Grids/LayoutsPage.razor.rz.scp.css */
+.Avatar[b-8f9uj2pcjf] {
+    align-items: center;
+    background: #fada7a;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    justify-content: center;
+}
 /* /Pages/Home.razor.rz.scp.css */
 #headings[b-n9hliwjast] {
     padding: 40px 0;
@@ -223,6 +233,10 @@
         font-size: 48px;
         font-weight: 800;
         margin-bottom: .25em;
+    }
+
+    #headings h2[b-n9hliwjast] {
+        line-height: 1.75em;
     }
 
     #gallery[b-n9hliwjast] {
