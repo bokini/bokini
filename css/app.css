@@ -7,8 +7,9 @@
     --codeblock-tab-padding: 0 5px;
     --nav-display: flex;
     --horz-padding: 40px;
-    --grid-template-columns: repeat(4, 1fr);            
+    --grid-template-columns: repeat(4, 1fr);
     --bodyFontSize: 12px;
+    --innerPadding: 0 var(--horz-padding) 0 0;
 }
 
 body {
@@ -88,6 +89,7 @@ main > section > nav {
         --flex-direction: column;
         --gridMax: 90vw;
         --bodyFontSize: 14px;
+        --innerPadding: 0 var(--horz-padding);
     }
 }
 
@@ -113,7 +115,7 @@ main > section > nav {
 }
 
 main:is(.inner) #page {
-    padding: 0 var(--horz-padding) 0 0;
+    padding: var(--innerPadding);
 }
 
 #content {
