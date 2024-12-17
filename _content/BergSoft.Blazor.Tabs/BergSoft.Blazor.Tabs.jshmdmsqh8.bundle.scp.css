@@ -1,0 +1,189 @@
+/* _content/BergSoft.Blazor.Tabs/PageControl.razor.rz.scp.css */
+.PageControl[b-n0zi4l0kd7] {
+}
+
+.PageControl[b-n0zi4l0kd7] {
+    display: flex;
+}
+
+    .PageControl .Tabs[b-n0zi4l0kd7] {
+        display: flex;
+        border-bottom: 1px solid var(--gridLines);
+        width: 100%;
+    }
+
+    .PageControl.tabsLocationLeft .Tabs[b-n0zi4l0kd7] {
+        flex-direction: column;
+        padding: 4px;
+        width: 48px;
+    }
+
+    .PageControl.tabsLocationTop[b-n0zi4l0kd7] {
+        flex-direction: column;
+    }
+
+    .PageControl.tabsLocationLeft[b-n0zi4l0kd7] {
+        flex-direction: row;
+    }
+
+        .PageControl .SideContent[b-n0zi4l0kd7] {
+            display: flex;
+            flex: 1;
+            padding-left: 32px;
+        }
+
+        .PageControl .Buttons[b-n0zi4l0kd7] {
+            display: flex;
+        }
+
+        .PageControl .Buttons::deep button[b-n0zi4l0kd7] {
+            background: red;
+            width: 28px;
+        }
+
+        .TabCloseButton[b-n0zi4l0kd7] {
+            border: none;
+            background: inherit;
+            stroke: var(--content, white);
+            padding: 8px;
+        }
+
+            .TabCloseButton:hover[b-n0zi4l0kd7] {
+                background: var(--surface, gray);
+            }
+
+        .flex-container[b-n0zi4l0kd7] {
+            display: flex;
+            height: 100%;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .flex-container:hover[b-n0zi4l0kd7] {
+                color: rgb(37, 36, 35);
+                outline: transparent dashed 2px;
+                border-color: transparent;
+                font-weight: 600;
+            }
+
+        .text-container[b-n0zi4l0kd7] {
+            flex-grow: 1;
+        }
+
+            .button-label[b-n0zi4l0kd7] {
+                margin: 0px 4px;
+                line-height: 100%;
+                display: block;
+            }
+
+                .button-label:hover[b-n0zi4l0kd7] {
+                    color: rgb(37, 36, 35);
+                    outline: transparent dashed 2px;
+                    border-color: transparent;
+                    font-weight: 600;
+                }
+/* _content/BergSoft.Blazor.Tabs/PageTab.razor.rz.scp.css */
+.PageTab[b-jj70y63bsw] {
+    font-size: 14px;
+    font-weight: 400;
+    background: inherit;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--content);
+    user-select: none;
+}
+
+    .PageTab:hover[b-jj70y63bsw] {
+        outline: transparent dashed 2px;
+        border-color: transparent;
+        font-weight: 600;
+    }
+
+    .PageTab.tabsLocationTop[b-jj70y63bsw] {
+        padding: 0px 10px;
+        border-bottom: 1px solid transparent;
+    }
+
+    .PageTab.tabsLocationLeft:hover[b-jj70y63bsw] {
+        backgroud: var(--surface, lightgray);
+        border-radius: 4px;
+    }
+
+    .PageTab.tabsLocationLeft.isActive[b-jj70y63bsw] {
+        border-right: 2px solid var(--focusBorder);
+    }
+
+    .PageTab.tabsLocationTop.isActive[b-jj70y63bsw] {
+        border-bottom: 2px solid var(--focusBorder);
+    }
+/* _content/BergSoft.Blazor.Tabs/TabsBar.razor.rz.scp.css */
+.TabsBarBase[b-m8lktxf2ax] {
+    display: inline-flex;
+    position: relative;
+}
+
+    .TabsBarBase .Selection[b-m8lktxf2ax] {
+        background: var(--active, black);
+        position: absolute;
+        z-index: 1000;
+        height: 34px;
+        transition: all ease-out 0.15s;
+    }
+
+.TabsBar[b-m8lktxf2ax] {
+    background: var(--surface);
+    font-size: var(--fontSize);
+    padding: 2px;
+}
+
+    .TabsBar.roundCorners[b-m8lktxf2ax] {
+        border-radius: 7px;
+    }
+
+        .TabsBar.roundCorners .Selection[b-m8lktxf2ax] {
+            border-radius: 8px;
+        }
+
+    .TabsBar.pill[b-m8lktxf2ax] {
+        border-radius: 100vh;
+    }
+
+        .TabsBar.pill .Selection[b-m8lktxf2ax] {
+            border-radius: 100vh;
+        }
+
+    .TabsBar:focus[b-m8lktxf2ax],
+    .TabsBar:focus-within[b-m8lktxf2ax] {
+        outline-offset: 1px;
+        outline: 2px solid var(--focusBorder, lightsteelblue);
+    }
+
+    .TabsBar button[b-m8lktxf2ax] {
+        align-items: center;
+        background: none;
+        border: 0;
+        color: var(--content, black);
+        cursor: pointer;
+        display: flex;
+        fill: var(--content, black);
+        font-size: var(--fontSizeS);
+        justify-content: center;
+        min-height: 34px;
+        outline: none;
+        user-select: none;
+        z-index: 1001;
+        transition: all ease-out 0.15s;
+    }
+    
+    .TabsBar button:focus[b-m8lktxf2ax] {
+        outline: none;
+    }
+
+        .TabsBar button.selected[b-m8lktxf2ax] {
+            color: var(--activeText, white);
+            fill: var(--activeText, white);
+        }
