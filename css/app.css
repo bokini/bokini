@@ -122,19 +122,23 @@ main:is(.inner) #page {
     flex: 1;
 }
 
-code.parameter {
-    color: #800080;
-}
-
-code.keyword {
-    color: #0000ff;
-}
-
-code.attribute {
-    color: #ff0000;
-}
-
 .country {
     display: flex;
     gap: 8px;
+}
+
+code {
+    font-size: 14px;
+}
+
+code.parameter {
+    color: var(--parameter, #800080);
+}
+
+code.keyword {
+    color: var(--keyword, #0000ff);
+}
+
+code.attribute {
+    color: var(--attribute, #ff0000);
 }

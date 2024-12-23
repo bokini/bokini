@@ -3,6 +3,7 @@
     --background: #121212;
     --surface: #1b1b1b;
     --secondarySurface: #262626;
+    --tertiarySurface: #121212;
     --active: #ffffff;
     --content: #f2f2f2;
     --activeText: #000;
@@ -24,4 +25,10 @@
     --dangerContent: #ff3b3b;
     --successSurface: #112b0b;
     --successContent: #32d600;
+}
+
+:root {
+    --attribute: #8addff;
+    --keyword: #3c9ddb;
+    --parameter: #009997;
 }
