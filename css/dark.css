@@ -4,7 +4,7 @@
     --surface: #1b1b1b;
     --secondarySurface: #262626;
     --tertiarySurface: #121212;
-    --active: #ffffff;
+    --active: #f2f2f2;
     --content: #f2f2f2;
     --activeText: #000;
     --gridLines: rgba(225, 225, 225, .25);
@@ -20,7 +20,7 @@
     --spacing: 4px;
     --spacingLarge: 8px;
     --selection: #0a2e4a;
-    --selectionText: #000;
+    --selectionText: #f2f2f2;
     --dangerSurface: #2b0f0b;
     --dangerContent: #ff3b3b;
     --successSurface: #112b0b;
