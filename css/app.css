@@ -127,11 +127,23 @@ main:is(.inner) #page {
     gap: 8px;
 }
 
-code {
-    font-size: 13px;
+.avatar {
+    background: var(--surface);
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
 }
 
-code.parameter {
+.age {
+    color: hsl(from var(--content) h s calc(l + 0.5));
+}
+
+code {
+    font-size: var(--bodyFontSize);
+}
+
+code.parameter,
+code.component {
     color: var(--parameter, #800080);
 }
 
