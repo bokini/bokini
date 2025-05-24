@@ -5,7 +5,7 @@
 @import '_content/Bergsoft.Blazor/Bergsoft.Blazor.eiy1w98wds.bundle.scp.css';
 
 /* /Components/BackButton.razor.rz.scp.css */
-.BackButton[b-0l3igv2gv6] {
+.BackButton[b-g2isju7mh9] {
     align-items: center;
     background: none;
     border: none;
@@ -19,18 +19,18 @@
     padding: 8px;
 }
 
-.BackButton svg[b-0l3igv2gv6] {
+.BackButton svg[b-g2isju7mh9] {
     transition: all ease-out .5s;
     position: relative;
     fill: var(--content);
     left: 2px;
 }
 
-    .BackButton:hover[b-0l3igv2gv6] {
+    .BackButton:hover[b-g2isju7mh9] {
         background: var(--surface);
     }
 
-    .BackButton:hover svg[b-0l3igv2gv6] {
+    .BackButton:hover svg[b-g2isju7mh9] {
         left: 0;
     }
 /* /Components/Card.razor.rz.scp.css */
