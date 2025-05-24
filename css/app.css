@@ -1,0 +1,156 @@
+@import "reset.css";
+@import "blazor.css";
+
+:root {
+    --codeblock-padding: 40px;
+    --codeblock-justify-content: left;
+    --codeblock-tab-padding: 0 5px;
+    --nav-display: flex;
+    --horz-padding: 40px;
+    --grid-template-columns: repeat(4, 1fr);
+    --bodyFontSize: 12px;
+    --innerPadding: 0 var(--horz-padding) 0 0;
+}
+
+body {
+    background: var(--baseSurface);
+}
+
+main {
+    color: var(--content);
+    line-height: 2em;
+}
+
+    main:not(.inner) {
+        background: var(--background);
+    }
+
+    main:is(.inner) > section {
+        display: flex;
+        gap: 20px;
+    }
+
+    main > header {
+        align-items: center;
+        background: var(--baseSurface);
+        color: var(--content);
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        padding: 0 var(--horz-padding);
+    }
+
+    main > footer {
+        align-items: center;
+        background: var(--baseSurface);
+        color: var(--content);
+        padding: 40px var(--horz-padding);
+    }
+
+        main > footer a {
+            color: var(--content);
+        }
+
+            main > footer a:hover {
+                text-decoration: underline;
+            }
+
+        main > footer > section {
+            display: flex;
+        }
+
+    main > header > section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main > header > section,
+    #page {
+    }
+
+main > section > nav {
+    background: var(--secondarySurface);
+    display: var(--nav-display);
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 0 20px;
+    width: 280px;
+}
+
+/* typical phone screen resolution */
+@media only screen and (max-width : 667px) {
+    :root {
+        --codeblock-padding: 50px;
+        --codeblock-justify-content: center;
+        --codeblock-tab-padding: 16px;
+        --nav-display: none;
+        --horz-padding: 15px;
+        --grid-template-columns: 1fr;
+        --flex-direction: column;
+        --gridMax: 90vw;
+        --bodyFontSize: 14px;
+        --innerPadding: 0 var(--horz-padding);
+    }
+}
+
+@media only screen and (min-width : 941px) and (max-width : 1240px) {
+    :root {
+        --grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width : 668px) and (max-width : 940px) {
+    :root {
+        --grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* portrait orientation */
+@media only screen and (min-width : 375px) and (max-width : 667px) and (orientation : portrait) {
+
+}
+
+#page {
+    padding: 0 var(--horz-padding);
+}
+
+main:is(.inner) #page {
+    padding: var(--innerPadding);
+}
+
+#content {
+    flex: 1;
+}
+
+.country {
+    display: flex;
+    gap: 8px;
+}
+
+.avatar {
+    background: var(--surface);
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+}
+
+.age {
+    color: hsl(from var(--content) h s calc(l + 0.5));
+}
+
+code {
+    font-size: var(--bodyFontSize);
+}
+
+code.parameter,
+code.component {
+    color: var(--parameter, #800080);
+}
+
+code.keyword {
+    color: var(--keyword, #0000ff);
+}
+
+code.attribute {
+    color: var(--attribute, #ff0000);
+}
