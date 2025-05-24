@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Bergsoft.Blazor.Demo",
   "resources": {
-    "hash": "sha256-9oFPM0zKPHcFGjkqhnz5laNPw8i1A5XD6Rw/uLGKVSs=",
+    "hash": "sha256-SFDKmhSQJzjD4/k2yUXChNqQlVIi4lyrMUUCTJkdAJ0=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-RiGT44TFZmHOY+Oqvb8o8r+BJVWex6+dPxFxrOiWvFY="
     },
@@ -61,7 +61,7 @@
       "Bergsoft.Blazor.Tabs.wasm": "sha256-HOnMaJq/2MMCu4QhUHDUSTEafzEe1bl0bFJBB5bSBcw=",
       "Bergsoft.Blazor.Tree.wasm": "sha256-iJkzfXm9ZWWW+H4WlOdfuJG2u3JscQXOV1deAa/vg/g=",
       "Bergsoft.wasm": "sha256-uqhZVcDzTrkVAKUFiYhs6J91rGOtA26zohQTZqcN9f0=",
-      "Bergsoft.Blazor.Demo.wasm": "sha256-tB1bHDvS43YI5+JEn6eW4MJVk9MVmR1gEL+wyKVSU10="
+      "Bergsoft.Blazor.Demo.wasm": "sha256-oHn5pVpBbKivT1U41GnWP/3YVne6vPBshXuZlE220HQ="
     }
   },
   "cacheBootResources": true,
