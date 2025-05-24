@@ -65,31 +65,31 @@
     white-space: normal; /* Allow text to wrap to the next line */
 }
 /* /Components/CodeBlock.razor.rz.scp.css */
-.CodeBlock[b-mo323j7pmt] {
+.CodeBlock[b-o7a8t63szu] {
     margin-bottom: 20px;
 }
 
-    .CodeBlock header[b-mo323j7pmt] {
+    .CodeBlock header[b-o7a8t63szu] {
         align-items: center;
         display: flex;
         gap: 16px;
         justify-content: var(--codeblock-justify-content);
     }
 
-    .CodeBlock > section[b-mo323j7pmt] {
+    .CodeBlock > section[b-o7a8t63szu] {
         border-top: 1px solid var(--gridLines);
         top: -1px;
     }
 
-    .CodeBlock .ChildContent[b-mo323j7pmt] {
+    .CodeBlock .ChildContent[b-o7a8t63szu] {
         font-size: var(--fontSize);
     }
 
-    .CodeBlock .ChildContent.Padding[b-mo323j7pmt] {
+    .CodeBlock .ChildContent.Padding[b-o7a8t63szu] {
         padding: var(--codeblock-padding);
     }
 
-    .CodeBlock button[b-mo323j7pmt] {
+    .CodeBlock button[b-o7a8t63szu] {
         background: none;
         border: 0;
         font-size: 11px;
@@ -97,21 +97,21 @@
         padding: var(--codeblock-tab-padding);
     }
 
-    .CodeBlock button svg[b-mo323j7pmt] {
+    .CodeBlock button svg[b-o7a8t63szu] {
         fill: var(--content);
     }
 
-    .CodeBlock button:not(.active)[b-mo323j7pmt] {
+    .CodeBlock button:not(.active)[b-o7a8t63szu] {
         cursor: pointer;
         border-bottom: 2px solid transparent;
     }
 
-        .CodeBlock button.active[b-mo323j7pmt] {
+        .CodeBlock button.active[b-o7a8t63szu] {
             cursor: default;
             border-bottom: 2px solid var(--focusBorder);
         }
 
-    .CodeBlock .FileType[b-mo323j7pmt] {
+    .CodeBlock .FileType[b-o7a8t63szu] {
         background: var(--background);
         display: block;
         font-size: 9px;
@@ -120,16 +120,16 @@
         text-transform: uppercase;
     }
 
-    .CodeBlock pre[b-mo323j7pmt] {
+    .CodeBlock pre[b-o7a8t63szu] {
         background: var(--background);
         color: var(--content);
         font-family: monospace;
         font-size: 12px;
         padding: 10px;
         line-height: 1.5em;
-        white-space: pre-wrap; /* Preserves formatting but allows wrapping */
-        word-wrap: break-word; /* Allows words to break if necessary */
-        overflow-wrap: break-word; /* Standardized word breaking */
+        white-space: pre-wrap; 
+        word-wrap: break-word; 
+        overflow-wrap: break-word; 
     }
 /* /Pages/BarsPage.razor.rz.scp.css */
 .BrushPresets[b-ywv87p1y1k] {
