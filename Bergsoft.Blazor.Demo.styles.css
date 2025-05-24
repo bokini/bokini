@@ -1,0 +1,249 @@
+@import '_content/Bergsoft.Blazor.Grids/Bergsoft.Blazor.Grids.gwl9dnylcg.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Inspector/Bergsoft.Blazor.Inspector.qggqb462jd.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Tabs/Bergsoft.Blazor.Tabs.43fb40scwu.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Tree/Bergsoft.Blazor.Tree.ow3epsh2sh.bundle.scp.css';
+@import '_content/Bergsoft.Blazor/Bergsoft.Blazor.eiy1w98wds.bundle.scp.css';
+
+/* /Components/BackButton.razor.rz.scp.css */
+.BackButton[b-0l3igv2gv6] {
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: var(--borderRadius);
+    color: var(--content);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: var(--bodyFontSize);
+    margin-bottom: 1em;
+    gap: 4px;
+    padding: 8px;
+}
+
+.BackButton svg[b-0l3igv2gv6] {
+    transition: all ease-out .5s;
+    position: relative;
+    fill: var(--content);
+    left: 2px;
+}
+
+    .BackButton:hover[b-0l3igv2gv6] {
+        background: var(--surface);
+    }
+
+    .BackButton:hover svg[b-0l3igv2gv6] {
+        left: 0;
+    }
+/* /Components/Card.razor.rz.scp.css */
+.Card[b-zdexpg6iz1] {
+    margin-bottom: 20px;
+}
+
+    .Card header a[b-zdexpg6iz1] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+.Card header[b-zdexpg6iz1] {
+    background: var(--baseSurface);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.Card h2[b-zdexpg6iz1] {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.Card p[b-zdexpg6iz1] {
+    margin: 0;
+    word-wrap: break-word; /* Break long words */
+    overflow: hidden; /* Hide any overflow */
+    white-space: normal; /* Allow text to wrap to the next line */
+}
+/* /Components/CodeBlock.razor.rz.scp.css */
+.CodeBlock[b-mo323j7pmt] {
+    margin-bottom: 20px;
+}
+
+    .CodeBlock header[b-mo323j7pmt] {
+        align-items: center;
+        display: flex;
+        gap: 16px;
+        justify-content: var(--codeblock-justify-content);
+    }
+
+    .CodeBlock > section[b-mo323j7pmt] {
+        border-top: 1px solid var(--gridLines);
+        top: -1px;
+    }
+
+    .CodeBlock .ChildContent[b-mo323j7pmt] {
+        font-size: var(--fontSize);
+    }
+
+    .CodeBlock .ChildContent.Padding[b-mo323j7pmt] {
+        padding: var(--codeblock-padding);
+    }
+
+    .CodeBlock button[b-mo323j7pmt] {
+        background: none;
+        border: 0;
+        font-size: 11px;
+        outline: 0;
+        padding: var(--codeblock-tab-padding);
+    }
+
+    .CodeBlock button svg[b-mo323j7pmt] {
+        fill: var(--content);
+    }
+
+    .CodeBlock button:not(.active)[b-mo323j7pmt] {
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+    }
+
+        .CodeBlock button.active[b-mo323j7pmt] {
+            cursor: default;
+            border-bottom: 2px solid var(--focusBorder);
+        }
+
+    .CodeBlock .FileType[b-mo323j7pmt] {
+        background: var(--background);
+        display: block;
+        font-size: 9px;
+        color: #999;
+        padding: 10px 0 0 10px;
+        text-transform: uppercase;
+    }
+
+    .CodeBlock pre[b-mo323j7pmt] {
+        background: var(--background);
+        color: var(--content);
+        font-family: monospace;
+        font-size: 12px;
+        padding: 10px;
+        line-height: 1.5em;
+        white-space: pre-wrap; /* Preserves formatting but allows wrapping */
+        word-wrap: break-word; /* Allows words to break if necessary */
+        overflow-wrap: break-word; /* Standardized word breaking */
+    }
+/* /Pages/BarsPage.razor.rz.scp.css */
+.BrushPresets[b-ywv87p1y1k] {
+    margin-bottom: 20px;
+}
+
+    .BrushPresets td[b-ywv87p1y1k] {
+        padding: 8px;
+    }
+
+    .Preset[b-ywv87p1y1k] {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+    }
+
+        .Selection[b-ywv87p1y1k] {
+            background: var(--focusBorder);
+        }
+
+        .Yolk[b-ywv87p1y1k] {
+            background: #fcc902;
+        }
+
+        .Horizon[b-ywv87p1y1k] {
+            background: linear-gradient(to right, #f7c91e, #fb7f27, #f62df7, #00ffe7);
+        }
+
+        .Fire[b-ywv87p1y1k] {
+            background: linear-gradient(to right, #ff6d00, #ffe200);
+        }
+
+        .Marine[b-ywv87p1y1k] {
+            background: linear-gradient(to right, #00b48a, #49daff);
+        }
+
+        .Acid[b-ywv87p1y1k] {
+            background: linear-gradient(to right, #00d031, #e0ff42)
+        }
+
+    .title:not(:first-child)[b-ywv87p1y1k] {
+        margin: .5em 0 .5em 0;
+    }
+
+    .title:first-child[b-ywv87p1y1k] {
+        margin: 1em 0 .5em 0;
+    }
+
+    .description[b-ywv87p1y1k] {
+        margin: 0 0 1em 0;
+        font-size: 11px;
+    }
+
+    .over-title[b-ywv87p1y1k] {
+        font-size: 10px;
+        color: gray;
+        margin-top: 1em;
+    }
+
+.alert[b-ywv87p1y1k] {
+    background: #c7253e;
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    padding: 4px;
+    border-radius: 4px;
+    margin-top: 1em;
+}
+/* /Pages/DatePickerPage.razor.rz.scp.css */
+/* /Pages/Grids/LayoutsPage.razor.rz.scp.css */
+.Avatar[b-8f9uj2pcjf] {
+    align-items: center;
+    background: #fada7a;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    justify-content: center;
+}
+/* /Pages/Home.razor.rz.scp.css */
+#headings[b-iivgup8hv0] {
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.Hero[b-iivgup8hv0] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width : 667px) {
+    #headings[b-iivgup8hv0] {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+    #headings h1[b-iivgup8hv0] {
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: .25em;
+    }
+
+    #headings h2[b-iivgup8hv0] {
+        line-height: 1.75em;
+    }
+
+    #gallery[b-iivgup8hv0] {
+        display: grid;
+        grid-template-columns: var(--grid-template-columns);
+        gap: 20px;
+        padding: 40px 0;
+    }
+/* /Pages/ListBoxPage.razor.rz.scp.css */
