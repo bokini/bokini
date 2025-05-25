@@ -34,11 +34,11 @@
         left: 0;
     }
 /* /Components/Card.razor.rz.scp.css */
-.Card[b-zdexpg6iz1] {
+.Card[b-upltcciw9r] {
     margin-bottom: 20px;
 }
 
-    .Card header a[b-zdexpg6iz1] {
+    .Card header a[b-upltcciw9r] {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -46,23 +46,23 @@
         height: 100%;
     }
 
-.Card header[b-zdexpg6iz1] {
+.Card header[b-upltcciw9r] {
     background: var(--baseSurface);
     border-radius: 16px;
     overflow: hidden;
 }
 
-.Card h2[b-zdexpg6iz1] {
+.Card h2[b-upltcciw9r] {
     font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
 }
 
-.Card p[b-zdexpg6iz1] {
+.Card p[b-upltcciw9r] {
     margin: 0;
-    word-wrap: break-word; /* Break long words */
-    overflow: hidden; /* Hide any overflow */
-    white-space: normal; /* Allow text to wrap to the next line */
+    word-wrap: break-word;
+    overflow: hidden;
+    white-space: normal;
 }
 /* /Components/CodeBlock.razor.rz.scp.css */
 .CodeBlock[b-o7a8t63szu] {
