@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=./index.html" />
+  </head>
+  <body>
+    <p>Redirecting...</p>
+    <script>
+      // Workaround to preserve route after redirect
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+        location.replace(redirect);
+      }
+    </script>
+  </body>
+</html>

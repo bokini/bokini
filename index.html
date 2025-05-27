@@ -12,6 +12,12 @@
 </head>
 
 <body>
+<script>
+  // Store the current path before redirecting via 404.html
+  if (!sessionStorage.redirect) {
+    sessionStorage.redirect = location.href;
+  }
+</script>
     <div id="app">
         <svg class="loading-progress">
             <circle r="40%" cx="50%" cy="50%" />
