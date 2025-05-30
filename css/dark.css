@@ -10,6 +10,8 @@
     --gridLines: rgba(225, 225, 225, .25);
     --overlay: #262626;
     --focusBorder: #0095ff;
+    --focusBorderOffset: 1px;
+    --focusBorderSize: 2px;
     --fontSize: 12px;
     --fontSizeS: 11px;
     --fontSizeXS: 10px;

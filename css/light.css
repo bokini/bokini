@@ -8,6 +8,8 @@
     --content: #000;
     --activeText: #fff;
     --focusBorder: #0095ff;
+    --focusBorderOffset: 1px;
+    --focusBorderSize: 2px;
     --gridLines: #ccc;
     --overlay: white;
     --fontSize: 12px;
