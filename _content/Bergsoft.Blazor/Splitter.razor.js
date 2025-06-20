@@ -20,10 +20,8 @@ export function connect(splitter) {
                     prevPos = e.clientY; 
                 } else {
                     let minWidth = style.getPropertyValue("min-width");
-                    let delta = originalPosition - e.clientX;
-                    console.log(`delta: ${delta}`);
+//                    let delta = originalPosition - e.clientX;
                     let newWidth = originalSize - (originalPosition - e.clientX);
-                    console.log(`New width: ${newWidth}`);
                     if (newWidth < parseInt(minWidth)) {
                         newWidth = parseInt(minWidth);
                     }

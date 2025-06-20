@@ -40,7 +40,6 @@ export function connect(dotnet, knob, currentPosition, min, max) {
             const clampedX = Math.max(0, Math.min(relativeX, boundingRect.width));
             const position = Math.round(clampedX / (boundingRect.width / (max - min)));
                 
-
             if (position >= min && position <= max) {
                 updateKnobAndProgress(position);
                 dotnet.invokeMethodAsync("PositionChangedAsync", position);

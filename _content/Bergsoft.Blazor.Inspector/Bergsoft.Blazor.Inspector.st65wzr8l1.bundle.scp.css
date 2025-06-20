@@ -1,0 +1,84 @@
+/* _content/Bergsoft.Blazor.Inspector/CheckBoxInspectorItem.razor.rz.scp.css */
+/* _content/Bergsoft.Blazor.Inspector/ColorInspectorItem.razor.rz.scp.css */
+.Palette[b-rwysfu86re] {
+    align-items: center;
+    display: flex;
+    padding-left: var(--spacingLarge, 8px);
+    height: 12px;
+}
+/* _content/Bergsoft.Blazor.Inspector/Inspector.razor.rz.scp.css */
+.Inspector[b-yvk4r7mjt8] {
+    background: var(--background, gainsboro);
+    border-radius: var(--borderRadiusM, 6px);
+    padding: var(--spacingLarge, 8px);
+}
+/* _content/Bergsoft.Blazor.Inspector/InspectorItem.razor.rz.scp.css */
+.InspectorItem[b-88fl0x5k60] { }
+
+    /** Title & value */
+    .InspectorItem > header[b-88fl0x5k60] {
+        align-items: center;
+        display: grid;
+        column-gap: var(--spacingLarge, 8px);
+        grid-template-columns: 120px auto;
+    }
+
+        .InspectorItem.Category > header[b-88fl0x5k60] {
+            cursor: default;
+            font-weight: 400;
+            display: flex;
+            text-align: left;
+            min-height: 20px;
+            opacity: .65;
+            padding-left: var(--spacingLarge, 8px);
+        }
+
+        .InspectorItem.SubCategory[b-88fl0x5k60] {
+            grid-template-columns: 80px auto;
+        }
+
+        /** Title */
+        .InspectorItem > header section:first-child[b-88fl0x5k60] {
+            display: flex;
+            justify-content: flex-end;
+            column-gap: var(--spacingLarge, 8px);
+            height: 100%;
+            align-items: center;
+        }
+
+    .InspectorItem.Category.CanToggle > header:hover[b-88fl0x5k60] {
+        background: var(--secondarySurface, lightgray);
+    }
+    
+    .InspectorItem.Category.SubCategory > header[b-88fl0x5k60] {
+        align-items: start;
+    }
+
+    .InspectorItem .Value[b-88fl0x5k60] {
+        align-items: center;
+        display: flex;
+    }
+
+    /** Direct children */
+    .InspectorItem > .Children[b-88fl0x5k60] {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacingLarge, 8px);
+    }
+
+    .InspectorItem:not(.SubCategory) > .Children[b-88fl0x5k60] {
+        padding: var(--spacingLarge, 8px);
+    }
+
+
+.Toggle[b-88fl0x5k60] {
+    transform: rotate(-90deg);
+    transition: all .1s linear;
+}
+
+.Toggle.Expanded[b-88fl0x5k60] { transform: rotate(0deg); }
+/* _content/Bergsoft.Blazor.Inspector/TrackBarInspectorItem.razor.rz.scp.css */
+.Text[b-nqyw3irbz1] {
+    width: 28px;
+    padding-left: var(--spacingLarge, 8px);    
+}

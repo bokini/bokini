@@ -1,8 +1,8 @@
-@import '_content/Bergsoft.Blazor.Grids/Bergsoft.Blazor.Grids.8s0g9t8kus.bundle.scp.css';
-@import '_content/Bergsoft.Blazor.Inspector/Bergsoft.Blazor.Inspector.qggqb462jd.bundle.scp.css';
-@import '_content/Bergsoft.Blazor.Tabs/Bergsoft.Blazor.Tabs.43fb40scwu.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Grids/Bergsoft.Blazor.Grids.mplxr90v3i.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Inspector/Bergsoft.Blazor.Inspector.st65wzr8l1.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Tabs/Bergsoft.Blazor.Tabs.v0w1rxpr06.bundle.scp.css';
 @import '_content/Bergsoft.Blazor.Tree/Bergsoft.Blazor.Tree.n5om8n9xn2.bundle.scp.css';
-@import '_content/Bergsoft.Blazor/Bergsoft.Blazor.gl6wtup0kx.bundle.scp.css';
+@import '_content/Bergsoft.Blazor/Bergsoft.Blazor.nfuq6daal0.bundle.scp.css';
 
 /* /Components/BackButton.razor.rz.scp.css */
 .BackButton[b-g2isju7mh9] {
@@ -43,14 +43,15 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+        min-height: 240px;
         height: 100%;
     }
 
-.Card header[b-upltcciw9r] {
-    background: var(--baseSurface);
-    border-radius: 16px;
-    overflow: hidden;
-}
+    .Card header[b-upltcciw9r] {
+        background: var(--baseSurface);
+        border-radius: 16px;
+        overflow: hidden;
+    }
 
 .Card h2[b-upltcciw9r] {
     font-size: 16px;

@@ -5,7 +5,7 @@
     --codeblock-padding: 40px;
     --codeblock-justify-content: left;
     --codeblock-tab-padding: 0 5px;
-    --nav-display: flex;
+    --nav-display: block;
     --horz-padding: 40px;
     --grid-template-columns: repeat(4, 1fr);
     --bodyFontSize: 12px;
@@ -73,7 +73,7 @@ main > section > nav {
     display: var(--nav-display);
     flex-direction: column;
     flex-shrink: 0;
-    padding: 0 20px;
+    padding: 20px 20px;
     width: 280px;
 }
 
