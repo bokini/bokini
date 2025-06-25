@@ -7,6 +7,12 @@ export function connect(dotnet, knob, hasProgress, progressRef, min, max) {
 
     const calcKnobLeft = position => ((position - min) / (max - min)) * 100;
 
+    const calcPosition = e => {
+        const relativeX = e.clientX - bounds.left;
+        const clampedX = Math.max(0, Math.min(relativeX, bounds.width));
+        return Math.round(clampedX / (bounds.width / (max - min)));
+    }
+
     function startDragging(e) {
         isDragging = true;
         knob.setPointerCapture(e.pointerId);
@@ -19,11 +25,8 @@ export function connect(dotnet, knob, hasProgress, progressRef, min, max) {
 
     trackBar.addEventListener("pointerup", e => stopDragging(e));
 
-    trackBar.addEventListener("pointerdown", (e) => {
-        const relativeX = e.clientX - bounds.left;
-        const clampedX = Math.max(0, Math.min(relativeX, bounds.width));
-        const position = Math.round(clampedX / (bounds.width / (max - min)));
-
+    trackBar.addEventListener("pointerdown", e => {
+        const position = calcPosition(e);
         if (position >= min && position <= max) {
             updateKnobAndProgress(position);
             dotnet.invokeMethodAsync("PositionChangedAsync", position);
@@ -32,11 +35,9 @@ export function connect(dotnet, knob, hasProgress, progressRef, min, max) {
         startDragging(e);
     });
 
-    knob.addEventListener("pointermove", (e) => {
+    knob.addEventListener("pointermove", e => {
         if (isDragging) {
-            const relativeX = e.clientX - bounds.left;
-            const clampedX = Math.max(0, Math.min(relativeX, bounds.width));
-            const position = Math.round(clampedX / (bounds.width / (max - min)));
+            const position = calcPosition(e);
                 
             if (position >= min && position <= max) {
                 //updateKnobAndProgress(position);

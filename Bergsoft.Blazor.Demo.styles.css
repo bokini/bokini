@@ -2,7 +2,7 @@
 @import '_content/Bergsoft.Blazor.Inspector/Bergsoft.Blazor.Inspector.kl8iu2mqac.bundle.scp.css';
 @import '_content/Bergsoft.Blazor.Tabs/Bergsoft.Blazor.Tabs.2xi599nck3.bundle.scp.css';
 @import '_content/Bergsoft.Blazor.Tree/Bergsoft.Blazor.Tree.5orx1qbwm9.bundle.scp.css';
-@import '_content/Bergsoft.Blazor/Bergsoft.Blazor.46cgsfga7d.bundle.scp.css';
+@import '_content/Bergsoft.Blazor/Bergsoft.Blazor.na0ox41hyo.bundle.scp.css';
 
 /* /Components/BackButton.razor.rz.scp.css */
 .BackButton[b-g2isju7mh9] {
@@ -65,6 +65,24 @@
     overflow: hidden;
     white-space: normal;
 }
+/* /Components/ChangelogButton.razor.rz.scp.css */
+.ChangelogButton[b-6710j36xie] {
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    color: var(--content);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: var(--bodyFontSize);
+    margin-bottom: 1em;
+    gap: 4px;
+    padding: 8px;
+}
+
+    .ChangelogButton:hover[b-6710j36xie] {
+        background: var(--surface);
+    }
 /* /Components/CodeBlock.razor.rz.scp.css */
 .CodeBlock[b-o7a8t63szu] {
     margin-bottom: 20px;
