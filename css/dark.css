@@ -1,36 +1,47 @@
 ﻿:root {
-    --baseSurface: #000;
-    --background: #121212;
-    --surface: #1b1b1b;
-    --secondarySurface: #262626;
-    --tertiarySurface: #121212;
-    --active: #f2f2f2;
-    --content: #f2f2f2;
-    --activeText: #000;
-    --gridLines: rgba(225, 225, 225, .25);
-    --overlay: #262626;
-    --focusBorder: #0095ff;
-    --focusBorderOffset: 1px;
-    --focusBorderSize: 2px;
-    --fontSize: 12px;
-    --fontSizeS: 11px;
-    --fontSizeXS: 10px;
-    --borderRadius: 4px;
-    --borderRadiusM: 6px;
-    --borderRadiusLarge: 8px;
-    --borderRadiusXL: 12px;
-    --spacing: 4px;
-    --spacingLarge: 8px;
-    --selection: #0a2e4a;
-    --selectionText: #f2f2f2;
-    --dangerSurface: #2b0f0b;
-    --dangerContent: #ff3b3b;
-    --successSurface: #112b0b;
-    --successContent: #32d600;
+    --background: hsl(0, 0%, 10%); /* Page background */
+
+    /* Surface */
+    --surface: hsl(0, 0%, 14%); /* Base container surface */
+    --surface-secondary: hsl(0, 0%, 8%); /* Input, ListBox etc. */
+    --surface-hover: hsl(0, 0%, 20%);
+    --surface-active: hsl(0, 0%, 12%);
+
+    /* Content */
+    --active: white;
+    --content: hsl(0, 0%, 90%);
+    --content-inverted: black;
+
+    /* Selected & focused states */
+    --state-selection-bg: #0a2e4a;
+    --state-selection-content: #f2f2f2;
+    --state-focus-border: #0095ff;
+    --state-focus-border-size: 2px;
+    --state-focus-border-offset: 1px;
+
+    /* Visual details */
+    --grid-lines: rgba(225, 225, 225, .25);
+
+    /* Size */
+    --size-xs: 4px;
+    --size-sm: 6px;
+    --size-md: 8px;
+    --size-lg: 12px;
+    --border-radius-sm: var(--size-xs); /* 4 */
+    --border-radius-md: var(--size-sm); /* 6 */
+    --border-radius-lg: var(--size-md); /* 8 */
+
+    --spacing: var(--size-xs);
+    --spacing-md: var(--size-md);
+    --surface-danger: #2b0f0b;
+    --content-danger: #ff3b3b;
+    --surface-success: #112b0b;
+    --content-success: #32d600;
 }
 
 :root {
-    --attribute: #8addff;
-    --keyword: #3c9ddb;
-    --parameter: #009997;
+    --component: var(--content);
+    --attribute: #ff0000;
+    --parameter: #800080;
+    --keyword: #0000ff;
 }

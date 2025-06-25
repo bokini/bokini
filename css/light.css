@@ -1,35 +1,51 @@
 ﻿:root {
-    --baseSurface: #FFF;
-    --background: #F7F7F7;
-    --surface: #EAECEE;
-    --secondarySurface: #f3f3f3;
-    --tertiarySurface: #dee1e4;
-    --active: #0b0d0e;
-    --content: #000;
-    --activeText: #fff;
-    --focusBorder: #0095ff;
-    --focusBorderOffset: 1px;
-    --focusBorderSize: 2px;
-    --gridLines: #ccc;
-    --overlay: white;
-    --fontSize: 12px;
-    --fontSizeS: 11px;
-    --fontSizeXS: 10px;
-    --borderRadius: 4px;
-    --borderRadiusM: 6px;
-    --borderRadiusLarge: 8px;
-    --borderRadiusXL: 12px;
-    --spacing: 4px;
-    --spacingLarge: 8px;
-    --selection: #d9efff;
-    --selectionText: #000;
-    --dangerSurface: #ffe9e7;
-    --dangerContent: #910808;
-    --successSurface: #e7ffed;
-    --successContent: #289208;
+    /* Light */
+
+    --background: hsl(0, 0%, 100%); /* Page background */
+
+    /* Surface */
+    --surface: hsl(0, 0%, 92%); /* Base container surface */
+    --surface-secondary: hsl(0, 0%, 97%); /* Input, ListBox etc. */
+    --surface-hover: hsl(0, 0%, 95%);
+    --surface-active: hsl(0, 0%, 80%);
+
+    /* Content */
+    --active: white;
+    --content: hsl(0, 0%, 10%);
+    --content-inverted: white;
+
+    /* Selected & focused states */
+    --state-selection-bg: #d9efff;
+    --state-selection-content: #000;
+
+    --state-focus-border: #0095ff;
+    --state-focus-border-size: 2px;
+    --state-focus-border-offset: 1px;
+
+    /* Visual details */
+    --grid-lines: rgba(225, 225, 225, .25);
+
+    /* Size */
+    --size-xs: 4px;
+    --size-sm: 6px;
+    --size-md: 8px;
+    --size-lg: 12px;
+
+    --border-radius-sm: var(--size-xs); /* 4 */
+    --border-radius-md: var(--size-sm); /* 6 */
+    --border-radius-lg: var(--size-md); /* 8 */
+
+    --spacing: var(--size-xs);
+    --spacing-md: var(--size-md);
+
+    --surface-danger: #ffe9e7;
+    --content-danger: #910808;
+    --surface-success: #e7ffed;
+    --content-success: #289208;
 }
 
 :root {
+    --component: black;
     --attribute: #ff0000;
     --parameter: #800080;
     --keyword: #0000ff;

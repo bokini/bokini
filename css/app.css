@@ -13,7 +13,7 @@
 }
 
 body {
-    background: var(--baseSurface);
+    background: var(--background);
 }
 
 main {
@@ -22,7 +22,7 @@ main {
 }
 
     main:not(.inner) {
-        background: var(--background);
+        background: var(--surface);
     }
 
     main:is(.inner) > section {
@@ -32,7 +32,7 @@ main {
 
     main > header {
         align-items: center;
-        background: var(--baseSurface);
+        background: var(--background);
         color: var(--content);
         display: flex;
         justify-content: space-between;
@@ -42,7 +42,7 @@ main {
 
     main > footer {
         align-items: center;
-        background: var(--baseSurface);
+        background: var(--background);
         color: var(--content);
         padding: 40px var(--horz-padding);
     }
@@ -69,7 +69,7 @@ main {
     }
 
 main > section > nav {
-    background: var(--secondarySurface);
+    background: var(--surface-hover);
     display: var(--nav-display);
     flex-direction: column;
     flex-shrink: 0;

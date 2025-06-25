@@ -1,15 +1,15 @@
-@import '_content/Bergsoft.Blazor.Grids/Bergsoft.Blazor.Grids.mplxr90v3i.bundle.scp.css';
-@import '_content/Bergsoft.Blazor.Inspector/Bergsoft.Blazor.Inspector.st65wzr8l1.bundle.scp.css';
-@import '_content/Bergsoft.Blazor.Tabs/Bergsoft.Blazor.Tabs.v0w1rxpr06.bundle.scp.css';
-@import '_content/Bergsoft.Blazor.Tree/Bergsoft.Blazor.Tree.n5om8n9xn2.bundle.scp.css';
-@import '_content/Bergsoft.Blazor/Bergsoft.Blazor.9me1vxb5n0.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Grids/Bergsoft.Blazor.Grids.74pjofv5ml.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Inspector/Bergsoft.Blazor.Inspector.kl8iu2mqac.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Tabs/Bergsoft.Blazor.Tabs.2xi599nck3.bundle.scp.css';
+@import '_content/Bergsoft.Blazor.Tree/Bergsoft.Blazor.Tree.5orx1qbwm9.bundle.scp.css';
+@import '_content/Bergsoft.Blazor/Bergsoft.Blazor.46cgsfga7d.bundle.scp.css';
 
 /* /Components/BackButton.razor.rz.scp.css */
 .BackButton[b-g2isju7mh9] {
     align-items: center;
     background: none;
     border: none;
-    border-radius: var(--borderRadius);
+    border-radius: var(--border-radius-sm);
     color: var(--content);
     cursor: pointer;
     display: inline-flex;
@@ -48,7 +48,7 @@
     }
 
     .Card header[b-upltcciw9r] {
-        background: var(--baseSurface);
+        background: var(--background);
         border-radius: 16px;
         overflow: hidden;
     }
@@ -78,7 +78,7 @@
     }
 
     .CodeBlock > section[b-o7a8t63szu] {
-        border-top: 1px solid var(--gridLines);
+        border-top: 1px solid var(--grid-lines);
         top: -1px;
     }
 
@@ -109,11 +109,11 @@
 
         .CodeBlock button.active[b-o7a8t63szu] {
             cursor: default;
-            border-bottom: 2px solid var(--focusBorder);
+            border-bottom: 2px solid var(--state-focus-border);
         }
 
     .CodeBlock .FileType[b-o7a8t63szu] {
-        background: var(--background);
+        background: var(--surface);
         display: block;
         font-size: 9px;
         color: #999;
@@ -122,7 +122,7 @@
     }
 
     .CodeBlock pre[b-o7a8t63szu] {
-        background: var(--background);
+        background: var(--surface);
         color: var(--content);
         font-family: monospace;
         font-size: 12px;
@@ -138,7 +138,7 @@
 }
 
     .BrushPresets td[b-4kjfufevw1] {
-        padding: var(--spacingLarge);
+        padding: var(--spacing-md);
     }
 
     .Preset[b-4kjfufevw1] {
@@ -148,7 +148,7 @@
     }
 
         .Selection[b-4kjfufevw1] {
-            background: var(--focusBorder);
+            background: var(--state-focus-border);
         }
 
         .Yolk[b-4kjfufevw1] {
