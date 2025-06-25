@@ -45,6 +45,7 @@
 }
 
 :root {
+    --card-color: white;
     --component: black;
     --attribute: #ff0000;
     --parameter: #800080;

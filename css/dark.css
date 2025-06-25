@@ -40,6 +40,7 @@
 }
 
 :root {
+    --card-color: black;
     --component: var(--content);
     --attribute: #ff0000;
     --parameter: #800080;
