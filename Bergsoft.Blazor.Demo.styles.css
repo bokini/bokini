@@ -14,7 +14,6 @@
     cursor: pointer;
     display: inline-flex;
     font-size: var(--bodyFontSize);
-    margin-bottom: 1em;
     gap: 4px;
     padding: 8px;
 }
@@ -75,7 +74,6 @@
     cursor: pointer;
     display: inline-flex;
     font-size: var(--bodyFontSize);
-    margin-bottom: 1em;
     gap: 4px;
     padding: 8px;
 }
@@ -150,6 +148,13 @@
         word-wrap: break-word; 
         overflow-wrap: break-word; 
     }
+/* /Components/TopBar.razor.rz.scp.css */
+.TopBar[b-t6msevtewt] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
 /* /Pages/BarsPage.razor.rz.scp.css */
 .BrushPresets[b-4kjfufevw1] {
     margin-bottom: 20px;
