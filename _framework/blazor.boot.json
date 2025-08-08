@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Bergsoft.Blazor.Demo",
   "resources": {
-    "hash": "sha256-njtzEX/BB+qNjIWOZVjnuc50Fn2NzYoon1Iav2nJDr4=",
+    "hash": "sha256-jpcQJo8bsr+nR7iixwBMhUgGs9GmH4TPDjAZk5YfHC8=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-YyxJV6dv935qHoQAmjB+2qRjHeGpm4SyWxE0T/KvsIE="
     },
@@ -48,20 +48,20 @@
       "System.Private.Uri.wasm": "sha256-FkRgvpHo5IzFFmYHOx4L7AUDmAqlJt4VlrCGwIQhrxs=",
       "System.Runtime.InteropServices.JavaScript.wasm": "sha256-6ht7t7ZGK/86U8FnFK1GLseCU0E5iuaDtCmC7u+/c0U=",
       "System.Runtime.InteropServices.wasm": "sha256-6eP1mgDcmJK0+xKkiJ9JVT8Ob69bknpSMQJl7SSR+pw=",
-      "System.Runtime.wasm": "sha256-Eb/74jhM6d2l+WRJmxMhC8xiM+eUrbiiE2bJfv0XYYQ=",
+      "System.Runtime.wasm": "sha256-jQmkA9yWA2YTJRE7zURMHQKA9diWqN0X601PXnVLo5o=",
       "System.Text.Encodings.Web.wasm": "sha256-TyCrgbuqNXEwZqFx+EGYl/MMzRwCdmCy0gpTCOLv/JQ=",
       "System.Text.Json.wasm": "sha256-+Ilm7kdBg5lYUSkFTBIljzKamtC6SuPUzSAQpP7AA2U=",
       "System.Text.RegularExpressions.wasm": "sha256-hGZleNEZV17Dz5kzEWFvNqnurwCDj1PZ9QMtVOHwaI0=",
       "System.Threading.Thread.wasm": "sha256-IVFelUxPcDt4geYDZmFDhR5NJrI6G0YiCwK3yj7m3Lw=",
       "System.wasm": "sha256-ovI9fLxLRfh4RwNCi87t4luRVFfNap5GiBEwY0eh3bc=",
       "System.Private.CoreLib.wasm": "sha256-uwcKLXaFnf1Mo3xmyiI7gGpa0uI3RBgirxkOURONuXo=",
-      "Bergsoft.Blazor.wasm": "sha256-GVVMGPbyyhkWMQkhm7tyeme9M15UZC2Vbhr9avwkQGw=",
-      "Bergsoft.Blazor.Grids.wasm": "sha256-kh4pUcHe1R+63+63eGGQEfYwB9x3OXaQAgTtwq/APEI=",
-      "Bergsoft.Blazor.Inspector.wasm": "sha256-PL3Yx5qLDmjbd+Yg89VIcnYylQujYMxdAaOFduKC7N4=",
-      "Bergsoft.Blazor.Tabs.wasm": "sha256-HREK74q4uc7A+l3Hfk4CvLap9ztcVqq/fpojPO6vg8U=",
-      "Bergsoft.Blazor.Tree.wasm": "sha256-wG8jz7a5wZHE4NagNdBKDUa/gX6IBFcUN1Bhettogmk=",
-      "Bergsoft.wasm": "sha256-lV1R+C8qpoK5Yv4IrkBeRCAYE3wAVJcBMtRFxQly8zI=",
-      "Bergsoft.Blazor.Demo.wasm": "sha256-affg6enxKBupke2tYG/JLXT6mKY2mogFCaNn49/C2Dg="
+      "Bergsoft.Blazor.wasm": "sha256-yHkhgC7BPWLa2k+TYthGrOS2eKri0aSFMxOg7/v97y8=",
+      "Bergsoft.Blazor.Grids.wasm": "sha256-gqiQlU9qUS6UEltHPtXRosXQWNFCxITh99nflpUClX4=",
+      "Bergsoft.Blazor.Inspector.wasm": "sha256-Uc7QQVPL+flGQiuovM6W90qgWv3koqOXLUWjN8SHYdU=",
+      "Bergsoft.Blazor.Tabs.wasm": "sha256-F9frlhtRifV+Z2aEGE5gspuLvMXniTcnEFTg2B6Ooxo=",
+      "Bergsoft.Blazor.Tree.wasm": "sha256-qz0W14TbnPrqcVt3/aGf8hVQJQQ+7BrFZSZjgAyIYu4=",
+      "Bergsoft.wasm": "sha256-6ANrxRsvxMGYBa7fnz+jj4wIGDLiSLdmFWUUNu4A4jc=",
+      "Bergsoft.Blazor.Demo.wasm": "sha256-oHECz3SlIVbpAFgPaM8uesiakWxxJkYR49XRnZQ2a3I="
     }
   },
   "cacheBootResources": true,

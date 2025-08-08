@@ -9,7 +9,7 @@
 
     /* Content */
     --active: white;
-    --content: hsl(0, 0%, 90%);
+    --content: hsl(0, 0%, 95%);
     --content-inverted: black;
 
     /* Selected & focused states */
