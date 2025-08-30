@@ -1,0 +1,49 @@
+﻿/*
+    Light style
+    v1.0.3
+*/
+
+:root {
+    --background: hsl(0, 0%, 100%); /* Page background */
+
+    /* Surface */
+    --surface: hsl(0, 0%, 92%); /* Base container surface */
+    --surface-secondary: hsl(0, 0%, 97%); /* Input, ListBox etc. */
+    --surface-hover: hsl(0, 0%, 95%);
+    --surface-active: hsl(0, 0%, 90%);
+
+    /* Content */
+    --active: white;
+    --content: hsl(0, 0%, 10%);
+    --content-inverted: white;
+
+    /* Selected & focused states */
+    --state-selection-bg: #d9efff;
+    --state-selection-content: #000;
+
+    --state-focus-border: #0095ff;
+    --state-focus-border-size: 2px;
+    --state-focus-border-offset: 1px;
+
+    /* Visual details */
+    --grid-lines: rgba(225, 225, 225, .25);
+
+    /* Size */
+    --size-xs: 4px;
+    --size-sm: 6px;
+    --size-md: 8px;
+    --size-lg: 12px;
+
+    --border-radius-sm: var(--size-xs); /* 4 */
+    --border-radius-md: var(--size-sm); /* 6 */
+    --border-radius-lg: var(--size-md); /* 8 */
+    --border-radius-xl: var(--size-lg); /* 12 */
+
+    --spacing: var(--size-xs);
+    --spacing-md: var(--size-md);
+
+    --surface-danger: #ffe9e7;
+    --content-danger: #910808;
+    --surface-success: #e7ffed;
+    --content-success: #289208;
+}

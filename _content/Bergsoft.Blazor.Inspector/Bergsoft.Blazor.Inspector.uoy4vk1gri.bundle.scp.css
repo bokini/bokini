@@ -1,0 +1,12 @@
+/* _content/Bergsoft.Blazor.Inspector/ColorInspectorItem.razor.rz.scp.css */
+.Palette[b-rwysfu86re] {
+    align-items: center;
+    display: flex;
+    padding-left: var(--spacing-md, 8px);
+    height: 12px;
+}
+/* _content/Bergsoft.Blazor.Inspector/TrackBarInspectorItem.razor.rz.scp.css */
+.Text[b-nqyw3irbz1] {
+    width: 28px;
+    padding-left: var(--spacing-md, 8px);    
+}

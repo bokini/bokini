@@ -16,7 +16,7 @@ export function connect(dialog, title) {
     });
 
     title.addEventListener("pointerdown", (e) => {
-        if (title.classList.contains("Moving")) {
+        if (title.classList.contains("moving")) {
             isMoving = true;
             e.currentTarget.setPointerCapture(e.pointerId);
             offset = {
