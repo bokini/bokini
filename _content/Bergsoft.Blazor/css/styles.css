@@ -1161,13 +1161,14 @@
   z-index: 90000;
   opacity: 0;
   top: 100%;
-  margin-top: 4px;
+  margin-top: 2px;
   left: 50%;
   transform: translateX(-50%);
+  transition: all ease-out 1s;
   white-space: nowrap;
 }
 .tooltip-container .tooltip-core .tooltip {
-  background: color-mix(in srgb, var(--surface-active, lightgray) 75%, var(--state-focus-border, dodgerblue) 25%);
+  background: var(--surface-active, lightgray);
   color: var(--content, black);
   font-size: calc(1em - 1px);
   padding: var(--size-xs, 4px) var(--size-md, 8px);
