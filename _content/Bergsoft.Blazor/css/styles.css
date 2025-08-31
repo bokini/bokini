@@ -1467,7 +1467,7 @@
   color: var(--content-danger, indianred);
   fill: var(--content-danger, indianred);
 }
-.style-danger:hover:not(.active) {
+.style-danger:hover:not(:active) {
   background: var(--surface-danger, mistyrose);
 }
 
@@ -1475,7 +1475,7 @@
   color: var(--content-success, forestgreen);
   fill: var(--content-success, forestgreen);
 }
-.style-success:hover:not(.active) {
+.style-success:hover:not(:active) {
   background: var(--surface-success, lightgreen);
 }
 
