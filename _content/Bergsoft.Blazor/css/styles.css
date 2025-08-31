@@ -1167,14 +1167,23 @@
   white-space: nowrap;
 }
 .tooltip-container .tooltip-core .tooltip {
-  background-color: var(--surface-hover, whitesmoke);
+  background: color-mix(in srgb, var(--surface-active, lightgray) 90%, var(--state-selection-bg, lightblue) 10%);
   color: var(--content, black);
-  padding: var(--size-lg, 12px);
-  border-radius: var(--border-radius-xl, 12px);
+  font-size: calc(1em - 1px);
+  padding: var(--size-xs, 4px) var(--size-md, 8px);
+  border-radius: calc(var(--border-radius-lg, 8px) * 2);
   z-index: 20000;
 }
-.tooltip-container .tooltip-core .tooltip > section {
-  font-size: smaller;
+.tooltip-container .tooltip-core .tooltip.spacious {
+  padding: var(--size-md, 8px) calc(var(--size-sm, 6px) * 2);
+}
+.tooltip-container .tooltip-core .tooltip > header {
+  align-items: center;
+  display: flex;
+  gap: var(--size-sm, 6px);
+}
+.tooltip-container .tooltip-core .tooltip > header svg {
+  fill: var(--content, black);
 }
 .tooltip-container .tooltip-core .beak-core {
   width: var(--beakSize, 12px);
@@ -1192,8 +1201,8 @@
 }
 .tooltip-container .tooltip-core .separator {
   border-bottom: 1px solid var(--content, black);
-  margin: var(--size-sm, 6px) 0;
-  opacity: 0.25;
+  margin: var(--size-xs, 4px) 0;
+  opacity: 0.15;
 }
 
 .track-bar {
