@@ -8,6 +8,8 @@ function setupReordering(control) {
         control.addEventListener("pointerdown", e => {
 
             if (e.target.classList.contains("drag-handle")) {
+                e.preventDefault();
+
                 offsetY = e.offsetY;
 
                 dragged = e.target.parentNode;
@@ -27,6 +29,7 @@ function setupReordering(control) {
                 dragged.style.top = `${rect.top}px`;
                 dragged.style.left = `${rect.left}px`;
                 dragged.style.width = `${control.getBoundingClientRect().width}px`;
+                dragged.style.userSelect = 'none';
 
                 document.addEventListener("pointermove", onPointerMove);
                 document.addEventListener("pointerup", onPointerUp);
@@ -34,7 +37,9 @@ function setupReordering(control) {
         });
 
         function onPointerMove(e) {
-            if (!dragged) return;
+            if (!dragged)
+                return;
+            e.preventDefault();
             dragged.style.top = e.clientY - offsetY + "px";
 
             const items = [...control.querySelectorAll(".item:not(.dragging)")];
@@ -60,7 +65,7 @@ function setupReordering(control) {
             dragged.style.top = '';
             dragged.style.left = '';
             dragged.style.width = '';
-            dragged.style.position = 'static';
+            dragged.style.position = '';
 
             placeholder.remove();
             placeholder = null;

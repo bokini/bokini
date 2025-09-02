@@ -737,10 +737,10 @@
 }
 
 .dragging {
-  opacity: 0.75;
+  background: var(--surface-hover, whitesmoke);
   color: var(--content, black);
   position: absolute;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  touch-action: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
