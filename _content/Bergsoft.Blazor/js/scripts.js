@@ -1,56 +1,86 @@
-function setupReordering(control) {
+function setupReordering(listbox) {
     let dragged = null;
-    let offsetY = 0;
     let placeholder = null;
+    let deltaY = 0;
+    const bounds = listbox.getBoundingClientRect();
 
-    if (control !== null) {
+    if (listbox !== null) {
 
-        control.addEventListener("pointerdown", e => {
+        listbox.addEventListener("pointerdown", e => {
 
             if (e.target.classList.contains("drag-handle")) {
-                e.preventDefault();
+
+//                bounds = listbox.getBoundingClientRect();
+                const localY = e.pageY - bounds.top;
+                console.log('localY: ' + localY);
+
+                listbox.style.position = 'relative';
 
                 offsetY = e.offsetY;
 
                 dragged = e.target.parentNode;
-                const rect = dragged.getBoundingClientRect();
+
+                // Rect of the handle
+                let draggedRect = dragged.getBoundingClientRect();
+                const targetRect = e.target.getBoundingClientRect();
+                const targetY = e.pageY;// - targetRect.top;
 
                 placeholder = document.createElement("div");
                 placeholder.classList.add("placeholder");
 
                 dragged.parentNode.insertBefore(placeholder, dragged);
 
-                dragged.parentNode.removeChild(dragged);
+                //dragged.parentNode.removeChild(dragged);
 
-                document.body.appendChild(dragged);
+                //document.body.appendChild(dragged);
                 dragged.classList.add("dragging");
 
                 dragged.style.position = 'absolute';
-                dragged.style.top = `${rect.top}px`;
-                dragged.style.left = `${rect.left}px`;
-                dragged.style.width = `${control.getBoundingClientRect().width}px`;
+
+                console.log('handleY: ' + targetY);
+
+//                dragged.style.top = z -  + "px";
+
+                let top = localY;// (localY - targetRect.height) - 4;
+
+                deltaY = e.pageY - draggedRect.top;
+
+//                console.log("delta: " + delta);
+
+                dragged.style.top = `${top - deltaY}px`;
+
+                dragged.style.left = `0`;
+                dragged.style.width = `${listbox.getBoundingClientRect().width}px`;
                 dragged.style.userSelect = 'none';
 
-                document.addEventListener("pointermove", onPointerMove);
-                document.addEventListener("pointerup", onPointerUp);
+                //dragged.setPointerCapture(e.pointerId);
+
+                listbox.addEventListener("pointermove", onPointerMove);
+                listbox.addEventListener("pointerup", onPointerUp);
             }
         });
+
+        function calculateTop(e) {
+            const localY = e.pageY - bounds.top;
+            return `${localY - deltaY}px`;
+        }
 
         function onPointerMove(e) {
             if (!dragged)
                 return;
-            e.preventDefault();
-            dragged.style.top = e.clientY - offsetY + "px";
 
-            const items = [...control.querySelectorAll(".item:not(.dragging)")];
+            e.preventDefault();
+            dragged.style.top = calculateTop(e);
+
+            const items = [...listbox.querySelectorAll(".item:not(.dragging)")];
             for (let item of items) {
                 const box = item.getBoundingClientRect();
                 if (e.clientY < box.top + box.height / 2) {
-                    control.insertBefore(placeholder, item);
+                    listbox.insertBefore(placeholder, item);
                     return;
                 }
             }
-            control.appendChild(placeholder);
+            listbox.appendChild(placeholder);
         }
 
         function onPointerUp() {
@@ -59,7 +89,8 @@ function setupReordering(control) {
 
             // Inserts before the placeholder
             dragged.remove();
-            control.insertBefore(dragged, placeholder);           
+            listbox.insertBefore(dragged, placeholder);           
+            listbox.style.position = '';
 
             dragged.classList.remove("dragging");
             dragged.style.top = '';

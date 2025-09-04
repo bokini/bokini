@@ -747,13 +747,14 @@
 }
 
 .list-box {
-  overflow-y: auto;
+  overflow: clip auto;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 .list-box .placeholder {
   background: inherit;
+  cursor: grabbing;
   height: 28px;
 }
 .list-box .item {
@@ -768,7 +769,7 @@
   -webkit-user-select: none;
   user-select: none;
 }
-.list-box .item:hover {
+.list-box .item:hover:not(.dragging) {
   background-color: var(--surface-hover, whitesmoke);
 }
 .list-box .item .drag-handle {
