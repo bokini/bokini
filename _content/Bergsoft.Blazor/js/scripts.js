@@ -2,55 +2,36 @@ function setupReordering(listbox) {
     let dragged = null;
     let placeholder = null;
     let deltaY = 0;
-    const bounds = listbox.getBoundingClientRect();
 
     if (listbox !== null) {
 
         listbox.addEventListener("pointerdown", e => {
 
             if (e.target.classList.contains("drag-handle")) {
-
-//                bounds = listbox.getBoundingClientRect();
-                const localY = e.pageY - bounds.top;
-                console.log('localY: ' + localY);
-
                 listbox.style.position = 'relative';
-
-                offsetY = e.offsetY;
 
                 dragged = e.target.parentNode;
 
-                // Rect of the handle
                 let draggedRect = dragged.getBoundingClientRect();
-                const targetRect = e.target.getBoundingClientRect();
-                const targetY = e.pageY;// - targetRect.top;
+                const targetY = e.pageY;
 
                 placeholder = document.createElement("div");
                 placeholder.classList.add("placeholder");
+                placeholder.style.height = `${draggedRect.height}px`;
 
                 dragged.parentNode.insertBefore(placeholder, dragged);
-
-                //dragged.parentNode.removeChild(dragged);
-
-                //document.body.appendChild(dragged);
                 dragged.classList.add("dragging");
 
                 dragged.style.position = 'absolute';
 
-                console.log('handleY: ' + targetY);
-
-//                dragged.style.top = z -  + "px";
-
-                let top = localY;// (localY - targetRect.height) - 4;
-
                 deltaY = e.pageY - draggedRect.top;
 
-//                console.log("delta: " + delta);
+                const style = window.getComputedStyle(listbox);
 
-                dragged.style.top = `${top - deltaY}px`;
+                dragged.style.top = calculateTop(e);
 
-                dragged.style.left = `0`;
-                dragged.style.width = `${listbox.getBoundingClientRect().width}px`;
+                dragged.style.left = style.paddingLeft;
+                dragged.style.width = `${draggedRect.width}px`;
                 dragged.style.userSelect = 'none';
 
                 //dragged.setPointerCapture(e.pointerId);
@@ -61,7 +42,8 @@ function setupReordering(listbox) {
         });
 
         function calculateTop(e) {
-            const localY = e.pageY - bounds.top;
+            const listboxRect = listbox.getBoundingClientRect();
+            const localY = e.pageY - listboxRect.top;
             return `${localY - deltaY}px`;
         }
 
@@ -103,8 +85,8 @@ function setupReordering(listbox) {
 
             dragged = null;
 
-            document.removeEventListener("pointermove", onPointerMove);
-            document.removeEventListener("pointerup", onPointerUp);
+            listbox.removeEventListener("pointermove", onPointerMove);
+            listbox.removeEventListener("pointerup", onPointerUp);
         }
     }
 }

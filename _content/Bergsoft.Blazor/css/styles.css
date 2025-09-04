@@ -736,16 +736,6 @@
   fill: var(--red, red);
 }
 
-.dragging {
-  background: var(--surface-hover, whitesmoke);
-  color: var(--content, black);
-  position: absolute;
-  touch-action: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
 .list-box {
   overflow: clip auto;
   -moz-user-select: none;
@@ -754,12 +744,9 @@
 }
 .list-box .placeholder {
   background: inherit;
-  cursor: grabbing;
-  height: 28px;
 }
 .list-box .item {
   border-radius: var(--border-radius-sm, 4px);
-  cursor: pointer;
   color: var(--content, black);
   display: flex;
   align-items: center;
@@ -769,7 +756,20 @@
   -webkit-user-select: none;
   user-select: none;
 }
-.list-box .item:hover:not(.dragging) {
+.list-box .item.dragging {
+  background: var(--surface-hover, whitesmoke);
+  color: var(--content, black);
+  cursor: grabbing;
+  position: absolute;
+  touch-action: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.list-box .item .item:not(.dragging) {
+  cursor: pointer;
+}
+.list-box .item .item:not(.dragging):hover {
   background-color: var(--surface-hover, whitesmoke);
 }
 .list-box .item .drag-handle {
