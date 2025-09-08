@@ -1,40 +1,26 @@
-function setupReordering(listbox) {
-    let dragged = null;
-    let placeholder = null;
+function setupReordering(listbox, dotNetRef) {
+    let item = null;
     let deltaY = 0;
+    let dragIndex, newIndex = null;
 
     if (listbox !== null) {
+
+        const style = window.getComputedStyle(listbox);
 
         listbox.addEventListener("pointerdown", e => {
 
             if (e.target.classList.contains("drag-handle")) {
-                listbox.style.position = 'relative';
 
-                dragged = e.target.parentNode;
+                item = e.target.parentNode;
+                dragIndex = parseInt(item.dataset.index);
 
-                let draggedRect = dragged.getBoundingClientRect();
-                const targetY = e.pageY;
+                let draggedRect = item.getBoundingClientRect();
 
-                placeholder = document.createElement("div");
-                placeholder.classList.add("placeholder");
-                placeholder.style.height = `${draggedRect.height}px`;
+                deltaY = e.pageY - draggedRect.top - listbox.scrollTop;
 
-                dragged.parentNode.insertBefore(placeholder, dragged);
-                dragged.classList.add("dragging");
+                dotNetRef.invokeMethodAsync("HandleDragStart", dragIndex, calculateTop(e))
 
-                dragged.style.position = 'absolute';
-
-                deltaY = e.pageY - draggedRect.top;
-
-                const style = window.getComputedStyle(listbox);
-
-                dragged.style.top = calculateTop(e);
-
-                dragged.style.left = style.paddingLeft;
-                dragged.style.width = `${draggedRect.width}px`;
-                dragged.style.userSelect = 'none';
-
-                //dragged.setPointerCapture(e.pointerId);
+                item.setPointerCapture(e.pointerId);
 
                 listbox.addEventListener("pointermove", onPointerMove);
                 listbox.addEventListener("pointerup", onPointerUp);
@@ -43,50 +29,40 @@ function setupReordering(listbox) {
 
         function calculateTop(e) {
             const listboxRect = listbox.getBoundingClientRect();
-            const localY = e.pageY - listboxRect.top;
+            const localY = e.pageY - listboxRect.top - parseInt(style.paddingTop);
             return `${localY - deltaY}px`;
         }
 
         function onPointerMove(e) {
-            if (!dragged)
+            if (!item)
                 return;
 
             e.preventDefault();
-            dragged.style.top = calculateTop(e);
 
             const items = [...listbox.querySelectorAll(".item:not(.dragging)")];
             for (let item of items) {
-                const box = item.getBoundingClientRect();
-                if (e.clientY < box.top + box.height / 2) {
-                    listbox.insertBefore(placeholder, item);
+                const itemRect = item.getBoundingClientRect();
+                if (e.clientY < itemRect.top + itemRect.height / 2) {
+                    newIndex = parseInt(item.dataset.index);
+                    dotNetRef.invokeMethodAsync("HandleDragOver", newIndex, calculateTop(e));
                     return;
                 }
             }
-            listbox.appendChild(placeholder);
+            dotNetRef.invokeMethodAsync("HandleDragOver", newIndex + 1, calculateTop(e));
         }
 
-        function onPointerUp() {
-            if (!dragged)
+        function onPointerUp(e) {
+            if (!item)
                 return;
 
-            // Inserts before the placeholder
-            dragged.remove();
-            listbox.insertBefore(dragged, placeholder);           
-            listbox.style.position = '';
+            item.releasePointerCapture(e.pointerId);
+            item = null;
 
-            dragged.classList.remove("dragging");
-            dragged.style.top = '';
-            dragged.style.left = '';
-            dragged.style.width = '';
-            dragged.style.position = '';
-
-            placeholder.remove();
-            placeholder = null;
-
-            dragged = null;
+            dotNetRef.invokeMethodAsync("HandleDragEnd");
 
             listbox.removeEventListener("pointermove", onPointerMove);
             listbox.removeEventListener("pointerup", onPointerUp);
+
         }
     }
 }

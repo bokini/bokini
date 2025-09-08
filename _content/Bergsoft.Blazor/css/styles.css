@@ -744,13 +744,13 @@
 }
 .list-box .placeholder {
   background: inherit;
+  transition: all ease-out 0.25s;
 }
 .list-box .item {
   border-radius: var(--border-radius-sm, 4px);
   color: var(--content, black);
   display: flex;
   align-items: center;
-  height: 28px;
   padding: 0 8px;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -761,15 +761,18 @@
   color: var(--content, black);
   cursor: grabbing;
   position: absolute;
+  flex: 1;
+  inset: 0;
   touch-action: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02), 0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
 }
-.list-box .item .item:not(.dragging) {
+.list-box .item:not(.dragging) {
   cursor: pointer;
 }
-.list-box .item .item:not(.dragging):hover {
+.list-box .item:not(.dragging):hover {
   background-color: var(--surface-hover, whitesmoke);
 }
 .list-box .item .drag-handle {
