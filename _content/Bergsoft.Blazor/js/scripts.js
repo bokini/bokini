@@ -24,6 +24,9 @@ function setupReordering(listbox, dotNetRef) {
 
                 listbox.addEventListener("pointermove", onPointerMove);
                 listbox.addEventListener("pointerup", onPointerUp);
+                listbox.addEventListener("touchmove", (e) => {
+                    e.preventDefault();
+                }, { passive: false });
             }
         });
 
