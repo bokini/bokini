@@ -272,39 +272,61 @@
   -webkit-user-select: none;
   user-select: none;
 }
-.datagrid-core thead tr {
+.datagrid-core thead tr:not(.dragging) {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
 }
-.datagrid-core .grid-header {
+.datagrid-core .dragging-header {
+  cursor: grabbing;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  background: var(--surface-hover, whitesmoke);
+  border-radius: var(--border-radius-md, 6px);
+  z-index: 2581049653;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02), 0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+.datagrid-core .grid-header,
+.datagrid-core .dragging-header {
   align-items: center;
   font-weight: normal;
   height: 30px;
 }
-.datagrid-core .grid-header:not(:first-child) .content {
-  margin-left: 6px;
-}
-.datagrid-core .grid-header .content {
+.datagrid-core .grid-header .content,
+.datagrid-core .dragging-header .content {
   display: flex;
-  border-radius: var(--border-radius-md, 6px);
   padding: 0 6px;
   flex: 1;
   overflow: hidden;
   align-items: center;
-  margin-right: -6px;
-  transition: background ease-out 0.25s;
 }
-.datagrid-core .grid-header .text {
+.datagrid-core .grid-header .text,
+.datagrid-core .dragging-header .text {
   font-size: inherit;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.datagrid-core .dragging-placeholder {
+  position: absolute;
+  width: 10px;
+}
+.datagrid-core .grid-header .content {
+  border-radius: var(--border-radius-md, 6px);
+  margin-right: -6px;
+  transition: background ease-out 0.25s;
+}
+.datagrid-core .grid-header:not(:first-child) .content {
+  margin-left: 6px;
+}
 .datagrid-core .grid-header > div {
   display: flex;
   position: relative;
   height: 100%;
+}
+.datagrid-core .grid-header.dragging .content {
+  background: var(--surface, lightgray);
 }
 .datagrid-core .grid-header:not(.fixed) .content:hover {
   cursor: pointer;
@@ -454,8 +476,7 @@
   color: silver;
 }
 
-.dialog-behind {
-  background: var(--blackTranslucent40);
+.dialog-back {
   display: flex;
   width: 100%;
   height: 100%;
@@ -465,12 +486,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: 216820;
+  z-index: 2168205643;
 }
-.dialog-behind.open {
+.dialog-back.open {
   display: flex;
 }
-.dialog-behind.closed {
+.dialog-back.closed {
   display: none;
 }
 
@@ -479,10 +500,9 @@
 }
 .dialog-core.dialog {
   background: var(--surface, gainsboro);
-  border-radius: var(--size-xs, 4px);
   display: flex;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.22) 0px 25.6px 57.6px 0px, rgba(0, 0, 0, 0.18) 0px 4.8px 14.4px 0px;
+  box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02), 0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
   max-height: calc(100% - 40px);
   max-width: calc(100% - 40px);
 }
@@ -501,10 +521,14 @@
 }
 .dialog-core.dialog > header .dialog-title-core {
   flex: 1;
+  fill: var(--content, black);
   height: 100%;
 }
-.dialog-core.dialog > header .dialog-title-core.moving {
-  cursor: move;
+.dialog-core.dialog > header .dialog-title-core.draggable {
+  cursor: grab;
+}
+.dialog-core.dialog > header .dialog-title-core.dragging {
+  cursor: grabbing;
 }
 .dialog-core.dialog > header .dialog-title-core.dialog-title {
   display: flex;
@@ -751,6 +775,7 @@
   color: var(--content, black);
   display: flex;
   align-items: center;
+  gap: 4px;
   padding: 0 8px;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -768,9 +793,6 @@
   -webkit-user-select: none;
   user-select: none;
   box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02), 0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
-}
-.list-box .item:not(.dragging) {
-  cursor: pointer;
 }
 .list-box .item:not(.dragging):hover {
   background-color: var(--surface-hover, whitesmoke);
@@ -1324,6 +1346,10 @@
   --border-radius: var(--border-radius-lg, 8px);
 }
 
+.corners-large {
+  --border-radius: var(--border-radius-xl, 12px);
+}
+
 .corners-all {
   border-radius: var(--border-radius);
 }
@@ -1681,25 +1707,6 @@
   display: inline-flex;
   position: relative;
   flex: 1;
-}
-
-.item {
-  align-items: center;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  gap: 4px;
-  min-height: 32px;
-  padding: 0 8px;
-}
-.item:active {
-  background: var(--state-selection-bg, lightblue);
-}
-.item:hover {
-  background-color: var(--surface-hover, whitesmoke);
-}
-.item.selected:not(:hover) {
-  background: var(--state-selection-bg, lightblue);
 }
 
 .slide-panel-core {
