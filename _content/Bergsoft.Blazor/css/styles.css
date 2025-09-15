@@ -310,7 +310,7 @@
 }
 .datagrid-core .dragging-placeholder {
   position: absolute;
-  width: 10px;
+  touch-action: none;
 }
 .datagrid-core .grid-header .content {
   border-radius: var(--border-radius-md, 6px);

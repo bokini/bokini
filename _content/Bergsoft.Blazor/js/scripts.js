@@ -26,6 +26,9 @@ function registerHeadersReordering(headers, dotNet) {
         header.setPointerCapture(e.pointerId);
         header.addEventListener("pointermove", onPointerMove);
         header.addEventListener("pointerup", onPointerUp);
+        header.addEventListener("touchmove", e => {
+            e.preventDefault();
+        }, { passive: false });
     });
     function onPointerMove(e) {
         let currentLocation = { x: e.pageX, y: e.pageY };
