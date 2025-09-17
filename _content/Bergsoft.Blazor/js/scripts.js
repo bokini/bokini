@@ -140,8 +140,10 @@ function setupReordering(listbox, dotNet) {
             else if (target.classList.contains("item")) {
                 item = target;
             }
-            else
-                return;
+            else {
+                item = target.closest(".item");
+            }
+            ;
             if (canDrag) {
                 startDrag(e, item);
             }
@@ -179,37 +181,55 @@ function setupReordering(listbox, dotNet) {
         listbox.removeEventListener("pointerup", onPointerUp);
     }
 }
-/**
- * Setup events and handle dragging of Dialog.
- * @param dialog
- * @param title
- */
-function registerDialog(dialog, title) {
-    let dragging = false;
-    let offset;
-    title.addEventListener("pointermove", e => {
-        if (dragging) {
-            dialog.style.left = (e.clientX + offset.x) + 'px';
-            dialog.style.top = (e.clientY + offset.y) + 'px';
-            offset = {
-                x: dialog.offsetLeft - e.clientX,
-                y: dialog.offsetTop - e.clientY
-            };
-        }
-    });
-    title.addEventListener("pointerdown", e => {
-        if (title.classList.contains("dragging")) {
-            dragging = true;
-            title.setPointerCapture(e.pointerId);
-            offset = {
-                x: dialog.offsetLeft - e.clientX,
-                y: dialog.offsetTop - e.clientY
-            };
-        }
-    });
-    title.addEventListener("pointerup", e => {
-        dragging = false;
-        title.releasePointerCapture(e.pointerId);
-    });
+class Dialog {
+    constructor(dialog, title, dotnet) {
+        this.dialog = dialog;
+        this.title = title;
+        this.dotnet = dotnet;
+        this.initialize = () => {
+            let dragging = false;
+            let offset;
+            const dotnet = this.dotnet;
+            const title = this.title;
+            title.addEventListener("pointerdown", e => {
+                if (title.classList.contains("draggable")) {
+                    dragging = true;
+                    title.setPointerCapture(e.pointerId);
+                    title.classList.add("dragging");
+                    offset = {
+                        x: this.dialog.offsetLeft - e.clientX,
+                        y: this.dialog.offsetTop - e.clientY
+                    };
+                }
+                title.addEventListener("pointermove", titlePointerMove);
+                title.addEventListener("pointerup", titlePointerUp);
+                title.addEventListener("touchmove", e => {
+                    e.preventDefault();
+                }, { passive: false });
+            });
+            function titlePointerMove(e) {
+                if (dragging) {
+                    const position = {
+                        x: e.clientX + offset.x,
+                        y: e.clientY + offset.y
+                    };
+                    dotnet.invokeMethodAsync("SetPosition", `${position.x}px`, `${position.y}px`);
+                }
+            }
+            function titlePointerUp(e) {
+                dragging = false;
+                title.releasePointerCapture(e.pointerId);
+                title.classList.remove("dragging");
+                title.removeEventListener("pointermove", titlePointerMove);
+                title.removeEventListener("pointerup", titlePointerUp);
+            }
+        };
+        this.initialize();
+    }
 }
+window.dialogFactory = {
+    create: (dialog, title, dotNetHelper) => {
+        return new Dialog(dialog, title, dotNetHelper);
+    }
+};
 //# sourceMappingURL=scripts.js.map
