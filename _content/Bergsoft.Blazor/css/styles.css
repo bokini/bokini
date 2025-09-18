@@ -476,8 +476,13 @@
   color: silver;
 }
 
-.dialog-overlay {
-  display: flex;
+.dialog-overlay-core {
+  display: none;
+}
+.dialog-overlay-core.is-open {
+  display: inline;
+}
+.dialog-overlay-core.dialog-overlay {
   position: fixed;
   inset: 0;
   align-items: center;
@@ -488,11 +493,8 @@
   -webkit-user-select: none;
   user-select: none;
 }
-.dialog-overlay.open {
+.dialog-overlay-core.dialog-overlay.is-open {
   display: flex;
-}
-.dialog-overlay.closed {
-  display: none;
 }
 
 .dialog-core {

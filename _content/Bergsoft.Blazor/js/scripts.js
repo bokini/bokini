@@ -109,6 +109,9 @@ function setupReordering(listbox, dotNet) {
     let location = null;
     let canDrag = false;
     let style;
+    function reordering() {
+        return listbox.classList.contains("reordering");
+    }
     function startDrag(e, item) {
         dragIndex = parseInt(item.dataset.index);
         let draggedRect = item.getBoundingClientRect();
@@ -133,18 +136,20 @@ function setupReordering(listbox, dotNet) {
         listbox.addEventListener("pointerdown", e => {
             location = { x: e.pageX, y: e.pageY };
             const target = e.target;
-            if (target.classList.contains("drag-handle")) {
-                item = target.parentNode;
-                canDrag = true;
+            if (reordering()) {
+                if (target.classList.contains("drag-handle")) {
+                    item = target.parentNode;
+                    canDrag = true;
+                }
+                else if (target.classList.contains("item")) {
+                    item = target;
+                }
+                else {
+                    item = target.closest(".item");
+                }
+                ;
             }
-            else if (target.classList.contains("item")) {
-                item = target;
-            }
-            else {
-                item = target.closest(".item");
-            }
-            ;
-            if (canDrag) {
+            if (canDrag && reordering()) {
                 startDrag(e, item);
             }
             listbox.addEventListener("pointermove", onPointerMove);
@@ -164,17 +169,19 @@ function setupReordering(listbox, dotNet) {
         if (!canDrag) {
             if (location && Math.abs(location.x - e.pageX) > distance || Math.abs(location.y - e.pageY) > distance) {
                 canDrag = true;
-                if (listbox.classList.contains("reordering")) {
+                if (reordering()) {
                     startDrag(e, item);
                 }
             }
         }
-        if (canDrag) {
+        if (canDrag && reordering()) {
             drag(e);
         }
     }
     function onPointerUp(e) {
-        item.releasePointerCapture(e.pointerId);
+        if (item) {
+            item.releasePointerCapture(e.pointerId);
+        }
         item = null;
         canDrag = false;
         location = null;
@@ -195,9 +202,10 @@ class Dialog {
             let offset;
             const dotnet = this.dotnet;
             const title = this.title;
-            this.dialog.addEventListener("pointerdown", e => {
-                e.stopPropagation();
-            });
+            /* Prevent touch scrolling in Safari for iOS */
+            this.dialog.addEventListener("touchmove", e => {
+                e.preventDefault();
+            }, { passive: false });
             title.addEventListener("pointerdown", e => {
                 if (title.classList.contains("draggable")) {
                     dragging = true;
@@ -210,9 +218,6 @@ class Dialog {
                 }
                 title.addEventListener("pointermove", titlePointerMove);
                 title.addEventListener("pointerup", titlePointerUp);
-                title.addEventListener("touchmove", e => {
-                    e.preventDefault();
-                }, { passive: false });
             });
             function titlePointerMove(e) {
                 if (dragging) {
