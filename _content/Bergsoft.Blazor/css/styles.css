@@ -483,7 +483,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: 216820564334;
+  z-index: 2000;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
@@ -497,6 +497,7 @@
 
 .dialog-core {
   position: absolute;
+  z-index: 2001;
 }
 .dialog-core.dialog {
   background: var(--surface, gainsboro);

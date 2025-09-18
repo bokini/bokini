@@ -164,7 +164,9 @@ function setupReordering(listbox, dotNet) {
         if (!canDrag) {
             if (location && Math.abs(location.x - e.pageX) > distance || Math.abs(location.y - e.pageY) > distance) {
                 canDrag = true;
-                startDrag(e, item);
+                if (listbox.classList.contains("reordering")) {
+                    startDrag(e, item);
+                }
             }
         }
         if (canDrag) {
@@ -176,6 +178,8 @@ function setupReordering(listbox, dotNet) {
         item = null;
         canDrag = false;
         location = null;
+        targetIndex = null;
+        dragIndex = null;
         dotNet.invokeMethodAsync("HandleDragEnd");
         listbox.removeEventListener("pointermove", onPointerMove);
         listbox.removeEventListener("pointerup", onPointerUp);
@@ -191,6 +195,9 @@ class Dialog {
             let offset;
             const dotnet = this.dotnet;
             const title = this.title;
+            this.dialog.addEventListener("pointerdown", e => {
+                e.stopPropagation();
+            });
             title.addEventListener("pointerdown", e => {
                 if (title.classList.contains("draggable")) {
                     dragging = true;
