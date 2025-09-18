@@ -590,6 +590,32 @@
   outline: none;
 }
 
+.drop-list .item {
+  color: var(--content, black);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.drop-list .item:hover {
+  background-color: var(--surface-hover, whitesmoke);
+}
+.drop-list .item.selected {
+  background-color: var(--surface-active, silver);
+  color: var(--content, black);
+}
+.drop-list:focus, .drop-list:focus-within {
+  outline: none;
+}
+.drop-list:focus .item.selected, .drop-list:focus-within .item.selected {
+  color: var(--state-selection-content, black);
+  background-color: var(--state-selection-bg, lightblue);
+  outline: none;
+}
+
 .icon-panel {
   display: flex;
   gap: var(--size-md, 8px);
