@@ -24,7 +24,7 @@ export function connectProgressBar(progress, dotNetReference, min, max) {
             const value = Math.round(clampedX / (boundingRect.width / (max - min)));
 
             if (value >= min && value <= max) {
-                dotNetReference.invokeMethodAsync("setProgressValue", value);
+                dotNetReference.invokeMethodAsync("SetProgressValue", value);
             }
         }
     });

@@ -309,7 +309,6 @@
   text-overflow: ellipsis;
 }
 .datagrid-core .dragging-placeholder {
-  position: absolute;
   touch-action: none;
 }
 .datagrid-core .grid-header .content {
@@ -326,6 +325,7 @@
   height: 100%;
 }
 .datagrid-core .grid-header.dragging .content {
+  opacity: 0.1;
   background: var(--surface, lightgray);
 }
 .datagrid-core .grid-header:not(.fixed) .content:hover {
@@ -686,6 +686,25 @@
 .input-core.input:focus .spin-buttons .vertical, .input-core.input:focus-within .spin-buttons .vertical {
   flex-direction: column-reverse;
 }
+.input-core.input .progress-bar {
+  height: 2px;
+  cursor: grab;
+  position: relative;
+  margin: -1px 2px;
+  bottom: 2px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.input-core.input .progress-bar .progress {
+  background: var(--green, seagreen);
+  border-radius: 1px;
+  height: 100%;
+  transition: height ease-in-out 0.15s;
+}
+.input-core.input .progress-bar .progress:active {
+  cursor: grabbing;
+}
 @media (max-width: 600px) {
   .input-core.input .progress-bar:hover .progress {
     border-radius: 4px;
@@ -705,7 +724,7 @@
 .input-core.input .inplace-input.inplace {
   padding: 0 0 0 6px;
 }
-.input-core.inplace {
+.input-core.input.inplace {
   border: 0;
   background: none;
   outline: none;

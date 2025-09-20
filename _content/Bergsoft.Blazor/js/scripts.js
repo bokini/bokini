@@ -1,6 +1,80 @@
 const dragDistance = 2;
 function distanceReach(point1, point2, distance = dragDistance) {
-    return point1 && Math.abs(point1.x - point2.x) > distance || Math.abs(point1.y - point2.y) > distance;
+    return point1 && Math.abs(point1.x - point2.x) > distance || point1 && Math.abs(point1.y - point2.y) > distance;
+}
+function registerProgressBar(progress, min, max, dotNetReference) {
+    const container = progress.parentElement;
+    progress.addEventListener("pointerdown", e => {
+        progress.setPointerCapture(e.pointerId);
+        progress.addEventListener("pointerup", endDragging, { once: true });
+        progress.addEventListener("pointercancel", endDragging, { once: true });
+        progress.addEventListener("pointermove", drag);
+    });
+    function endDragging(e) {
+        progress.releasePointerCapture(e.pointerId);
+        progress.removeEventListener("pointermove", drag);
+    }
+    function drag(e) {
+        const boundingRect = container.getBoundingClientRect();
+        const relativeX = e.clientX - boundingRect.left;
+        const clampedX = Math.max(0, Math.min(relativeX, boundingRect.width));
+        const value = Math.round(clampedX / (boundingRect.width / (max - min)));
+        if (value >= min && value <= max) {
+            dotNetReference.invokeMethodAsync("SetProgressValue", value);
+        }
+    }
+}
+/**
+ * Setup events for resizing headers
+ *
+ * @param headers Header element
+ * @param dotnet Dotnet reference to call methods
+ */
+function registerHeadersResizing(headers, dotnet) {
+    let headerIndex;
+    let divider;
+    let locationX;
+    headers.addEventListener('pointerdown', e => {
+        const target = e.target;
+        const header = target.closest("th");
+        if (!header) {
+            return;
+        }
+        /* Index of header being resized or dragged */
+        headerIndex = parseInt(header.dataset.index);
+        if (target.classList.contains("divider")) {
+            /* Can be resized? */
+            if (target.classList.contains("fixed") === false) {
+                divider = target;
+                divider.setPointerCapture(e.pointerId);
+                const headerRect = header.getBoundingClientRect();
+                locationX = headerRect.x;
+                window.addEventListener("pointermove", pointerMove);
+                window.addEventListener("pointerup", pointerUp);
+                window.addEventListener("pointercancel", pointerUp);
+                window.addEventListener("touchmove", e => e.preventDefault(), { passive: false, once: true });
+            }
+        }
+    });
+    function pointerMove(e) {
+        let colSize = e.pageX - locationX;
+        if (colSize < 8) {
+            colSize = 8;
+        }
+        if (headerIndex == null) {
+            throw new ReferenceError("Header index is null");
+        }
+        dotnet.invokeMethodAsync("HandleResize", headerIndex, `${colSize}px`);
+    }
+    const pointerUp = (e) => {
+        locationX = null;
+        headerIndex = null;
+        divider.releasePointerCapture(e.pointerId);
+        window.removeEventListener("pointermove", pointerMove);
+        window.removeEventListener("pointerup", pointerUp);
+        window.removeEventListener("pointercancel", pointerUp);
+        divider = null;
+    };
 }
 function registerHeadersReordering(headers, dotNet) {
     let grid = null;
@@ -11,22 +85,28 @@ function registerHeadersReordering(headers, dotNet) {
     let dragIndex = null;
     let dragging = false;
     let headersRect;
+    let headerContent = null;
     headers.addEventListener('pointerdown', e => {
-        headersRect = headers.getBoundingClientRect();
         const target = e.target;
+        if (target.classList.contains("divider")) {
+            return;
+        }
+        headersRect = headers.getBoundingClientRect();
         header = target.closest("th");
+        headerContent = header.querySelector(".content");
         location = { x: e.pageX, y: e.pageY };
-        grid = header.closest('table');
-        gridStyle = window.getComputedStyle(grid);
+        const grid = header.closest('table');
+        const gridStyle = window.getComputedStyle(grid);
         let draggedRect = header.getBoundingClientRect();
         offset = {
             x: e.pageX - draggedRect.left - grid.scrollLeft,
             y: e.pageY - draggedRect.top - grid.scrollTop
         };
-        header.setPointerCapture(e.pointerId);
-        header.addEventListener("pointermove", onPointerMove);
-        header.addEventListener("pointerup", onPointerUp);
-        header.addEventListener("touchmove", e => {
+        headerContent.setPointerCapture(e.pointerId);
+        window.addEventListener("pointermove", onPointerMove);
+        window.addEventListener("pointerup", onPointerUp, { once: true });
+        window.addEventListener("pointercancel", onPointerUp, { once: true });
+        window.addEventListener("touchmove", e => {
             e.preventDefault();
         }, { passive: false });
     });
@@ -38,10 +118,6 @@ function registerHeadersReordering(headers, dotNet) {
         if (dragging) {
             drag(e);
         }
-    }
-    function findPosition() {
-        const tr = header.parentNode;
-        const headers = tr.querySelectorAll("th:not(.dragging)");
     }
     function calcPosition(e) {
         return { x: e.pageX - offset.x + window.scrollX, y: e.pageY - offset.y + window.scrollY };
@@ -69,8 +145,8 @@ function registerHeadersReordering(headers, dotNet) {
         location = null;
         dragIndex = null;
         dotNet.invokeMethodAsync("HandleDragEnd");
-        header.removeEventListener("pointermove", onPointerMove);
-        header.removeEventListener("pointerup", onPointerUp);
+        headerContent.removeEventListener("pointermove", onPointerMove);
+        headerContent.removeEventListener("pointerup", onPointerUp);
     }
     function startDragging(e, header) {
         dragging = true;
@@ -78,7 +154,7 @@ function registerHeadersReordering(headers, dotNet) {
         header.setPointerCapture(e.pointerId);
     }
     function onPointerUp(e) {
-        header.releasePointerCapture(e.pointerId);
+        headerContent.releasePointerCapture(e.pointerId);
         endDragging();
     }
 }
@@ -111,6 +187,9 @@ function setupReordering(listbox, dotNet) {
     let style;
     function reordering() {
         return listbox.classList.contains("reordering");
+    }
+    function endDrag(e) {
+        dotNet.invokeMethodAsync("HandleDragEnd");
     }
     function startDrag(e, item) {
         dragIndex = parseInt(item.dataset.index);
@@ -152,9 +231,10 @@ function setupReordering(listbox, dotNet) {
             if (canDrag && reordering()) {
                 startDrag(e, item);
             }
-            listbox.addEventListener("pointermove", onPointerMove);
-            listbox.addEventListener("pointerup", onPointerUp);
-            listbox.addEventListener("touchmove", e => {
+            window.addEventListener("pointermove", onPointerMove);
+            window.addEventListener("pointerup", onPointerUp);
+            window.addEventListener("pointercancel", onPointerUp);
+            window.addEventListener("touchmove", e => {
                 e.preventDefault();
             }, { passive: false });
         });
@@ -179,6 +259,7 @@ function setupReordering(listbox, dotNet) {
         }
     }
     function onPointerUp(e) {
+        endDrag(e);
         if (item) {
             item.releasePointerCapture(e.pointerId);
         }
@@ -187,9 +268,7 @@ function setupReordering(listbox, dotNet) {
         location = null;
         targetIndex = null;
         dragIndex = null;
-        dotNet.invokeMethodAsync("HandleDragEnd");
-        listbox.removeEventListener("pointermove", onPointerMove);
-        listbox.removeEventListener("pointerup", onPointerUp);
+        window.removeEventListener("pointermove", onPointerMove);
     }
 }
 class Dialog {
