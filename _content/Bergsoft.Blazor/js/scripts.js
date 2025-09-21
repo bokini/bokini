@@ -51,8 +51,11 @@ function registerSplitter(splitter) {
         window.addEventListener("pointerup", stopDragging, { once: true });
         window.addEventListener("pointercancel", stopDragging, { once: true });
         window.addEventListener("pointermove", drag);
-        window.addEventListener("touchmove", e => e.preventDefault(), { passive: false });
+        window.addEventListener("touchmove", touchMove, { passive: false });
     });
+    function touchMove(e) {
+        e.preventDefault();
+    }
     function drag(e) {
         if (sibling) {
             let style = window.getComputedStyle(sibling, null);
@@ -78,6 +81,7 @@ function registerSplitter(splitter) {
     }
     function stopDragging(e) {
         window.removeEventListener("pointermove", drag);
+        window.removeEventListener("touchmove", touchMove);
         splitter.releasePointerCapture(e.pointerId);
     }
 }
@@ -109,10 +113,13 @@ function registerHeadersResizing(grid, dotnet) {
                 window.addEventListener("pointermove", pointerMove);
                 window.addEventListener("pointerup", pointerUp);
                 window.addEventListener("pointercancel", pointerUp);
-                window.addEventListener("touchmove", e => e.preventDefault(), { passive: false, once: true });
+                window.addEventListener("touchmove", touchMove, { passive: false });
             }
         }
     });
+    function touchMove(e) {
+        e.preventDefault();
+    }
     function pointerMove(e) {
         let colSize = e.pageX - locationX;
         if (colSize < 8) {
@@ -130,6 +137,7 @@ function registerHeadersResizing(grid, dotnet) {
         window.removeEventListener("pointermove", pointerMove);
         window.removeEventListener("pointerup", pointerUp);
         window.removeEventListener("pointercancel", pointerUp);
+        window.removeEventListener("touchmove", touchMove);
         divider = null;
     };
 }
@@ -163,10 +171,11 @@ function registerHeadersReordering(headers, dotNet) {
         window.addEventListener("pointermove", onPointerMove);
         window.addEventListener("pointerup", onPointerUp, { once: true });
         window.addEventListener("pointercancel", onPointerUp, { once: true });
-        window.addEventListener("touchmove", e => {
-            e.preventDefault();
-        }, { passive: false });
+        window.addEventListener("touchmove", touchMove, { passive: false });
     });
+    function touchMove(e) {
+        e.preventDefault();
+    }
     function onPointerMove(e) {
         let currentLocation = { x: e.pageX, y: e.pageY };
         if (!dragging && distanceReach(location, currentLocation)) {
@@ -204,6 +213,7 @@ function registerHeadersReordering(headers, dotNet) {
         dotNet.invokeMethodAsync("HandleDragEnd");
         headerContent.removeEventListener("pointermove", onPointerMove);
         headerContent.removeEventListener("pointerup", onPointerUp);
+        headerContent.removeEventListener("touchmove", touchMove);
     }
     function startDragging(e, header) {
         dragging = true;
@@ -291,10 +301,11 @@ function setupReordering(listbox, dotNet) {
             window.addEventListener("pointermove", onPointerMove);
             window.addEventListener("pointerup", onPointerUp);
             window.addEventListener("pointercancel", onPointerUp);
-            window.addEventListener("touchmove", e => {
-                e.preventDefault();
-            }, { passive: false });
+            window.addEventListener("touchmove", onTouchMove, { passive: false });
         });
+    }
+    function onTouchMove(e) {
+        e.preventDefault();
     }
     function calculateTop(e) {
         const listboxRect = listbox.getBoundingClientRect();
@@ -326,6 +337,7 @@ function setupReordering(listbox, dotNet) {
         targetIndex = null;
         dragIndex = null;
         window.removeEventListener("pointermove", onPointerMove);
+        window.removeEventListener("pointermove", onTouchMove);
     }
 }
 class Dialog {
@@ -339,9 +351,7 @@ class Dialog {
             const dotnet = this.dotnet;
             const title = this.title;
             /* Prevent touch scrolling in Safari for iOS */
-            this.dialog.addEventListener("touchmove", e => {
-                e.preventDefault();
-            }, { passive: false });
+            this.dialog.addEventListener("touchmove", touchMove, { passive: false });
             title.addEventListener("pointerdown", e => {
                 if (title.classList.contains("draggable")) {
                     dragging = true;
@@ -355,6 +365,9 @@ class Dialog {
                 title.addEventListener("pointermove", titlePointerMove);
                 title.addEventListener("pointerup", titlePointerUp);
             });
+            function touchMove(e) {
+                e.preventDefault();
+            }
             function titlePointerMove(e) {
                 if (dragging) {
                     const position = {
@@ -370,6 +383,7 @@ class Dialog {
                 title.classList.remove("dragging");
                 title.removeEventListener("pointermove", titlePointerMove);
                 title.removeEventListener("pointerup", titlePointerUp);
+                title.removeEventListener("touchmove", touchMove);
             }
         };
         this.initialize();
