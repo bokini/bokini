@@ -315,6 +315,7 @@
   border-radius: var(--border-radius-md, 6px);
   margin-right: -6px;
   transition: background ease-out 0.25s;
+  visibility: visible;
 }
 .datagrid-core .grid-header:not(:first-child) .content {
   margin-left: 6px;
@@ -325,8 +326,7 @@
   height: 100%;
 }
 .datagrid-core .grid-header.dragging .content {
-  opacity: 0.1;
-  background: var(--surface, lightgray);
+  visibility: hidden;
 }
 .datagrid-core .grid-header:not(.fixed) .content:hover {
   cursor: pointer;

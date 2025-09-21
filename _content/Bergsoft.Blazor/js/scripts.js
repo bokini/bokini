@@ -6,13 +6,13 @@ function registerProgressBar(progress, min, max, dotNetReference) {
     const container = progress.parentElement;
     progress.addEventListener("pointerdown", e => {
         progress.setPointerCapture(e.pointerId);
-        progress.addEventListener("pointerup", endDragging, { once: true });
-        progress.addEventListener("pointercancel", endDragging, { once: true });
-        progress.addEventListener("pointermove", drag);
+        window.addEventListener("pointerup", endDragging, { once: true });
+        window.addEventListener("pointercancel", endDragging, { once: true });
+        window.addEventListener("pointermove", drag);
     });
     function endDragging(e) {
         progress.releasePointerCapture(e.pointerId);
-        progress.removeEventListener("pointermove", drag);
+        window.removeEventListener("pointermove", drag);
     }
     function drag(e) {
         const boundingRect = container.getBoundingClientRect();
@@ -25,16 +25,73 @@ function registerProgressBar(progress, min, max, dotNetReference) {
     }
 }
 /**
+ * Register a splitter events to allow resizing of adjacent elements
+ *
+ * @param splitter
+ * @returns
+ */
+function registerSplitter(splitter) {
+    if (splitter === null) {
+        return;
+    }
+    let originalPosition;
+    let originalSize;
+    let prevPos;
+    let horizontal = splitter.classList.contains("vertical") === false;
+    let sibling;
+    splitter.addEventListener("pointerdown", (e) => {
+        sibling = splitter.previousElementSibling;
+        if (sibling === null) {
+            return;
+        }
+        splitter.setPointerCapture(e.pointerId);
+        prevPos = horizontal ? e.clientY : e.clientX;
+        originalSize = horizontal ? sibling.offsetHeight : sibling.offsetWidth;
+        originalPosition = horizontal ? e.clientY : e.clientX;
+        window.addEventListener("pointerup", stopDragging, { once: true });
+        window.addEventListener("pointercancel", stopDragging, { once: true });
+        window.addEventListener("pointermove", drag);
+        window.addEventListener("touchmove", e => e.preventDefault(), { passive: false });
+    });
+    function drag(e) {
+        if (sibling) {
+            let style = window.getComputedStyle(sibling, null);
+            if (horizontal) {
+                let minHeight = style.getPropertyValue("min-height");
+                let height = originalSize - (originalPosition - e.clientY);
+                if (height < parseInt(minHeight)) {
+                    height = parseInt(minHeight);
+                }
+                sibling.style.height = height + "px";
+                prevPos = e.clientY;
+            }
+            else {
+                let minWidth = style.getPropertyValue("min-width");
+                //                    let delta = originalPosition - e.clientX;
+                let newWidth = originalSize - (originalPosition - e.clientX);
+                if (newWidth < parseInt(minWidth)) {
+                    newWidth = parseInt(minWidth);
+                }
+                sibling.style.width = newWidth + "px";
+            }
+        }
+    }
+    function stopDragging(e) {
+        window.removeEventListener("pointermove", drag);
+        splitter.releasePointerCapture(e.pointerId);
+    }
+}
+/**
  * Setup events for resizing headers
  *
- * @param headers Header element
+ * @param grid Grid element
  * @param dotnet Dotnet reference to call methods
  */
-function registerHeadersResizing(headers, dotnet) {
+function registerHeadersResizing(grid, dotnet) {
     let headerIndex;
     let divider;
     let locationX;
-    headers.addEventListener('pointerdown', e => {
+    grid.addEventListener('pointerdown', e => {
         const target = e.target;
         const header = target.closest("th");
         if (!header) {
