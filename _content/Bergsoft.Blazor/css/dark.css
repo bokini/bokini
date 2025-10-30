@@ -16,10 +16,14 @@
     --active: white;
 
     --content: hsl(0, 0%, 100%);
+    --content-secondary: hsl(0, 0%, 80%);
     --content-inverted: black;
 
     /* Selected & focused states */
     --state-selection-bg: #0a2e4a;
+    --state-selection-bg-neutral: hsl(0, 0%, 19%);
+    --state-selection-bg-neutral-secondary: hsl(0, 0%, 22%);
+    
     --state-selection-content: #f2f2f2;
 
     --state-focus-border: #0095ff;
@@ -30,15 +34,17 @@
     --grid-lines: rgba(225, 225, 225, .25);
 
     /* Size */
+
     --size-xs: 4px;
     --size-sm: 6px;
     --size-md: 8px;
     --size-lg: 12px;
 
+    --border-radius-xxs: 2px; /* 2 */
     --border-radius-sm: var(--size-xs); /* 4 */
     --border-radius-md: var(--size-sm); /* 6 */
     --border-radius-lg: var(--size-md); /* 8 */
-    --border-radius-xl: var(--size-lg); /* 12 */
+    --border-radius-xl: 10px; /* 10 */
 
     --spacing: var(--size-xs);
     --spacing-md: var(--size-md);
