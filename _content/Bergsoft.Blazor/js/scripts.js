@@ -1,6 +1,143 @@
-const dragDistance = 2;
+function getDockById(dockId) {
+    const dock = document.getElementById(dockId);
+    if (dock) {
+        return createDockArgs(dock);
+    }
+    return null;
+}
+function getDockOrientation(dock) {
+    return dock.dataset.vertical !== undefined ? Orientation.Vertical : Orientation.Horizontal;
+}
+function createDockArgs(dock) {
+    return {
+        dockId: dock.id,
+        orientation: getDockOrientation(dock),
+        tag: dock.dataset.tag
+    };
+}
+function dock(control, dockId) {
+    const dock = document.getElementById(dockId);
+    if (dock && control) {
+        dock.appendChild(control);
+        //        console.log(`Append ${control.id} to ${dock.id}`);
+        return getDockOrientation(dock);
+    }
+    return Orientation.Horizontal;
+}
+function undock(control, dockId) {
+    const dockEl = document.getElementById(dockId);
+    if (dockEl && control) {
+        dockEl.removeChild(control);
+    }
+}
+function findDock(el) {
+    const elRect = el.getBoundingClientRect();
+    const docks = document.querySelectorAll('[data-dock]');
+    for (const dock of docks) {
+        const dockRect = inflateRect(dock.getBoundingClientRect(), 8, 8);
+        if (rectsIntersect(elRect, dockRect)) {
+            console.log(`Found dock: ${dock.id}`);
+            return dock;
+        }
+    }
+    return null;
+}
+function registerFloating(control, dotnet) {
+    let floating = false;
+    let origin = null;
+    let offset = null;
+    let handle;
+    let toolbarRect;
+    let dock = null;
+    control.addEventListener("pointerdown", e => {
+        handle = e.target;
+        if (handle.classList.contains("drag-handle")) {
+            e.preventDefault();
+            floating = control.classList.contains("floating");
+            toolbarRect = control.getBoundingClientRect();
+            /* It need to be undocked, or already floating, */
+            handle.setPointerCapture(e.pointerId);
+            origin = { x: e.pageX, y: e.pageY };
+            offset = {
+                x: e.pageX - toolbarRect.left - window.scrollX,
+                y: e.pageY - toolbarRect.top - window.scrollY
+            };
+            control.addEventListener("pointermove", onPointerMove);
+            control.addEventListener("pointerup", onPointerUp, { once: true });
+            control.addEventListener("pointercancel", onPointerUp, { once: true });
+            control.addEventListener("touchmove", disableTouchMove, { passive: false });
+        }
+    });
+    function resetDock(dock) {
+        if (dock) {
+            dock.classList.remove("floating-over");
+        }
+        dock = null;
+    }
+    function onPointerMove(e) {
+        e.preventDefault();
+        if (!floating) {
+            if (distanceReach(origin, { x: e.pageX, y: e.pageY }, 4)) {
+                startFloating(e);
+            }
+        }
+        if (floating) {
+            const position = { x: e.pageX - offset.x, y: e.pageY - offset.y };
+            dotnet.invokeMethodAsync("SetPosition", `${position.x}px`, `${position.y}px`);
+            const targetDock = findDock(control);
+            if (targetDock != dock) {
+                resetDock(dock);
+                dock = targetDock;
+                if (dock) {
+                    const args = createDockArgs(dock);
+                    dotnet.invokeMethodAsync("DockOver", args)
+                        .then((canDock) => {
+                        if (canDock) {
+                            dock.classList.add("floating-over");
+                        }
+                    });
+                }
+            }
+        }
+    }
+    /**
+     * Toolbar is undocked and starts floating
+     * @param e
+     */
+    function startFloating(e) {
+        console.log("startFloating");
+        floating = true;
+        /* Notify dotnet to rerender */
+        dotnet.invokeMethodAsync("StartFloating");
+        control.classList.add("floating");
+        /* Get the horizontal handle, as it is a different object */
+        handle = control.querySelector(".drag-handle");
+        handle.setPointerCapture(e.pointerId);
+        origin = { x: e.pageX, y: e.pageY };
+        const toolbarRect = control.getBoundingClientRect();
+        const handleRect = handle.getBoundingClientRect();
+        const style = window.getComputedStyle(control);
+        offset = {
+            x: (handleRect.left - toolbarRect.left + parseInt(style.paddingLeft) + handleRect.width / 2) - window.scrollX,
+            y: (handleRect.top - toolbarRect.top + parseInt(style.paddingTop) + handleRect.height / 2) - window.scrollY
+        };
+    }
+    function endFloating(dock) {
+        dotnet.invokeMethodAsync("DockStop", dock != null ? createDockArgs(dock) : null);
+    }
+    function onPointerUp(e) {
+        handle.releasePointerCapture(e.pointerId);
+        control.removeEventListener("pointermove", onPointerMove);
+        control.removeEventListener("touchmove", disableTouchMove);
+        endFloating(dock);
+        resetDock(dock);
+    }
+}
 function distanceReach(point1, point2, distance = dragDistance) {
     return point1 && Math.abs(point1.x - point2.x) > distance || point1 && Math.abs(point1.y - point2.y) > distance;
+}
+function disableTouchMove(e) {
+    e.preventDefault();
 }
 function registerProgressBar(progress, min, max, dotNetReference) {
     const container = progress.parentElement;
@@ -51,11 +188,8 @@ function registerSplitter(splitter) {
         window.addEventListener("pointerup", stopDragging, { once: true });
         window.addEventListener("pointercancel", stopDragging, { once: true });
         window.addEventListener("pointermove", drag);
-        window.addEventListener("touchmove", touchMove, { passive: false });
+        window.addEventListener("touchmove", disableTouchMove, { passive: false });
     });
-    function touchMove(e) {
-        e.preventDefault();
-    }
     function drag(e) {
         if (sibling) {
             let style = window.getComputedStyle(sibling, null);
@@ -81,7 +215,7 @@ function registerSplitter(splitter) {
     }
     function stopDragging(e) {
         window.removeEventListener("pointermove", drag);
-        window.removeEventListener("touchmove", touchMove);
+        window.removeEventListener("touchmove", disableTouchMove);
         splitter.releasePointerCapture(e.pointerId);
     }
 }
@@ -113,13 +247,10 @@ function registerHeadersResizing(grid, dotnet) {
                 window.addEventListener("pointermove", pointerMove);
                 window.addEventListener("pointerup", pointerUp);
                 window.addEventListener("pointercancel", pointerUp);
-                window.addEventListener("touchmove", touchMove, { passive: false });
+                window.addEventListener("touchmove", disableTouchMove, { passive: false });
             }
         }
     });
-    function touchMove(e) {
-        e.preventDefault();
-    }
     function pointerMove(e) {
         let colSize = e.pageX - locationX;
         if (colSize < 8) {
@@ -137,7 +268,7 @@ function registerHeadersResizing(grid, dotnet) {
         window.removeEventListener("pointermove", pointerMove);
         window.removeEventListener("pointerup", pointerUp);
         window.removeEventListener("pointercancel", pointerUp);
-        window.removeEventListener("touchmove", touchMove);
+        window.removeEventListener("touchmove", disableTouchMove);
         divider = null;
     };
 }
@@ -171,11 +302,8 @@ function registerHeadersReordering(headers, dotNet) {
         window.addEventListener("pointermove", onPointerMove);
         window.addEventListener("pointerup", onPointerUp, { once: true });
         window.addEventListener("pointercancel", onPointerUp, { once: true });
-        window.addEventListener("touchmove", touchMove, { passive: false });
+        window.addEventListener("touchmove", disableTouchMove, { passive: false });
     });
-    function touchMove(e) {
-        e.preventDefault();
-    }
     function onPointerMove(e) {
         let currentLocation = { x: e.pageX, y: e.pageY };
         if (!dragging && distanceReach(location, currentLocation)) {
@@ -213,7 +341,7 @@ function registerHeadersReordering(headers, dotNet) {
         dotNet.invokeMethodAsync("HandleDragEnd");
         headerContent.removeEventListener("pointermove", onPointerMove);
         headerContent.removeEventListener("pointerup", onPointerUp);
-        headerContent.removeEventListener("touchmove", touchMove);
+        headerContent.removeEventListener("touchmove", disableTouchMove);
     }
     function startDragging(e, header) {
         dragging = true;
@@ -301,11 +429,8 @@ function setupReordering(listbox, dotNet) {
             window.addEventListener("pointermove", onPointerMove);
             window.addEventListener("pointerup", onPointerUp);
             window.addEventListener("pointercancel", onPointerUp);
-            window.addEventListener("touchmove", onTouchMove, { passive: false });
+            window.addEventListener("touchmove", disableTouchMove, { passive: false });
         });
-    }
-    function onTouchMove(e) {
-        e.preventDefault();
     }
     function calculateTop(e) {
         const listboxRect = listbox.getBoundingClientRect();
@@ -337,7 +462,93 @@ function setupReordering(listbox, dotNet) {
         targetIndex = null;
         dragIndex = null;
         window.removeEventListener("pointermove", onPointerMove);
-        window.removeEventListener("pointermove", onTouchMove);
+        window.removeEventListener("touchmove", disableTouchMove);
+    }
+}
+/**
+ * Register toolbar events to allow floating undocking
+ *
+ * @param control
+ * @param dotNet
+ */
+function registerToolbar(control, dock, dotNet) {
+    let floating = false;
+    let origin = null;
+    let offset = null;
+    let handle;
+    let toolbarRect;
+    let canDrop = false;
+    control.addEventListener("pointerdown", e => {
+        handle = e.target;
+        if (handle.classList.contains("drag-handle")) {
+            e.preventDefault();
+            floating = control.classList.contains("floating");
+            toolbarRect = control.getBoundingClientRect();
+            /* It need to be undocked, or already floating, */
+            handle.setPointerCapture(e.pointerId);
+            origin = { x: e.pageX, y: e.pageY };
+            offset = {
+                x: e.pageX - toolbarRect.left - window.scrollX,
+                y: e.pageY - toolbarRect.top - window.scrollY
+            };
+            control.addEventListener("pointermove", onPointerMove);
+            control.addEventListener("pointerup", onPointerUp, { once: true });
+            control.addEventListener("pointercancel", onPointerUp, { once: true });
+            control.addEventListener("touchmove", disableTouchMove, { passive: false });
+        }
+    });
+    function onPointerMove(e) {
+        e.preventDefault();
+        if (!floating) {
+            if (distanceReach(origin, { x: e.pageX, y: e.pageY }, 4)) {
+                startFloating(e);
+            }
+        }
+        if (floating) {
+            const location = { x: e.pageX - offset.x, y: e.pageY - offset.y };
+            dotNet.invokeMethodAsync("OnSetLocation", `${location.x}px`, `${location.y}px`);
+            const dockRect = dock.getBoundingClientRect();
+            const placeholderRect = new DOMRect(dockRect.left, dockRect.top, dockRect.width, dockRect.height + toolbarRect.height);
+            canDrop = pointInRect({ x: e.clientX, y: e.clientY }, placeholderRect);
+            if (canDrop) {
+                dock.classList.add("floating-over");
+                dock.style.height = `${toolbarRect.height}px`;
+            }
+            else {
+                dock.classList.remove("floating-over");
+                dock.style.height = "";
+            }
+        }
+    }
+    /**
+     * Toolbar is undocked and starts floating
+     * @param e
+     */
+    function startFloating(e) {
+        floating = true;
+        /* Notify dotnet to rerender */
+        dotNet.invokeMethodAsync("OnStartFloating");
+        control.classList.add("floating");
+        /* Get the horizontal handle, as it is a different object */
+        handle = control.querySelector(".drag-handle");
+        handle.setPointerCapture(e.pointerId);
+        origin = { x: e.pageX, y: e.pageY };
+        const toolbarRect = control.getBoundingClientRect();
+        const handleRect = handle.getBoundingClientRect();
+        const style = window.getComputedStyle(control);
+        offset = {
+            x: (handleRect.left - toolbarRect.left + parseInt(style.paddingLeft) + handleRect.width / 2) - window.scrollX,
+            y: (handleRect.top - toolbarRect.top + parseInt(style.paddingTop) + handleRect.height / 2) - window.scrollY
+        };
+    }
+    function onPointerUp(e) {
+        handle.releasePointerCapture(e.pointerId);
+        dock.style.height = "";
+        control.removeEventListener("pointermove", onPointerMove);
+        control.removeEventListener("touchmove", disableTouchMove);
+        if (canDrop) {
+            dotNet.invokeMethodAsync("OnDock");
+        }
     }
 }
 class Dialog {
@@ -351,7 +562,7 @@ class Dialog {
             const dotnet = this.dotnet;
             const title = this.title;
             /* Prevent touch scrolling in Safari for iOS */
-            this.dialog.addEventListener("touchmove", touchMove, { passive: false });
+            this.dialog.addEventListener("touchmove", disableTouchMove, { passive: false });
             title.addEventListener("pointerdown", e => {
                 if (title.classList.contains("draggable")) {
                     dragging = true;
@@ -365,9 +576,6 @@ class Dialog {
                 title.addEventListener("pointermove", titlePointerMove);
                 title.addEventListener("pointerup", titlePointerUp);
             });
-            function touchMove(e) {
-                e.preventDefault();
-            }
             function titlePointerMove(e) {
                 if (dragging) {
                     const position = {
@@ -383,7 +591,7 @@ class Dialog {
                 title.classList.remove("dragging");
                 title.removeEventListener("pointermove", titlePointerMove);
                 title.removeEventListener("pointerup", titlePointerUp);
-                title.removeEventListener("touchmove", touchMove);
+                title.removeEventListener("touchmove", disableTouchMove);
             }
         };
         this.initialize();
@@ -394,4 +602,29 @@ window.dialogFactory = {
         return new Dialog(dialog, title, dotNetHelper);
     }
 };
-//# sourceMappingURL=scripts.js.map
+function listenClickOutside(el, dotnet) {
+    window.addEventListener('mousedown', function handler(e) {
+        if (e.target !== el && el !== null && el.contains(e.target) === false) {
+            dotnet.invokeMethodAsync("HandleClickOutside", e);
+            window.removeEventListener('mousedown', handler);
+        }
+    });
+}
+const dragDistance = 2;
+var Orientation;
+(function (Orientation) {
+    Orientation[Orientation["Horizontal"] = 0] = "Horizontal";
+    Orientation[Orientation["Vertical"] = 1] = "Vertical";
+})(Orientation || (Orientation = {}));
+function flip(point) {
+    return { x: point.y, y: point.x };
+}
+function inflateRect(rect, dx, dy) {
+    return new DOMRect(rect.x - dx, rect.y - dy, rect.width + dx * 2, rect.height + dy * 2);
+}
+function pointInRect(point, rect) {
+    return (point.x >= rect.left && point.x <= rect.right && point.y >= rect.top && point.y <= rect.bottom);
+}
+function rectsIntersect(a, b) {
+    return !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
+}
