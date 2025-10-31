@@ -130,30 +130,38 @@ svg.outlined path {
   padding-right: 8px;
 }
 
-.callout-core {
+.breadcrumbs {
+  display: flex;
+}
+.breadcrumbs button {
+  padding: 4px var(--spacing-md, 8px);
+  min-height: 2rem;
+}
+
+.callout-base {
   --beakSize: 18px;
   --offsetX: 0;
   --offsetY: 9px;
   position: absolute;
   z-index: 1004;
 }
-.callout-core.anchor-left {
+.callout-base.anchor-left {
   top: -9px;
   left: 100%;
 }
-.callout-core.anchor-top {
+.callout-base.anchor-top {
   top: 100%;
   left: 0;
   transform: translate(0, 9px);
 }
-.callout-core.callout {
+.callout-base.callout {
   background: var(--surface, gainsboro);
   border-radius: 2px;
   min-width: 100px;
   min-height: 100px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
 }
-.callout-core.callout .content {
+.callout-base.callout .content {
   position: absolute;
   top: 0;
   right: 0;
@@ -162,7 +170,7 @@ svg.outlined path {
   background-color: inherit;
   padding: 16px;
 }
-.callout-core .beak {
+.callout-base .beak {
   background: var(--surface, gainsboro);
   position: absolute;
   width: var(--beakSize, 18px);
@@ -170,11 +178,11 @@ svg.outlined path {
   box-shadow: inherit;
   transform: rotate(45deg);
 }
-.callout-core .beak.anchor-top {
+.callout-base .beak.anchor-top {
   left: 20px;
   top: -9px;
 }
-.callout-core .beak.anchor-left {
+.callout-base .beak.anchor-left {
   transform: translateX(-9px) translateY(18px) rotate(45deg);
 }
 
@@ -1991,11 +1999,6 @@ svg.outlined path {
 }
 .clear-button:hover {
   stroke: dimgray;
-}
-
-.breadcrumbs button {
-  padding: 4px var(--spacing-md, 8px);
-  min-height: 2rem;
 }
 
 .date-picker-core {
