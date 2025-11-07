@@ -115,9 +115,10 @@ function registerFloating(control, dotnet) {
         const handleRect = handle.getBoundingClientRect();
         const style = window.getComputedStyle(control);
         offset = {
-            x: (handleRect.left - toolbarRect.left + parseInt(style.paddingLeft) + handleRect.width / 2) - window.scrollX,
-            y: (handleRect.top - toolbarRect.top + parseInt(style.paddingTop) + handleRect.height / 2) - window.scrollY
+            x: (handleRect.left - toolbarRect.left + parseInt(style.paddingLeft) + handleRect.width / 2),
+            y: (handleRect.top - toolbarRect.top + parseInt(style.paddingTop) + handleRect.height / 2)
         };
+        console.log(offset);
     }
     function endFloating(dock) {
         dotnet.invokeMethodAsync("DockStop", dock != null ? createDockArgs(dock) : null);
