@@ -81,6 +81,18 @@ svg.outlined path {
 .accordion {
   overflow: clip;
 }
+.accordion .content-container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.1s ease-out;
+  overflow: hidden;
+}
+.accordion .content-container.expanded {
+  grid-template-rows: 1fr;
+}
+.accordion .content-container > .content {
+  min-height: 0;
+}
 
 .expander > button {
   padding: var(--spacing-md, 8px);
@@ -749,6 +761,7 @@ svg.outlined path {
 }
 .input-core.input .input-child-content {
   display: flex;
+  height: 100%;
 }
 .input-core.input .input-child-content .prefix,
 .input-core.input .input-child-content .suffix {

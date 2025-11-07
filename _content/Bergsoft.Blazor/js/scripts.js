@@ -19,10 +19,7 @@ function dock(control, dockId) {
     const dock = document.getElementById(dockId);
     if (dock && control) {
         dock.appendChild(control);
-        //        console.log(`Append ${control.id} to ${dock.id}`);
-        return getDockOrientation(dock);
     }
-    return Orientation.Horizontal;
 }
 function undock(control, dockId) {
     const dockEl = document.getElementById(dockId);
@@ -344,6 +341,7 @@ function registerHeadersReordering(headers, dotNet) {
         headerContent.removeEventListener("touchmove", disableTouchMove);
     }
     function startDragging(e, header) {
+        e.stopPropagation();
         dragging = true;
         dotNet.invokeMethodAsync("HandleDragStart", parseInt(header.dataset.index));
         header.setPointerCapture(e.pointerId);
