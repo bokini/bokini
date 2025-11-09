@@ -1,6 +1,6 @@
 ﻿/*
     Light style
-    v1.0.3
+    v1.0.4
 */
 
 :root {
@@ -31,7 +31,7 @@
     --state-focus-border-offset: 1px;
 
     /* Visual details */
-    --grid-lines: rgba(225, 225, 225, .25);
+    --grid-lines: hsl(0, 0%, 80%);
 
     /* Size */
     --size-xs: 4px;

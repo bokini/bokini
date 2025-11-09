@@ -31,7 +31,7 @@
     --state-focus-border-offset: 1px;
 
     /* Visual details */
-    --grid-lines: rgba(225, 225, 225, .25);
+    --grid-lines: hsl(0, 0%, 33%);
 
     /* Size */
 

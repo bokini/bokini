@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+/* Core */
+/* Gradients */
 .button-core, .clear-button, .expander > button {
   align-items: center;
   color: inherit;
@@ -1338,7 +1340,7 @@ svg.outlined path {
   z-index: 1;
 }
 .tabs-bar-core.tabs-bar {
-  background: var(--surface-secondary, white);
+  background: var(--surface-secondary, silver);
   padding: 2px;
 }
 .tabs-bar-core.tabs-bar.pill {
@@ -1440,7 +1442,7 @@ svg.outlined path {
 }
 .tags-bar .tag-core.tag .close:hover {
   background: var(--content, white);
-  stroke: var(--surface-secondary, whitesmoke);
+  stroke: var(--surface-secondary, silver);
 }
 .tags-bar .tag-core.tag .close:active {
   opacity: 0.75;
@@ -1673,7 +1675,7 @@ svg.outlined path {
 }
 .track-bar .slide {
   border-radius: 100vh;
-  background-color: var(--surface-secondary, whitesmoke);
+  background-color: var(--surface-secondary, silver);
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -1822,7 +1824,7 @@ svg.outlined path {
 }
 
 .gradient-border {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   background: linear-gradient(var(--background, canvas), var(--background, canvas)) padding-box, conic-gradient(from var(--start-angle), #f7c91e, #fb7f27, #f62df7, #00ffe7, #f7c91e) border-box;
   animation: spin 8s linear infinite;
 }

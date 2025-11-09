@@ -18,8 +18,11 @@ body {
 
 main {
     color: var(--content);
-    line-height: 2em;
 }
+
+    main p {
+        line-height: 2em;
+    }
 
     main:not(.inner) {
         background: var(--surface);
