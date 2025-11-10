@@ -1091,7 +1091,6 @@ svg.outlined path {
 .popup-base .popup-menu {
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
   min-width: 180px;
   padding: 6px;
 }
