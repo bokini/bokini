@@ -603,6 +603,7 @@ svg.outlined path {
   transform: translate(-50%, -50%);
   max-height: calc(100% - 40px);
   max-width: calc(100% - 40px);
+  z-index: 10003;
   box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02), 0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
 }
 .dialog-core.dialog:focus, .dialog-core.dialog:focus-within {
