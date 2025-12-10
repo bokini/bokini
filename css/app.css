@@ -130,11 +130,23 @@ main:is(.inner) #page {
     gap: 8px;
 }
 
+.person {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-start;
+}
+
 .avatar {
-    background: var(--surface);
+    align-items: center;
+    background: var(--content);
+    border-radius: 21px;
+    color: var(--background);
+    display: flex;
     width: 42px;
     height: 42px;
-    border-radius: 21px;
+    justify-content: center;
 }
 
 .age {

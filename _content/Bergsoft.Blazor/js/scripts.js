@@ -131,6 +131,145 @@ function registerFloating(control, dotnet) {
         resetDock(dock);
     }
 }
+/**
+ * Reordering elements
+ *
+ * @param handle Handle element to start dragging.
+ * @param subject Element to be dragged.
+ * @param dotNet DotNet helper.
+ */
+function listenReordering(handle, subject, dotNet) {
+    let offset;
+    let bounds;
+    let placeholder;
+    let currentOrder;
+    let previousOrder;
+    let orderedChildren = [];
+    const container = subject.parentElement;
+    let containerBounds;
+    if (container) {
+        handle.addEventListener("pointerdown", onPointerDown);
+    }
+    function onPointerDown(e) {
+        const containerStyle = window.getComputedStyle(container);
+        if (containerStyle.display !== "flex" || containerStyle.flexDirection != "column") {
+            return;
+        }
+        e.preventDefault();
+        handle.setPointerCapture(e.pointerId);
+        bounds = subject.getBoundingClientRect();
+        containerBounds = container.getBoundingClientRect();
+        /* Save the original order of dragging el. */
+        currentOrder = parseInt(subject.style.order);
+        subject.style.removeProperty("order");
+        /* Calculate offset */
+        offset = {
+            x: e.pageX - bounds.left - window.scrollX,
+            y: e.pageY - bounds.top - window.scrollY
+        };
+        /* Start floating */
+        subject.style.position = 'absolute';
+        subject.style.zIndex = '10000';
+        updateFloatingSize(e);
+        /* Sort children by order */
+        sortChildrenByOrder();
+        /* Create placeholder */
+        placeholder = document.createElement("div");
+        placeholder.className = "drag-placeholder";
+        /* Insert at any place, but take the order of subject */
+        container.appendChild(placeholder);
+        placeholder.style.order = currentOrder.toString();
+        handle.addEventListener("pointermove", onPointerMove);
+        handle.addEventListener("pointerup", onPointerUp, { once: true });
+        handle.addEventListener("pointercancel", onPointerUp, { once: true });
+        handle.addEventListener("touchmove", disableTouchMove, { passive: false });
+    }
+    function sortChildrenByOrder() {
+        const children = Array.from(container.children);
+        orderedChildren = children
+            .filter(el => el.style.order !== "" && el !== placeholder)
+            .sort((a, b) => {
+            const orderA = parseInt(a.style.order || "0");
+            const orderB = parseInt(b.style.order || "0");
+            return orderA - orderB;
+        });
+    }
+    function findOrderAtPos(point) {
+        for (let i = 0; i < orderedChildren.length; i++) {
+            const child = orderedChildren[i];
+            const childBounds = child.getBoundingClientRect();
+            if (pointInRect(point, childBounds)) {
+                if (point.y < childBounds.top + childBounds.height / 2) {
+                    if (parseInt(placeholder.style.order) > parseInt(child.style.order))
+                        return parseInt(child.style.order);
+                }
+                else {
+                    if (parseInt(placeholder.style.order) < parseInt(child.style.order)) {
+                        return parseInt(orderedChildren[i].style.order);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+    function updatePlaceholder(order, e) {
+        if (previousOrder !== order) {
+            let oldPlaceholderOrder = parseInt(placeholder.style.order);
+            placeholder.style.order = order.toString();
+            //            dotNet.invokeMethodAsync("Drag", oldPlaceholderOrder, order);
+            orderedChildren.forEach(child => {
+                if (child.style.order === placeholder.style.order) {
+                    child.style.order = oldPlaceholderOrder.toString();
+                    return;
+                }
+            });
+            previousOrder = order;
+            sortChildrenByOrder();
+        }
+        ;
+    }
+    function updateFloatingSize(e) {
+        const rect = new DOMRect(e.pageX - offset.x, e.pageY - offset.y, bounds.width, bounds.height);
+        subject.style.left = rect.x + "px";
+        subject.style.top = rect.y + "px";
+        subject.style.width = rect.width + "px";
+        subject.style.height = rect.height + "px";
+    }
+    function onPointerMove(e) {
+        e.preventDefault();
+        updateFloatingSize(e);
+        const order = findOrderAtPos({ x: e.pageX - window.scrollX, y: e.pageY - window.scrollY });
+        if (order) {
+            updatePlaceholder(order, e);
+        }
+    }
+    function onPointerUp(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (placeholder) {
+            subject.style.order = placeholder.style.order;
+            placeholder.remove();
+            placeholder = null;
+            orderedChildren.forEach(child => {
+                if (child.style.order === subject.style.order) {
+                    child.style.order = previousOrder.toString();
+                    return;
+                }
+            });
+            sortChildrenByOrder();
+        }
+        previousOrder = null;
+        handle.releasePointerCapture(e.pointerId);
+        handle.removeEventListener("pointermove", onPointerMove);
+        subject.style.removeProperty("z-index");
+        subject.style.removeProperty("position");
+        subject.style.removeProperty("left");
+        subject.style.removeProperty("top");
+        subject.style.removeProperty("width");
+        subject.style.removeProperty("height");
+        dotNet.invokeMethodAsync("DragEnd");
+    }
+}
 function distanceReach(point1, point2, distance = dragDistance) {
     return point1 && Math.abs(point1.x - point2.x) > distance || point1 && Math.abs(point1.y - point2.y) > distance;
 }
@@ -603,11 +742,77 @@ window.dialogFactory = {
 };
 function listenClickOutside(el, dotnet) {
     window.addEventListener('mousedown', function handler(e) {
+        const style = getComputedStyle(el);
         if (e.target !== el && el !== null && el.contains(e.target) === false) {
-            dotnet.invokeMethodAsync("HandleClickOutside", e);
-            window.removeEventListener('mousedown', handler);
+            if (style.display !== "none") {
+                dotnet.invokeMethodAsync("HandleClickOutside", e);
+            }
         }
     });
+}
+function capturePointer(el) {
+    if (el) {
+        el.addEventListener("pointerdown", e => el.setPointerCapture(e.pointerId));
+        el.addEventListener("pointerup", e => el.releasePointerCapture(e.pointerId));
+    }
+}
+function roundTo(value, decimals) {
+    const factor = Math.pow(10, decimals);
+    return Math.round(value * factor) / factor;
+}
+function listenTrackBarEvents(knob, min, max, decimals, suffix, dotnet) {
+    let dragging = false;
+    const trackBar = knob.parentElement;
+    let bounds;
+    let tooltip = null;
+    const calcPosition = (e) => {
+        const relativeX = e.clientX - bounds.left;
+        const clampedX = Math.max(0, Math.min(relativeX, bounds.width));
+        return roundTo(clampedX / (bounds.width / (max - min)) + min, decimals);
+    };
+    function setKnobPosition(e) {
+        const position = calcPosition(e);
+        if (position >= min && position <= max) {
+            dotnet.invokeMethodAsync("SetPosition", position);
+            updateTooltip(position);
+        }
+    }
+    function updateTooltip(position) {
+        if (tooltip === null) {
+            tooltip = document.createElement("div");
+            trackBar.appendChild(tooltip);
+            tooltip.style.position = "absolute";
+            tooltip.classList.add("tooltip");
+        }
+        tooltip.style.left = knob.style.left;
+        tooltip.innerText = `${position}${suffix}`;
+    }
+    function startDragging(e) {
+        bounds = trackBar.getBoundingClientRect();
+        dragging = true;
+        knob.focus();
+        knob.setPointerCapture(e.pointerId);
+    }
+    function endDragging(e) {
+        dragging = false;
+        if (tooltip) {
+            tooltip.remove();
+            tooltip = null;
+        }
+        knob.releasePointerCapture(e.pointerId);
+    }
+    trackBar.addEventListener("pointerup", e => endDragging(e));
+    trackBar.addEventListener("pointerdown", (e) => {
+        setKnobPosition(e);
+        startDragging(e);
+    });
+    knob.addEventListener("pointermove", e => {
+        if (dragging) {
+            setKnobPosition(e);
+        }
+    });
+    knob.addEventListener("pointerdown", e => startDragging(e));
+    knob.addEventListener("pointerup", e => endDragging(e));
 }
 const dragDistance = 2;
 var Orientation;
@@ -627,3 +832,4 @@ function pointInRect(point, rect) {
 function rectsIntersect(a, b) {
     return !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
 }
+//# sourceMappingURL=scripts.js.map
