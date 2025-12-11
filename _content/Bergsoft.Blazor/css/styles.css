@@ -1015,6 +1015,7 @@ svg.outlined path {
 }
 
 .list-box {
+  cursor: default;
   overflow: clip auto;
   scrollbar-color: var(--content, black) var(--background, white);
   -moz-user-select: none;
