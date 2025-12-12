@@ -1283,7 +1283,6 @@ svg.outlined path {
 .search-box-core .results {
   display: flex;
   flex-direction: column;
-  padding: var(--spacing, 4px);
 }
 .search-box-core .results > a {
   align-items: center;
@@ -1293,6 +1292,9 @@ svg.outlined path {
   display: flex;
   gap: var(--spacing, 4px);
   padding: var(--spacing, 4px);
+}
+.search-box-core .results > a > div {
+  white-space: nowrap;
 }
 .search-box-core .results > a:hover {
   background-color: var(--surface-hover, whitesmoke);
@@ -1445,6 +1447,7 @@ svg.outlined path {
 .tags-bar {
   --tags-spacing: 1px;
   display: inline-flex;
+  flex-shrink: 0;
   gap: var(--tags-spacing);
   padding: var(--tags-spacing);
   -moz-user-select: none;
@@ -1461,8 +1464,8 @@ svg.outlined path {
   align-items: center;
 }
 .tags-bar .tag-core.tag {
-  align-items: center;
   background: var(--surface, gainsboro);
+  align-items: center;
   display: flex;
   gap: var(--size-xs, 4px);
   padding: 0 var(--size-xs, 4px);
